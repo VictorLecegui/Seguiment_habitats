@@ -6,7 +6,10 @@
 
 ### Funció 1: Utilitzada per filtrar el polígon per camp i el valor que volem
 ### tambe fa el buffer de la capa segons el valor a Radi Buffe
-filter_polygons <- function(polygons, field, value) {
+
+###3 VIGILAR! Si no hi ha Buffer la funció no funcionarà, si els poligons ja tenen el buffer fet crear una columna amb aquest nom i 0 com a valor. 
+
+filter_polygons <- function(polygons, field, value, buff_dist = NULL) {
 
   if (is.null(field) || is.null(value)) {
     stop("You must provide both 'field' and 'value'")
@@ -18,8 +21,12 @@ filter_polygons <- function(polygons, field, value) {
 
   polys_flt <- polygons |>
     dplyr::filter(!is.na(.data[[field]])) |>
-    dplyr::filter(.data[[field]] == value) |> 
-    mutate(geometry = st_buffer(geometry, dist = -Radi_buffe))
+    dplyr::filter(.data[[field]] == value) 
+
+  if(!is.null(buff_dist)){
+    polys_flt <- polys_flt |> 
+                  dplyr::mutate(geometry = st_buffer(.data[["geometry"]], dist = -.data[[buff_dist]]))
+  }
 
   if (nrow(polys_flt) == 0) {
     message(field, " = ", value, ": no polygons found")

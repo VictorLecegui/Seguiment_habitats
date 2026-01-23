@@ -13,6 +13,7 @@ library(leaflet)
 
 boscos <- read_sf("data/MHTCv3_boscos/MHTCv3_boscos.shp")
 
+names(boscos)
 #### Funcions
 
 source("scripts/utils.R")
@@ -67,7 +68,7 @@ pol_flt_wgs <- st_transform(pol_flt, 4326)
 # Transform your points too
 pts_wgs <- st_transform(pts, 4326)
 pts_hcr_wgs <- st_transform(pts_hcr, 4326)
-
+pts_sf[1]
 
 leaflet() %>%
   addTiles() %>%
@@ -76,3 +77,6 @@ leaflet() %>%
   addCircleMarkers(data = pts_hcr_wgs, color = "red", radius = 3)
 
 st_crs(pol_flt)
+unique(boscos$Radi_buffe)
+
+

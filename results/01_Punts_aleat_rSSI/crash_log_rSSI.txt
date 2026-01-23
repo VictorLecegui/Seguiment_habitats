@@ -1,0 +1,23 @@
+2026-01-23 15:25:20.153598 - Processing HIC = 9540
+2026-01-23 15:27:54.117757 - ERROR in HIC 9540: protect(): protection stack overflow
+2026-01-23 15:27:54.11887 - Processing HIC = 92D0
+2026-01-23 15:29:09.083883 - ERROR in HIC 92D0: Gave up after 50000 trials, 2 points accepted
+2026-01-23 15:29:09.084919 - Processing HIC = 9340
+2026-01-23 15:29:09.762363 - ERROR in HIC 9340: [1m[22m[36mℹ[39m In argument: `geometry = st_buffer(.data[["geometry"]], dist = -.data[["Radi_buffe"]])`.
+[1mCaused by error:[22m
+[33m![39m IllegalArgumentException: Points of LinearRing do not form a closed linestring
+2026-01-23 15:29:09.768237 - Processing HIC = 92A0
+2026-01-23 15:34:41.24933 - HIC = 92A0 FINISHED
+2026-01-23 15:34:41.249779 - Processing HIC = 9150
+2026-01-23 15:35:32.098317 - HIC = 9150 FINISHED
+2026-01-23 15:35:32.098745 - Processing HIC = 9530*
+2026-01-23 15:36:37.864006 - ERROR in HIC 9530*: cannot open the connection
+2026-01-23 15:36:37.864997 - Processing HIC = 9580*
+2026-01-23 15:36:38.159468 - No es poden posar 50 punts en l'HIC 9580*
+2026-01-23 15:36:38.160182 - ERROR in HIC 9580*: no function to return from, jumping to top level
+2026-01-23 15:36:38.160879 - Processing HIC = 9380
+2026-01-23 15:36:38.450089 - No es poden posar 50 punts en l'HIC 9380
+2026-01-23 15:36:38.450787 - ERROR in HIC 9380: no function to return from, jumping to top level
+2026-01-23 15:36:38.45146 - Processing HIC = 9240
+2026-01-23 15:42:13.536768 - Processing HIC = 9380
+2026-01-23 15:42:26.500784 - No es poden posar 50 punts en l'HIC 9380
