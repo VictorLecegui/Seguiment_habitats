@@ -1,0 +1,5 @@
+Log file de la generació de punts per boscos, HIC i regions: 
+
+1. HIC 91D0*, 9140 i 9560* No presents a la regió "MED".
+2. HIC amb poca area es fa malla de 100m però sovint el punt es tan peitit que queden polígons sense punts. 
+			Proposta: Fer un punt per polígon i filtrar per distància. Després aplicar GRTS a 30 punts si hi ha 30 polígons dins de l'HIC. 

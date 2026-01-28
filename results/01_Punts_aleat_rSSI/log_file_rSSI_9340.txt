@@ -1,6 +1,0 @@
-2026-01-23 15:58:04.337035 - Processing HIC = 9340
-2026-01-23 15:58:05.02966 - ERROR in HIC 9340: [1m[22m[36mℹ[39m In argument: `geometry = st_buffer(.data[["geometry"]], dist = -.data[["Radi_buffe"]])`.
-[1mCaused by error:[22m
-[33m![39m IllegalArgumentException: Points of LinearRing do not form a closed linestring
-2026-01-23 16:18:13.003591 - Processing HIC = 9340
-2026-01-23 16:21:14.779029 - ERROR in HIC 9340: protect(): protection stack overflow
