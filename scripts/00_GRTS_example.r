@@ -3,6 +3,9 @@ library(spsurvey)
 library(ggplot2)
 library(dplyr)
 
+library(leaflet)
+library(htmlwidgets)
+
 source("scripts/utils.r")
 
 boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp")
@@ -27,5 +30,47 @@ points_50 <- generate_points(polygon = hic_med)
 
 punts_30 <- grts(points_50, n_base = 30)
 
-plot(punts_30, points_50, pch=19, key.width = lcm(3),
-        main = "Punts seleccionats HIC 9540")
+
+#### Visualització
+
+hic_med_wgs   <- st_transform(hic_med, 4326)
+points_50_wgs <- st_transform(points_50, 4326)
+punts_30_wgs  <- st_transform(punts_30$sites_base, 4326)
+
+map <- leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  
+  # Polygon layer
+  # First point layer
+  addCircleMarkers(
+    data = points_50_wgs,
+    radius = 4,
+    color = "#d95f0e",
+    fillOpacity = 0.8,
+    stroke = FALSE,
+    group = "50 punts aleatoris"
+  ) %>%
+  
+  # Second point layer
+  addCircleMarkers(
+    data = punts_30_wgs,
+    radius = 4,
+    color = "#1a9850",
+    fillOpacity = 0.8,
+    stroke = FALSE,
+    group = "30 punts GRTS"
+  ) %>%
+   addControl(
+    "<h3>Selecció punts HIC 9540</h3>",
+    position = "topright"
+  ) |> 
+  # Layer control
+  addLayersControl(
+    overlayGroups = c("50 punts aleatoris"
+                        , "30 punts GRTS"),
+    options = layersControlOptions(collapsed = FALSE)
+  ) 
+ 
+map
+saveWidget(map, "hic_9540_med_mapa.html", selfcontained = TRUE)
+

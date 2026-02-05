@@ -42,8 +42,6 @@ punts_boscos <- st_join(x = all_points_hic, y=boscos,
 
 unique(punts_boscos$COD_HIC)
 
-
-
 punts_summary <- punts_boscos  |> 
                    group_by(COD_HIC, RegioHIC) |> 
                    summarise(N = n()) |> 
