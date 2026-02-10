@@ -136,3 +136,16 @@ grid <- grid[inside, ]
  grid$method <- "grid_100m"
  return(grid)
                             }
+
+
+# Funció per registrar warnings i errors
+
+log_msg <- function(level = "INFO", msg) {
+  line <- paste0(
+    "[", format(Sys.time(), "%Y-%m-%d %H:%M:%S"), "] ",
+    "[", level, "] ",
+    msg
+  )
+  write(line, file = log_file, append = TRUE)
+  message(line)
+}

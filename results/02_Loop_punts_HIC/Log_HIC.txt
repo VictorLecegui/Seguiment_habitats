@@ -1,0 +1,6 @@
+[2026-02-10 15:56:40] [INFO] Començant a processar: X9140 MED
+[2026-02-10 15:56:40] [ERROR] Menys de 30 polígons per: X9140 MED
+[2026-02-10 15:56:41] [ERROR] Passant al següent HIC
+[2026-02-10 15:56:41] [INFO] Començant a processar: X9140 ALP
+[2026-02-10 15:56:41] [ERROR] Menys de 30 polígons per: X9140 ALP
+[2026-02-10 15:56:41] [ERROR] Passant al següent HIC
