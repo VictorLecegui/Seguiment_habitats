@@ -19,6 +19,7 @@ boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp") 
 
 points_cat <- readRDS("results/Malla_Catalunya.rds")
 
+
 # Pas 1: Obtenir polígon 
 
 colnames(boscos)
