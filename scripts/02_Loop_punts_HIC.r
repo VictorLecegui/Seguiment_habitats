@@ -21,6 +21,9 @@ source("scripts/utils2.R")
 boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp") |> 
                 mutate(COD_HIC_tf = make.names(COD_HIC))
 
+punts_mostrejats <- read_sf("data/Parcelles_fetes_20260213/Parcelles_fetes_20260213.shp") |> 
+                mutate(COD_HIC_tf = make.names(COD_HIC))
+
 points_cat <- readRDS("results/Malla_Catalunya.rds")
 
 radi <- read.csv2("data/HICs_radi.csv") |> 
@@ -29,6 +32,9 @@ radi <- read.csv2("data/HICs_radi.csv") |>
 # Comprovar que tenen la mateixa projecció
 
 st_crs(points_cat)==st_crs(boscos)
+st_crs(punts_mostrejats)==st_crs(boscos)
+
+head(punts_mostrejats)
 
 # punts_mostrejats <- read_sf("data/Punts_mostrejats.shp")
 
@@ -38,25 +44,25 @@ st_crs(points_cat)==st_crs(boscos)
 hics <- unique(boscos$COD_HIC_tf)
 hics <- hics[-2] # Polígons sense hics
 
+hics_most <- unique(punts_mostrejats$COD_HIC_tf)
+setdiff(hics_most, hics)
+
 regions <- unique(boscos$RegioHIC)
 
 # HICS que s'han de fer el buffer
 unique(radi$Radi)
 hics_radis <- radi |> filter(Radi=="Si") |> pull(COD_HIC_tf)
 
-j = 1
-i = 1
+
 
 #### Fitxer on emmagatzemar el procés
 
 # dir.create("results/02_Loop_punts_HIC")
-log_file <- "results/02_Loop_punts_HIC/Log_HIC.txt"
+log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260213.txt"
 
 
 #### Directoris on desar fitxer
 
-dir_pol_inf_30 <- "results/02_Loop_punts_HIC/N_pol_inf_30/"
-#dir.create(dir_pol_inf_30)
 
 dir_punts_mostreig <- "results/02_Loop_punts_HIC/Punts_mostreig/"
 #dir.create(dir_punts_mostreig)
@@ -68,8 +74,12 @@ dir_poligons <- "results/02_Loop_punts_HIC/Poligons_shapes/"
 #dir.create(dir_poligons)
 
 
+hic <- "X9530."
+regio  <- "MED"
 #### MARK: Loop per regió i HIC
 
+
+rm(hic, regio)
 for(j in seq_along(regions)){
 
     regio <- regions[j]
@@ -97,61 +107,60 @@ for(i in seq_along(hics)){
                 st_as_sf()
     }
    
+   if(nrow(pol)==0){
+        log_msg(level = "ATENCIÓ!", msg = paste("No hi ha polígons de:", hic, "a", regio))
+            next
+   }
 
-# Si no hi ha 30 poligons passar al següent
-    if(nrow(pol) < 30){
-        log_msg(level = "ERROR", msg = paste("Menys de 30 polígons per:", hic, regio))
-        log_msg(level = "ERROR", msg = paste("Passant al següent HIC"))
+#### Extreure punts mostrejats
 
-        saveRDS(pol, paste0(dir_pol_inf_30, "Poligons_inf_30_", hic, "_", regio, ".rds"))
+punts_hic_regio <- punts_mostrejats |> filter(COD_HIC_tf == hic & RegioHIC == regio)
 
-        next
-    }
+# Eliminar dimensió z de punts
+if(!is.null(punts_hic_regio) && nrow(punts_hic_regio)>0){
+    punts_hic_regio <- st_cast(punts_hic_regio, "POINT")
+    punts_hic_regio <- st_zm(punts_hic_regio)
+}
+
+#### Generar els punts (funció a utils2.r). Segons si ja hi ha punts o no. 
+
+# Posem l'objecte punts_hic_regio, si es null internament la funció ja l'ignora
+
+resultat_punts <- generate_points_hic(pol, 
+                                        points_cat, 
+                                        hic, 
+                                        regio, 
+                                        legacy_points = punts_hic_regio,
+                                        n_target = 30, 
+                                        min_dist = 200, 
+                                        n_iter = 100)
 
 
-#### Part 2: Retallar els punts de la mall dins del polígons
+if (is.null(resultat_punts)) {
+    log_msg(level="ERROR",
+            msg=paste("No s'han pogut generar punts per:", hic, regio))
+    next
+}
 
-    points_cat_crop <- st_crop(points_cat, st_bbox(pol))
 
-    hic_points <- st_join(points_cat_crop, pol,
-                        join = st_within, left = FALSE)
-
-    n_punts <- nrow(hic_points)
-
-#### Part 3: Situar els punts i fer GRTS
-
-    if(n_punts < 30){
-        log_msg(level = "ATENCIÓ", msg = paste("Menys de 30 punts d'intersecció amb la malla per:", hic, regio))
-
-        results <- lapply(1:100, function(x) select_polygons_200m(pol, 200))
-        best <- results[[which.max(sapply(results, nrow))]]
-
-        if (nrow(best) == 0) {
-           log_msg(level = "ERROR", msg = paste("Cap polígon seleccionat a més de 200m:", hic, regio))
-        
-        next
-            }
-
-        if(nrow(best)<30){
-            log_msg(msg = paste("Menys de 30 polígons separats 200m entre ells, utilitzant el punt dins del polígon:", hic, regio))
-            points <- st_point_on_surface(best)
-        } else{
-            log_msg(msg = paste("Més de 30 polígons amb distància mínima 200m, aplicant GRTS per:", hic, regio))
-            points <- st_point_on_surface(best)
-            points <- grts(points, n_base = 30, mindis = 200)
-        }
-    } else {
-        log_msg(msg = paste("Més de 30 punts a la malla, aplicant GRTS:", hic, regio))
-
-        points <- grts(hic_points, n_base = 30, mindis = 200)
-    }
 
 #### Part 4: Desar els punts, poligons i malla per cada HIC i regió
 
-saveRDS(points, paste0(dir_punts_mostreig, "Punts_", hic, "_", regio, ".rds"))
-saveRDS(hic_points, paste0(dir_malla, "Malla_", hic, "_", regio, ".rds"))
+saveRDS(resultat_punts$points, paste0(dir_punts_mostreig, "Punts_", hic, "_", regio, ".rds"))
+
+if(nrow(resultat_punts$hic_points)>1){
+saveRDS(resultat_punts$hic_points, paste0(dir_malla, "Malla_", hic, "_", regio, ".rds"))
+}
+
+if(!is.null(resultat_punts$points_centre)){
+    saveRDS(resultat_punts$points_centre, paste0(dir_malla, "Punts_centre_", hic, "_", regio, ".rds"))
+}
+
+# Escric un shape amb el poligon filtrat per HIC i Regió
 write_sf(pol, paste0(dir_poligons, "Pol_", hic, "_", regio, ".shp"))
 
-log_msg(level = "END", "Acabat:", hic, regio)
+log_msg(level = "END", msg = paste("Acabat:", hic, regio))
 
 }}
+
+

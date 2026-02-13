@@ -1,0 +1,140 @@
+[2026-02-12 11:14:43] [START] Començant a processar: X9340 MED
+[2026-02-12 11:15:53] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9340 MED
+[2026-02-12 11:15:58] [END] Acabat: X9340 MED
+[2026-02-12 11:15:58] [START] Començant a processar: X9540 MED
+[2026-02-12 11:17:09] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9540 MED
+[2026-02-12 11:17:14] [END] Acabat: X9540 MED
+[2026-02-12 11:17:14] [START] Començant a processar: X9120 MED
+[2026-02-12 11:17:36] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-12 11:17:36] [END] Acabat: X9120 MED
+[2026-02-12 11:17:36] [START] Començant a processar: X92A0 MED
+[2026-02-12 11:18:07] [INFO] Més de 30 punts a la malla, aplicant GRTS: X92A0 MED
+[2026-02-12 11:18:08] [END] Acabat: X92A0 MED
+[2026-02-12 11:18:08] [START] Començant a processar: X92D0 MED
+[2026-02-12 11:18:39] [INFO] Més de 30 punts a la malla, aplicant GRTS: X92D0 MED
+[2026-02-12 11:18:39] [END] Acabat: X92D0 MED
+[2026-02-12 11:18:39] [START] Començant a processar: X9330 MED
+[2026-02-12 11:18:58] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9330 MED
+[2026-02-12 11:19:00] [END] Acabat: X9330 MED
+[2026-02-12 11:19:00] [START] Començant a processar: X91E0. MED
+[2026-02-12 11:19:26] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91E0. MED
+[2026-02-12 11:19:26] [END] Acabat: X91E0. MED
+[2026-02-12 11:19:26] [START] Començant a processar: X9260 MED
+[2026-02-12 11:19:53] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9260 MED
+[2026-02-12 11:19:53] [END] Acabat: X9260 MED
+[2026-02-12 11:19:53] [START] Començant a processar: X9380 MED
+[2026-02-12 11:20:27] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9380 MED
+[2026-02-12 11:22:01] [INFO] Més de 30 polígons amb distància mínima 200m, aplicant GRTS per: X9380 MED
+[2026-02-12 11:22:02] [END] Acabat: X9380 MED
+[2026-02-12 11:22:02] [START] Començant a processar: X91F0 MED
+[2026-02-12 11:22:10] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91F0 MED
+[2026-02-12 11:22:10] [END] Acabat: X91F0 MED
+[2026-02-12 11:22:10] [START] Començant a processar: X9150 MED
+[2026-02-12 11:22:39] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9150 MED
+[2026-02-12 11:22:39] [END] Acabat: X9150 MED
+[2026-02-12 11:22:39] [START] Començant a processar: X9530. MED
+[2026-02-12 11:23:13] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
+[2026-02-12 11:23:14] [END] Acabat: X9530. MED
+[2026-02-12 11:23:14] [START] Començant a processar: X9180. MED
+[2026-02-12 11:23:34] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9180. MED
+[2026-02-12 11:23:34] [END] Acabat: X9180. MED
+[2026-02-12 11:23:34] [START] Començant a processar: X9580. MED
+[2026-02-12 11:24:01] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9580. MED
+[2026-02-12 11:26:16] [INFO] Més de 30 polígons amb distància mínima 200m, aplicant GRTS per: X9580. MED
+[2026-02-12 11:26:16] [END] Acabat: X9580. MED
+[2026-02-12 11:26:16] [START] Començant a processar: X9240 MED
+[2026-02-12 11:26:47] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9240 MED
+[2026-02-12 11:26:51] [END] Acabat: X9240 MED
+[2026-02-12 11:26:51] [START] Començant a processar: X9160 MED
+[2026-02-12 11:27:15] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9160 MED
+[2026-02-12 11:27:16] [END] Acabat: X9160 MED
+[2026-02-12 11:27:16] [START] Començant a processar: X3240 MED
+[2026-02-12 11:27:47] [INFO] Més de 30 punts a la malla, aplicant GRTS: X3240 MED
+[2026-02-12 11:27:47] [END] Acabat: X3240 MED
+[2026-02-12 11:27:47] [START] Començant a processar: X9130 MED
+[2026-02-12 11:27:59] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9130 MED
+[2026-02-12 11:28:00] [END] Acabat: X9130 MED
+[2026-02-12 11:28:00] [START] Començant a processar: X9430. MED
+[2026-02-12 11:28:10] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430. MED
+[2026-02-12 11:28:11] [END] Acabat: X9430. MED
+[2026-02-12 11:28:11] [START] Començant a processar: X9430 MED
+[2026-02-12 11:28:21] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9430 MED
+[2026-02-12 11:28:23] [INFO] Menys de 30 polígons separats 200m entre ells, utilitzant el punt dins del polígon: X9430 MED
+[2026-02-12 11:28:23] [END] Acabat: X9430 MED
+[2026-02-12 11:28:23] [START] Començant a processar: X9230 MED
+[2026-02-12 11:28:29] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9230 MED
+[2026-02-12 11:28:30] [END] Acabat: X9230 MED
+[2026-02-12 11:28:30] [START] Començant a processar: X91D0. MED
+[2026-02-12 11:28:30] [ATENCIÓ!] No hi ha polígons de: X91D0. a MED
+[2026-02-12 11:28:30] [START] Començant a processar: X9560. MED
+[2026-02-12 11:28:31] [ATENCIÓ!] No hi ha polígons de: X9560. a MED
+[2026-02-12 11:28:31] [START] Començant a processar: X9140 MED
+[2026-02-12 11:28:31] [ATENCIÓ!] No hi ha polígons de: X9140 a MED
+[2026-02-12 11:28:31] [START] Començant a processar: X9340 ALP
+[2026-02-12 11:29:12] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9340 ALP
+[2026-02-12 11:29:12] [END] Acabat: X9340 ALP
+[2026-02-12 11:29:12] [START] Començant a processar: X9540 ALP
+[2026-02-12 11:29:29] [ATENCIÓ!] No hi ha polígons de: X9540 a ALP
+[2026-02-12 11:29:29] [START] Començant a processar: X9120 ALP
+[2026-02-12 11:29:45] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 ALP
+[2026-02-12 11:29:45] [END] Acabat: X9120 ALP
+[2026-02-12 11:29:45] [START] Començant a processar: X92A0 ALP
+[2026-02-12 11:29:55] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X92A0 ALP
+[2026-02-12 11:30:34] [INFO] Menys de 30 polígons separats 200m entre ells, utilitzant el punt dins del polígon: X92A0 ALP
+[2026-02-12 11:30:34] [END] Acabat: X92A0 ALP
+[2026-02-12 11:30:34] [START] Començant a processar: X92D0 ALP
+[2026-02-12 11:30:35] [ATENCIÓ!] No hi ha polígons de: X92D0 a ALP
+[2026-02-12 11:30:35] [START] Començant a processar: X9330 ALP
+[2026-02-12 11:30:38] [ATENCIÓ!] No hi ha polígons de: X9330 a ALP
+[2026-02-12 11:30:38] [START] Començant a processar: X91E0. ALP
+[2026-02-12 11:30:51] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91E0. ALP
+[2026-02-12 11:30:51] [END] Acabat: X91E0. ALP
+[2026-02-12 11:30:51] [START] Començant a processar: X9260 ALP
+[2026-02-12 11:30:52] [ATENCIÓ!] No hi ha polígons de: X9260 a ALP
+[2026-02-12 11:30:52] [START] Començant a processar: X9380 ALP
+[2026-02-12 11:30:52] [ATENCIÓ!] No hi ha polígons de: X9380 a ALP
+[2026-02-12 11:30:52] [START] Començant a processar: X91F0 ALP
+[2026-02-12 11:30:52] [ATENCIÓ!] No hi ha polígons de: X91F0 a ALP
+[2026-02-12 11:30:52] [START] Començant a processar: X9150 ALP
+[2026-02-12 11:31:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9150 ALP
+[2026-02-12 11:31:04] [END] Acabat: X9150 ALP
+[2026-02-12 11:31:04] [START] Començant a processar: X9530. ALP
+[2026-02-12 11:31:15] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. ALP
+[2026-02-12 11:31:15] [END] Acabat: X9530. ALP
+[2026-02-12 11:31:15] [START] Començant a processar: X9180. ALP
+[2026-02-12 11:31:30] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9180. ALP
+[2026-02-12 11:31:31] [END] Acabat: X9180. ALP
+[2026-02-12 11:31:31] [START] Començant a processar: X9580. ALP
+[2026-02-12 11:31:40] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9580. ALP
+[2026-02-12 11:31:44] [INFO] Menys de 30 polígons separats 200m entre ells, utilitzant el punt dins del polígon: X9580. ALP
+[2026-02-12 11:31:44] [END] Acabat: X9580. ALP
+[2026-02-12 11:31:44] [START] Començant a processar: X9240 ALP
+[2026-02-12 11:31:51] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9240 ALP
+[2026-02-12 11:31:51] [END] Acabat: X9240 ALP
+[2026-02-12 11:31:51] [START] Començant a processar: X9160 ALP
+[2026-02-12 11:32:01] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9160 ALP
+[2026-02-12 11:32:02] [END] Acabat: X9160 ALP
+[2026-02-12 11:32:02] [START] Començant a processar: X3240 ALP
+[2026-02-12 11:32:13] [INFO] Més de 30 punts a la malla, aplicant GRTS: X3240 ALP
+[2026-02-12 11:32:13] [END] Acabat: X3240 ALP
+[2026-02-12 11:32:13] [START] Començant a processar: X9130 ALP
+[2026-02-12 11:32:25] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9130 ALP
+[2026-02-12 11:32:25] [END] Acabat: X9130 ALP
+[2026-02-12 11:32:25] [START] Començant a processar: X9430. ALP
+[2026-02-12 11:32:40] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430. ALP
+[2026-02-12 11:32:40] [END] Acabat: X9430. ALP
+[2026-02-12 11:32:40] [START] Començant a processar: X9430 ALP
+[2026-02-12 11:32:55] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430 ALP
+[2026-02-12 11:32:56] [END] Acabat: X9430 ALP
+[2026-02-12 11:32:56] [START] Començant a processar: X9230 ALP
+[2026-02-12 11:32:56] [ATENCIÓ!] No hi ha polígons de: X9230 a ALP
+[2026-02-12 11:32:56] [START] Començant a processar: X91D0. ALP
+[2026-02-12 11:33:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91D0. ALP
+[2026-02-12 11:33:05] [END] Acabat: X91D0. ALP
+[2026-02-12 11:33:05] [START] Començant a processar: X9560. ALP
+[2026-02-12 11:33:11] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9560. ALP
+[2026-02-12 11:33:13] [INFO] Menys de 30 polígons separats 200m entre ells, utilitzant el punt dins del polígon: X9560. ALP
+[2026-02-12 11:33:13] [END] Acabat: X9560. ALP
+[2026-02-12 11:33:13] [START] Començant a processar: X9140 ALP
+[2026-02-12 11:33:20] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9140 ALP
+[2026-02-12 11:33:20] [END] Acabat: X9140 ALP

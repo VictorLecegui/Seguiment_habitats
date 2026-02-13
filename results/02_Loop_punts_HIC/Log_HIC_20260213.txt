@@ -1,0 +1,8 @@
+[2026-02-13 17:08:34] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-02-13 17:08:34] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
+[2026-02-13 17:11:55] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-02-13 17:11:55] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
+[2026-02-13 17:19:16] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-02-13 17:19:16] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
+[2026-02-13 17:23:01] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-02-13 17:23:01] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
