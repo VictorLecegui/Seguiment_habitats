@@ -11,7 +11,7 @@ path_punts <- "results/02_Loop_punts_HIC/Punts_mostreig"
 # List all RDS files (important fix)
 punts_hic <- list.files(path_punts, pattern = "\\.rds$", full.names = TRUE)
 
-file_path<-"results/02_Loop_punts_HIC/Punts_mostreig/Punts_X3240_ALP.rds"
+file_path<-"results/02_Loop_punts_HIC/Punts_mostreig/Punts_X9340_MED.rds"
 # Function to read and process each file
 read_points_grts <- function(file_path){
     print(file_path)
@@ -47,10 +47,11 @@ if("sp_design" %in% class(punts_obj)){
 
   }
 } else {
+  
+  # SI els punts s'han generat amb el centroide del polígon etc. 
    punts <- punts_obj
 }
 
-# SI els punts s'han generat amb el centroide del polígon etc. 
 
   # Add generation method 
   punts <- punts |> 
@@ -65,14 +66,16 @@ if("sp_design" %in% class(punts_obj)){
 
   punts <- punts |> 
     mutate(min_dist_200m = ifelse(min_dist_value < set_units(200, "m"),
-                                  "Inf 200m",
-                                  "Sup 200m"))
+                                  "Inf_200m",
+                                  "Sup_200m"))
 
   return(punts)
 }
 
 # Apply to all files
 punts_ls <- lapply(punts_hic, read_points_grts)
+
+punts_ls[[1]]
 
 punts_mostreig <- bind_rows(punts_ls)
 nrow(punts_mostreig) # Nombre de punts a mostrejar

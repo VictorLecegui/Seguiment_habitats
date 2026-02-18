@@ -2,7 +2,7 @@
 ### Loop per fer trobar els punts de GRTS a Catalunya pels HIC. 
 
 
-##### MARK: Packages i funcinos
+##### MARK: Packages i funcions
 
 library(sf)
 library(tidyverse)
@@ -24,24 +24,22 @@ boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp") 
 punts_mostrejats <- read_sf("data/Parcelles_fetes_20260213/Parcelles_fetes_20260213.shp") |> 
                 mutate(COD_HIC_tf = make.names(COD_HIC))
 
-points_cat <- readRDS("results/Malla_Catalunya.rds")
+points_cat <- readRDS("results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
 
 radi <- read.csv2("data/HICs_radi.csv") |> 
                 mutate(COD_HIC_tf = make.names(HIC))
 
 # Comprovar que tenen la mateixa projecció
 
-st_crs(points_cat)==st_crs(boscos)
-st_crs(punts_mostrejats)==st_crs(boscos)
+st_crs(points_cat) == st_crs(boscos)
+st_crs(punts_mostrejats) == st_crs(boscos)
 
-head(punts_mostrejats)
 
-unique(punts_mostrejats$COD_HIC_tf)
-punts_mostrejats |> filter(COD_HIC_tf=="X.")
 ##### MARK: Preparació pel Loop
 
 hics <- unique(boscos$COD_HIC_tf)
 hics <- hics[-2] # Polígons sense hics
+
 
 hics_most <- unique(punts_mostrejats$COD_HIC_tf)
 setdiff(hics_most, hics)
@@ -50,17 +48,19 @@ regions <- unique(boscos$RegioHIC)
 
 # HICS que s'han de fer el buffer
 unique(radi$Radi)
-hics_radis <- radi |> filter(Radi=="Si") |> pull(COD_HIC_tf)
+hics_radis <- radi |> 
+                filter(Radi == "Si") |> 
+                pull(COD_HIC_tf)
 
 
 
-#### Fitxer on emmagatzemar el procés
+#### Generem un fitxer per enregistrar el procediment intern del Loop. 
+log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260218.txt"
 
+
+
+#### Directoris on desar els fitxers generats
 # dir.create("results/02_Loop_punts_HIC")
-log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260216.txt"
-
-
-#### Directoris on desar fitxer
 
 
 dir_punts_mostreig <- "results/02_Loop_punts_HIC/Punts_mostreig/"
@@ -73,11 +73,11 @@ dir_poligons <- "results/02_Loop_punts_HIC/Poligons_shapes/"
 #dir.create(dir_poligons)
 
 
-#hic <- "X9530."
-#regio  <- "MED"
+
 #### MARK: Loop per regió i HIC
 
-
+j=1
+i=1
 rm(hic, regio)
 for(j in seq_along(regions)){
 
@@ -91,6 +91,9 @@ for(i in seq_along(hics)){
 
     log_msg(level = "START", msg = paste("Començant a processar:", hic, regio))
 
+# Si l'HIC ha de tenir buffer o no 
+
+# SI HIC té buffer
     if(hic %in% hics_radis){
          pol <- filter_polygons(boscos, 
                         field = "COD_HIC_tf", 
@@ -98,6 +101,7 @@ for(i in seq_along(hics)){
                         buff_dist = "Radi_buffe") |> 
                 filter(RegioHIC == regio) |> 
                 st_as_sf()
+# NO HIC no se li ha d'aplicar buffer.                 
     } else {
          pol <- filter_polygons(boscos, 
                         field = "COD_HIC_tf", 
@@ -105,7 +109,8 @@ for(i in seq_along(hics)){
                 filter(RegioHIC == regio) |> 
                 st_as_sf()
     }
-   
+
+# Si no hi ha polígons per aquest HIC o regió passar al següent. 
    if(nrow(pol)==0){
         log_msg(level = "ATENCIÓ!", msg = paste("No hi ha polígons de:", hic, "a", regio))
             next
@@ -113,7 +118,8 @@ for(i in seq_along(hics)){
 
 #### Extreure punts mostrejats
 
-punts_hic_regio <- punts_mostrejats |> filter(COD_HIC_tf == hic & RegioHIC == regio)
+punts_hic_regio <- punts_mostrejats |> 
+                        filter(COD_HIC_tf == hic & RegioHIC == regio)
 
 # Eliminar dimensió z de punts
 if(!is.null(punts_hic_regio) && nrow(punts_hic_regio)>0){
@@ -121,7 +127,7 @@ if(!is.null(punts_hic_regio) && nrow(punts_hic_regio)>0){
     punts_hic_regio <- st_zm(punts_hic_regio)
 }
 
-#### Generar els punts (funció a utils2.r). Segons si ja hi ha punts o no. 
+#### Generar els punts (funció a utils.r). Segons si ja hi ha punts o no. 
 
 # Posem l'objecte punts_hic_regio, si es null internament la funció ja l'ignora
 

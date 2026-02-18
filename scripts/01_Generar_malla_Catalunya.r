@@ -13,10 +13,14 @@ source("scripts/utils.r")
 cat <- esp_get_ccaa("Catalunya")
 cat <- cat$geometry
 
+# Data frame que utiltzarem després, el carreguem per comprovar la projecció
+boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp") |> 
+                mutate(COD_HIC_tf = make.names(COD_HIC))
+
 # Projectar igual que el shape de boscos
 cat <- st_transform(cat, 25831)
 
-st_crs(cat)==st_crs(boscos)
+st_crs(cat) == st_crs(boscos)
 
 ## Construir la malla:
     # ATENCIÓ!!!!!
@@ -27,9 +31,10 @@ st_crs(cat)==st_crs(boscos)
 mida_costat <- 100
 cellsize_param <- mida_costat * sqrt(3)
 
+
 # cat_grid <- st_make_grid(cat, cellsize = cellsize_param, square = FALSE)
 
-saveRDS(cat_grid, "results/Malla_100m_cat.rds")
+saveRDS(cat_grid, "results/01_Generar_malla_Catalunya/Malla_100m_cat.rds")
 # Càlcul del centroide dels hexàgons
 hex_cent <- st_centroid(cat_grid)
 
@@ -38,8 +43,11 @@ hex_vert <- cat_grid |>
                st_cast("MULTILINESTRING") |> 
                st_cast("POINT")
 
-hex_vert <- readRDS("results/Vertices_hexagons_pts.rds")
-hex_cent <- readRDS("results/Center_hexagons_pts.rds")
+# saveRDS(hex_vert, "results/01_Generar_malla_Catalunya/Vertices_hexagons_pts.rds")
+# saveRDS(hex_cent, "results/01_Generar_malla_Catalunya/Center_hexagons_pts.rds")
+
+hex_vert <- readRDS("results/01_Generar_malla_Catalunya/Vertices_hexagons_pts.rds")
+hex_cent <- readRDS("results/01_Generar_malla_Catalunya/Center_hexagons_pts.rds")
 
 
 hex_vert <- st_union(hex_vert) |> 
@@ -56,9 +64,9 @@ points_cat <- st_intersection(points_grid, cat)
 
 #### Guardem el resultat
 
-saveRDS(points_cat, "results/Malla_Catalunya.rds")
+saveRDS(points_cat, "results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
 
-
+points_cat <- readRDS("results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
 
 ## Visualització de 1km2 per comprovar que s'ha fet bé
 
@@ -79,3 +87,6 @@ bbox_utm <- st_transform(bbox_sf, 25831)
 # Create 100 m grid
 grid_100m <- st_intersection(points_cat, bbox_utm)
 
+plot(grid_100m)
+
+st_distance(grid_100m)

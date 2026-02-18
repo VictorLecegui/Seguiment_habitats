@@ -143,8 +143,8 @@ generate_points_hic <- function(pol,
     # Poligons sense punts 
     pol_no_points   <- best[lengths(idx) == 0, ]
     
-    # Menys de 30 poligons separats 200m entre ells
-    if (nrow(best) < n_target) {
+    # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
+    if ((nrow(pol_no_points) + nrow(hic_points)) < n_target) {
       
       log_msg(msg = paste("Menys de", n_target,
                           "polígons separats", min_dist,
@@ -162,7 +162,7 @@ generate_points_hic <- function(pol,
         points <- rbind(points_pol, hic_points)
         method <- "Centroide polígon (<30 pol & <30 points)"
       }
-
+# Si una vegada ajuntem els polígons + punts malla etc. >30 punts
      if(nrow(points) > n_target){
       # SI hih a punts mostrejats els afegim
       if (!is.null(legacy_points) && nrow(legacy_points) > 0) { 
