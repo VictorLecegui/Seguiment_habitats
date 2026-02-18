@@ -14,7 +14,7 @@ library(htmlwidgets)
 
 # Funcions personalitzades
 
-source("scripts/utils2.R")
+source("scripts/utils.R")
 
 ##### MARK: Dades
 
@@ -36,9 +36,8 @@ st_crs(punts_mostrejats)==st_crs(boscos)
 
 head(punts_mostrejats)
 
-# punts_mostrejats <- read_sf("data/Punts_mostrejats.shp")
-
-
+unique(punts_mostrejats$COD_HIC_tf)
+punts_mostrejats |> filter(COD_HIC_tf=="X.")
 ##### MARK: Preparació pel Loop
 
 hics <- unique(boscos$COD_HIC_tf)
@@ -58,7 +57,7 @@ hics_radis <- radi |> filter(Radi=="Si") |> pull(COD_HIC_tf)
 #### Fitxer on emmagatzemar el procés
 
 # dir.create("results/02_Loop_punts_HIC")
-log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260213.txt"
+log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260216.txt"
 
 
 #### Directoris on desar fitxer
@@ -74,8 +73,8 @@ dir_poligons <- "results/02_Loop_punts_HIC/Poligons_shapes/"
 #dir.create(dir_poligons)
 
 
-hic <- "X9530."
-regio  <- "MED"
+#hic <- "X9530."
+#regio  <- "MED"
 #### MARK: Loop per regió i HIC
 
 
@@ -146,7 +145,9 @@ if (is.null(resultat_punts)) {
 
 #### Part 4: Desar els punts, poligons i malla per cada HIC i regió
 
-saveRDS(resultat_punts$points, paste0(dir_punts_mostreig, "Punts_", hic, "_", regio, ".rds"))
+saveRDS(list(punts = resultat_punts$points, 
+                method = resultat_punts$method), 
+                paste0(dir_punts_mostreig, "Punts_", hic, "_", regio, ".rds"))
 
 if(nrow(resultat_punts$hic_points)>1){
 saveRDS(resultat_punts$hic_points, paste0(dir_malla, "Malla_", hic, "_", regio, ".rds"))

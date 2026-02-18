@@ -1,0 +1,216 @@
+[2026-02-16 11:48:43] [START] Començant a processar: X9340 MED
+[2026-02-16 11:49:54] [INFO] 7 Punts ja mostrejats inclosos per l'HIC X9340 a MED
+[2026-02-16 11:49:54] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9340 MED
+[2026-02-16 11:49:56] [MÈTODE] Malla + GRTS
+[2026-02-16 11:49:58] [END] Acabat: X9340 MED
+[2026-02-16 11:49:58] [START] Començant a processar: X9540 MED
+[2026-02-16 11:50:55] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9540 a MED
+[2026-02-16 11:50:55] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9540 MED
+[2026-02-16 11:50:57] [MÈTODE] Malla + GRTS
+[2026-02-16 11:51:01] [END] Acabat: X9540 MED
+[2026-02-16 11:51:01] [START] Començant a processar: X9120 MED
+[2026-02-16 11:51:20] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-16 11:51:20] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-16 11:51:21] [MÈTODE] Malla + GRTS
+[2026-02-16 11:51:21] [END] Acabat: X9120 MED
+[2026-02-16 11:51:21] [START] Començant a processar: X92A0 MED
+[2026-02-16 11:51:53] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92A0 a MED
+[2026-02-16 11:51:53] [INFO] Més de 30 punts a la malla, aplicant GRTS: X92A0 MED
+[2026-02-16 11:51:53] [MÈTODE] Malla + GRTS
+[2026-02-16 11:51:54] [END] Acabat: X92A0 MED
+[2026-02-16 11:51:54] [START] Començant a processar: X92D0 MED
+[2026-02-16 11:52:24] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92D0 a MED
+[2026-02-16 11:52:24] [INFO] Més de 30 punts a la malla, aplicant GRTS: X92D0 MED
+[2026-02-16 11:52:24] [MÈTODE] Malla + GRTS
+[2026-02-16 11:52:24] [END] Acabat: X92D0 MED
+[2026-02-16 11:52:24] [START] Començant a processar: X9330 MED
+[2026-02-16 11:52:44] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9330 a MED
+[2026-02-16 11:52:44] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9330 MED
+[2026-02-16 11:52:45] [MÈTODE] Malla + GRTS
+[2026-02-16 11:52:46] [END] Acabat: X9330 MED
+[2026-02-16 11:52:46] [START] Començant a processar: X91E0. MED
+[2026-02-16 11:53:12] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91E0. a MED
+[2026-02-16 11:53:12] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91E0. MED
+[2026-02-16 11:53:12] [MÈTODE] Malla + GRTS
+[2026-02-16 11:53:12] [END] Acabat: X91E0. MED
+[2026-02-16 11:53:12] [START] Començant a processar: X9260 MED
+[2026-02-16 11:53:37] [INFO] 1 Punts ja mostrejats inclosos per l'HIC X9260 a MED
+[2026-02-16 11:53:37] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9260 MED
+[2026-02-16 11:53:37] [MÈTODE] Malla + GRTS
+[2026-02-16 11:53:37] [END] Acabat: X9260 MED
+[2026-02-16 11:53:37] [START] Començant a processar: X9380 MED
+[2026-02-16 11:54:07] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9380 a MED
+[2026-02-16 11:54:07] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9380 MED
+[2026-02-16 11:55:39] [INFO] Més de 30 polígons amb distància mínima 200 m, aplicant GRTS per: X9380 MED
+[2026-02-16 11:55:40] [MÈTODE] Centroide polígon + GRTS (>30 pol)
+[2026-02-16 11:55:40] [END] Acabat: X9380 MED
+[2026-02-16 11:55:40] [START] Començant a processar: X91F0 MED
+[2026-02-16 11:55:48] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91F0 a MED
+[2026-02-16 11:55:48] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91F0 MED
+[2026-02-16 11:55:48] [MÈTODE] Malla + GRTS
+[2026-02-16 11:55:48] [END] Acabat: X91F0 MED
+[2026-02-16 11:55:48] [START] Començant a processar: X9150 MED
+[2026-02-16 11:56:16] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9150 a MED
+[2026-02-16 11:56:16] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9150 MED
+[2026-02-16 11:56:16] [MÈTODE] Malla + GRTS
+[2026-02-16 11:56:16] [END] Acabat: X9150 MED
+[2026-02-16 11:56:16] [START] Començant a processar: X9530. MED
+[2026-02-16 11:56:49] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-02-16 11:56:49] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. MED
+[2026-02-16 11:56:49] [MÈTODE] Malla + GRTS
+[2026-02-16 11:56:49] [END] Acabat: X9530. MED
+[2026-02-16 11:56:49] [START] Començant a processar: X9180. MED
+[2026-02-16 11:57:10] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9180. a MED
+[2026-02-16 11:57:10] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9180. MED
+[2026-02-16 11:57:10] [MÈTODE] Malla + GRTS
+[2026-02-16 11:57:10] [END] Acabat: X9180. MED
+[2026-02-16 11:57:10] [START] Començant a processar: X9580. MED
+[2026-02-16 11:57:36] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9580. a MED
+[2026-02-16 11:57:36] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9580. MED
+[2026-02-16 11:59:50] [INFO] Més de 30 polígons amb distància mínima 200 m, aplicant GRTS per: X9580. MED
+[2026-02-16 11:59:50] [MÈTODE] Centroide polígon + GRTS (>30 pol)
+[2026-02-16 11:59:50] [END] Acabat: X9580. MED
+[2026-02-16 11:59:50] [START] Començant a processar: X9240 MED
+[2026-02-16 12:00:18] [INFO] 2 Punts ja mostrejats inclosos per l'HIC X9240 a MED
+[2026-02-16 12:00:18] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9240 MED
+[2026-02-16 12:00:18] [MÈTODE] Malla + GRTS
+[2026-02-16 12:00:18] [END] Acabat: X9240 MED
+[2026-02-16 12:00:18] [START] Començant a processar: X9160 MED
+[2026-02-16 12:00:31] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9160 a MED
+[2026-02-16 12:00:31] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9160 MED
+[2026-02-16 12:00:31] [MÈTODE] Malla + GRTS
+[2026-02-16 12:00:31] [END] Acabat: X9160 MED
+[2026-02-16 12:00:31] [START] Començant a processar: X3240 MED
+[2026-02-16 12:00:46] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a MED
+[2026-02-16 12:00:46] [INFO] Més de 30 punts a la malla, aplicant GRTS: X3240 MED
+[2026-02-16 12:00:46] [MÈTODE] Malla + GRTS
+[2026-02-16 12:00:46] [END] Acabat: X3240 MED
+[2026-02-16 12:00:46] [START] Començant a processar: X9130 MED
+[2026-02-16 12:00:57] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9130 a MED
+[2026-02-16 12:00:57] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9130 MED
+[2026-02-16 12:00:58] [MÈTODE] Malla + GRTS
+[2026-02-16 12:00:58] [END] Acabat: X9130 MED
+[2026-02-16 12:00:58] [START] Començant a processar: X9430. MED
+[2026-02-16 12:01:05] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9430. a MED
+[2026-02-16 12:01:05] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430. MED
+[2026-02-16 12:01:06] [MÈTODE] Malla + GRTS
+[2026-02-16 12:01:06] [END] Acabat: X9430. MED
+[2026-02-16 12:01:06] [START] Començant a processar: X9430 MED
+[2026-02-16 12:01:14] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9430 a MED
+[2026-02-16 12:01:14] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9430 MED
+[2026-02-16 12:01:17] [INFO] Menys de 30 polígons separats 200 m entre ells: X9430 MED
+[2026-02-16 12:01:17] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-16 12:01:17] [END] Acabat: X9430 MED
+[2026-02-16 12:01:17] [START] Començant a processar: X9230 MED
+[2026-02-16 12:01:23] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9230 a MED
+[2026-02-16 12:01:23] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9230 MED
+[2026-02-16 12:01:23] [MÈTODE] Malla + GRTS
+[2026-02-16 12:01:23] [END] Acabat: X9230 MED
+[2026-02-16 12:01:23] [START] Començant a processar: X91D0. MED
+[2026-02-16 12:01:24] [ATENCIÓ!] No hi ha polígons de: X91D0. a MED
+[2026-02-16 12:01:24] [START] Començant a processar: X9560. MED
+[2026-02-16 12:01:24] [ATENCIÓ!] No hi ha polígons de: X9560. a MED
+[2026-02-16 12:01:24] [START] Començant a processar: X9140 MED
+[2026-02-16 12:01:24] [ATENCIÓ!] No hi ha polígons de: X9140 a MED
+[2026-02-16 12:01:24] [START] Començant a processar: X9340 ALP
+[2026-02-16 12:01:59] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9340 a ALP
+[2026-02-16 12:01:59] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9340 ALP
+[2026-02-16 12:01:59] [MÈTODE] Malla + GRTS
+[2026-02-16 12:01:59] [END] Acabat: X9340 ALP
+[2026-02-16 12:01:59] [START] Començant a processar: X9540 ALP
+[2026-02-16 12:02:15] [ATENCIÓ!] No hi ha polígons de: X9540 a ALP
+[2026-02-16 12:02:15] [START] Començant a processar: X9120 ALP
+[2026-02-16 12:02:28] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9120 a ALP
+[2026-02-16 12:02:28] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 ALP
+[2026-02-16 12:02:28] [MÈTODE] Malla + GRTS
+[2026-02-16 12:02:28] [END] Acabat: X9120 ALP
+[2026-02-16 12:02:28] [START] Començant a processar: X92A0 ALP
+[2026-02-16 12:02:39] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92A0 a ALP
+[2026-02-16 12:02:39] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X92A0 ALP
+[2026-02-16 12:03:18] [INFO] Menys de 30 polígons separats 200 m entre ells: X92A0 ALP
+[2026-02-16 12:03:18] [MÈTODE] Centroide polígon (<30 pol & >30 points)
+[2026-02-16 12:03:18] [END] Acabat: X92A0 ALP
+[2026-02-16 12:03:18] [START] Començant a processar: X92D0 ALP
+[2026-02-16 12:03:19] [ATENCIÓ!] No hi ha polígons de: X92D0 a ALP
+[2026-02-16 12:03:19] [START] Començant a processar: X9330 ALP
+[2026-02-16 12:03:22] [ATENCIÓ!] No hi ha polígons de: X9330 a ALP
+[2026-02-16 12:03:22] [START] Començant a processar: X91E0. ALP
+[2026-02-16 12:03:34] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91E0. a ALP
+[2026-02-16 12:03:34] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91E0. ALP
+[2026-02-16 12:03:34] [MÈTODE] Malla + GRTS
+[2026-02-16 12:03:34] [END] Acabat: X91E0. ALP
+[2026-02-16 12:03:34] [START] Començant a processar: X9260 ALP
+[2026-02-16 12:03:35] [ATENCIÓ!] No hi ha polígons de: X9260 a ALP
+[2026-02-16 12:03:35] [START] Començant a processar: X9380 ALP
+[2026-02-16 12:03:35] [ATENCIÓ!] No hi ha polígons de: X9380 a ALP
+[2026-02-16 12:03:35] [START] Començant a processar: X91F0 ALP
+[2026-02-16 12:03:36] [ATENCIÓ!] No hi ha polígons de: X91F0 a ALP
+[2026-02-16 12:03:36] [START] Començant a processar: X9150 ALP
+[2026-02-16 12:03:47] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9150 a ALP
+[2026-02-16 12:03:47] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9150 ALP
+[2026-02-16 12:03:47] [MÈTODE] Malla + GRTS
+[2026-02-16 12:03:47] [END] Acabat: X9150 ALP
+[2026-02-16 12:03:47] [START] Començant a processar: X9530. ALP
+[2026-02-16 12:03:57] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9530. a ALP
+[2026-02-16 12:03:57] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9530. ALP
+[2026-02-16 12:03:57] [MÈTODE] Malla + GRTS
+[2026-02-16 12:03:57] [END] Acabat: X9530. ALP
+[2026-02-16 12:03:57] [START] Començant a processar: X9180. ALP
+[2026-02-16 12:04:09] [INFO] 2 Punts ja mostrejats inclosos per l'HIC X9180. a ALP
+[2026-02-16 12:04:09] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9180. ALP
+[2026-02-16 12:04:09] [MÈTODE] Malla + GRTS
+[2026-02-16 12:04:10] [END] Acabat: X9180. ALP
+[2026-02-16 12:04:10] [START] Començant a processar: X9580. ALP
+[2026-02-16 12:04:16] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9580. a ALP
+[2026-02-16 12:04:16] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9580. ALP
+[2026-02-16 12:04:21] [INFO] Menys de 30 polígons separats 200 m entre ells: X9580. ALP
+[2026-02-16 12:04:21] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-16 12:04:21] [END] Acabat: X9580. ALP
+[2026-02-16 12:04:21] [START] Començant a processar: X9240 ALP
+[2026-02-16 12:04:27] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9240 a ALP
+[2026-02-16 12:04:27] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9240 ALP
+[2026-02-16 12:04:27] [MÈTODE] Malla + GRTS
+[2026-02-16 12:04:27] [END] Acabat: X9240 ALP
+[2026-02-16 12:04:27] [START] Començant a processar: X9160 ALP
+[2026-02-16 12:04:39] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9160 a ALP
+[2026-02-16 12:04:39] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9160 ALP
+[2026-02-16 12:04:39] [MÈTODE] Malla + GRTS
+[2026-02-16 12:04:39] [END] Acabat: X9160 ALP
+[2026-02-16 12:04:39] [START] Començant a processar: X3240 ALP
+[2026-02-16 12:04:51] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a ALP
+[2026-02-16 12:04:51] [INFO] Més de 30 punts a la malla, aplicant GRTS: X3240 ALP
+[2026-02-16 12:04:51] [MÈTODE] Malla + GRTS
+[2026-02-16 12:04:51] [END] Acabat: X3240 ALP
+[2026-02-16 12:04:51] [START] Començant a processar: X9130 ALP
+[2026-02-16 12:05:03] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9130 a ALP
+[2026-02-16 12:05:03] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9130 ALP
+[2026-02-16 12:05:03] [MÈTODE] Malla + GRTS
+[2026-02-16 12:05:03] [END] Acabat: X9130 ALP
+[2026-02-16 12:05:03] [START] Començant a processar: X9430. ALP
+[2026-02-16 12:05:16] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9430. a ALP
+[2026-02-16 12:05:16] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430. ALP
+[2026-02-16 12:05:17] [MÈTODE] Malla + GRTS
+[2026-02-16 12:05:17] [END] Acabat: X9430. ALP
+[2026-02-16 12:05:17] [START] Començant a processar: X9430 ALP
+[2026-02-16 12:05:33] [INFO] 6 Punts ja mostrejats inclosos per l'HIC X9430 a ALP
+[2026-02-16 12:05:33] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9430 ALP
+[2026-02-16 12:05:33] [MÈTODE] Malla + GRTS
+[2026-02-16 12:05:34] [END] Acabat: X9430 ALP
+[2026-02-16 12:05:34] [START] Començant a processar: X9230 ALP
+[2026-02-16 12:05:34] [ATENCIÓ!] No hi ha polígons de: X9230 a ALP
+[2026-02-16 12:05:34] [START] Començant a processar: X91D0. ALP
+[2026-02-16 12:05:42] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91D0. a ALP
+[2026-02-16 12:05:42] [INFO] Més de 30 punts a la malla, aplicant GRTS: X91D0. ALP
+[2026-02-16 12:05:42] [MÈTODE] Malla + GRTS
+[2026-02-16 12:05:42] [END] Acabat: X91D0. ALP
+[2026-02-16 12:05:42] [START] Començant a processar: X9560. ALP
+[2026-02-16 12:05:48] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9560. a ALP
+[2026-02-16 12:05:48] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X9560. ALP
+[2026-02-16 12:05:51] [INFO] Menys de 30 polígons separats 200 m entre ells: X9560. ALP
+[2026-02-16 12:05:51] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-16 12:05:51] [END] Acabat: X9560. ALP
+[2026-02-16 12:05:51] [START] Començant a processar: X9140 ALP
+[2026-02-16 12:05:57] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9140 a ALP
+[2026-02-16 12:05:57] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9140 ALP
+[2026-02-16 12:05:58] [MÈTODE] Malla + GRTS
+[2026-02-16 12:05:58] [END] Acabat: X9140 ALP
