@@ -1,0 +1,250 @@
+[2026-02-22 19:22:58] [START] Començant a processar: GmqQi
+[2026-02-22 19:23:16] [INFO] 14 Punts ja mostrejats inclosos pel grup GmqQi
+[2026-02-22 19:23:16] [INFO] Més de 30 punts a la malla, aplicant GRTS: GmqQi
+[2026-02-22 19:23:16] [MÈTODE] Malla + GRTS
+[2026-02-22 19:23:17] [END] Acabat: GmqQi
+[2026-02-22 19:23:17] [START] Començant a processar: GQpbQi
+[2026-02-22 19:23:28] [INFO] 0 Punts ja mostrejats inclosos pel grup GQpbQi
+[2026-02-22 19:23:28] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQpbQi
+[2026-02-22 19:23:28] [MÈTODE] Malla + GRTS
+[2026-02-22 19:23:28] [END] Acabat: GQpbQi
+[2026-02-22 19:23:28] [START] Començant a processar: GPpt
+[2026-02-22 19:23:39] [INFO] 0 Punts ja mostrejats inclosos pel grup GPpt
+[2026-02-22 19:23:39] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPpt
+[2026-02-22 19:23:39] [MÈTODE] Malla + GRTS
+[2026-02-22 19:23:39] [END] Acabat: GPpt
+[2026-02-22 19:23:39] [START] Començant a processar: GFs_01
+[2026-02-22 19:23:39] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GFs_01
+[2026-02-22 19:23:39] [END] Acabat grup: GFs_01
+[2026-02-22 19:23:39] [START] Començant a processar: GQpb
+[2026-02-22 19:23:54] [INFO] 0 Punts ja mostrejats inclosos pel grup GQpb
+[2026-02-22 19:23:54] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQpb
+[2026-02-22 19:23:55] [MÈTODE] Malla + GRTS
+[2026-02-22 19:23:55] [END] Acabat: GQpb
+[2026-02-22 19:23:55] [START] Començant a processar: GPp
+[2026-02-22 19:24:07] [INFO] 5 Punts ja mostrejats inclosos pel grup GPp
+[2026-02-22 19:24:07] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPp
+[2026-02-22 19:24:08] [MÈTODE] Malla + GRTS
+[2026-02-22 19:24:08] [END] Acabat: GPp
+[2026-02-22 19:24:08] [START] Començant a processar: GPh_02
+[2026-02-22 19:24:30] [INFO] 12 Punts ja mostrejats inclosos pel grup GPh_02
+[2026-02-22 19:24:30] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPh_02
+[2026-02-22 19:24:31] [MÈTODE] Malla + GRTS
+[2026-02-22 19:24:32] [END] Acabat: GPh_02
+[2026-02-22 19:24:32] [START] Començant a processar: GUmFa
+[2026-02-22 19:24:32] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GUmFa
+[2026-02-22 19:24:32] [END] Acabat grup: GUmFa
+[2026-02-22 19:24:32] [START] Començant a processar: GVa
+[2026-02-22 19:24:42] [INFO] 5 Punts ja mostrejats inclosos pel grup GVa
+[2026-02-22 19:24:42] [INFO] Més de 30 punts a la malla, aplicant GRTS: GVa
+[2026-02-22 19:24:42] [MÈTODE] Malla + GRTS
+[2026-02-22 19:24:42] [END] Acabat: GVa
+[2026-02-22 19:24:42] [START] Començant a processar: GTx
+[2026-02-22 19:24:53] [INFO] 19 Punts ja mostrejats inclosos pel grup GTx
+[2026-02-22 19:24:53] [INFO] Més de 30 punts a la malla, aplicant GRTS: GTx
+[2026-02-22 19:24:53] [MÈTODE] Malla + GRTS
+[2026-02-22 19:24:53] [END] Acabat: GTx
+[2026-02-22 19:24:53] [START] Començant a processar: GQs
+[2026-02-22 19:24:53] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GQs
+[2026-02-22 19:24:53] [END] Acabat grup: GQs
+[2026-02-22 19:24:53] [START] Començant a processar: GSx_02
+[2026-02-22 19:25:04] [INFO] 0 Punts ja mostrejats inclosos pel grup GSx_02
+[2026-02-22 19:25:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: GSx_02
+[2026-02-22 19:25:04] [MÈTODE] Malla + GRTS
+[2026-02-22 19:25:04] [END] Acabat: GSx_02
+[2026-02-22 19:25:04] [START] Començant a processar: GAg
+[2026-02-22 19:25:04] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GAg
+[2026-02-22 19:25:04] [END] Acabat grup: GAg
+[2026-02-22 19:25:04] [START] Començant a processar: GLn
+[2026-02-22 19:25:14] [INFO] 0 Punts ja mostrejats inclosos pel grup GLn
+[2026-02-22 19:25:14] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: GLn
+[2026-02-22 19:26:12] [INFO] Menys de 30 polígons separats 200 m entre ells: GLn
+[2026-02-22 19:26:12] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-22 19:26:12] [END] Acabat: GLn
+[2026-02-22 19:26:12] [START] Començant a processar: GQi_01
+[2026-02-22 19:26:32] [INFO] 14 Punts ja mostrejats inclosos pel grup GQi_01
+[2026-02-22 19:26:32] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQi_01
+[2026-02-22 19:26:32] [MÈTODE] Malla + GRTS
+[2026-02-22 19:26:33] [END] Acabat: GQi_01
+[2026-02-22 19:26:33] [START] Començant a processar: GCs
+[2026-02-22 19:26:33] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GCs
+[2026-02-22 19:26:33] [END] Acabat grup: GCs
+[2026-02-22 19:26:33] [START] Començant a processar: GPt
+[2026-02-22 19:26:43] [INFO] 2 Punts ja mostrejats inclosos pel grup GPt
+[2026-02-22 19:26:43] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPt
+[2026-02-22 19:26:44] [MÈTODE] Malla + GRTS
+[2026-02-22 19:26:44] [END] Acabat: GPt
+[2026-02-22 19:26:44] [START] Començant a processar: GPh_01
+[2026-02-22 19:27:05] [INFO] 12 Punts ja mostrejats inclosos pel grup GPh_01
+[2026-02-22 19:27:05] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPh_01
+[2026-02-22 19:27:06] [MÈTODE] Malla + GRTS
+[2026-02-22 19:27:08] [END] Acabat: GPh_01
+[2026-02-22 19:27:08] [START] Començant a processar: GQi_02
+[2026-02-22 19:27:27] [INFO] 5 Punts ja mostrejats inclosos pel grup GQi_02
+[2026-02-22 19:27:27] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQi_02
+[2026-02-22 19:27:27] [MÈTODE] Malla + GRTS
+[2026-02-22 19:27:28] [END] Acabat: GQi_02
+[2026-02-22 19:27:28] [START] Començant a processar: GSa
+[2026-02-22 19:27:28] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GSa
+[2026-02-22 19:27:28] [END] Acabat grup: GSa
+[2026-02-22 19:27:28] [START] Començant a processar: GmqQr
+[2026-02-22 19:27:41] [INFO] 8 Punts ja mostrejats inclosos pel grup GmqQr
+[2026-02-22 19:27:41] [INFO] Més de 30 punts a la malla, aplicant GRTS: GmqQr
+[2026-02-22 19:27:41] [MÈTODE] Malla + GRTS
+[2026-02-22 19:27:42] [END] Acabat: GmqQr
+[2026-02-22 19:27:42] [START] Començant a processar: GFe
+[2026-02-22 19:27:55] [INFO] 1 Punts ja mostrejats inclosos pel grup GFe
+[2026-02-22 19:27:55] [INFO] Més de 30 punts a la malla, aplicant GRTS: GFe
+[2026-02-22 19:27:55] [MÈTODE] Malla + GRTS
+[2026-02-22 19:27:55] [END] Acabat: GFe
+[2026-02-22 19:27:55] [START] Començant a processar: GQr
+[2026-02-22 19:27:55] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GQr
+[2026-02-22 19:27:55] [END] Acabat grup: GQr
+[2026-02-22 19:27:55] [START] Començant a processar: GPa_01
+[2026-02-22 19:28:06] [INFO] 10 Punts ja mostrejats inclosos pel grup GPa_01
+[2026-02-22 19:28:06] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPa_01
+[2026-02-22 19:28:06] [MÈTODE] Malla + GRTS
+[2026-02-22 19:28:06] [END] Acabat: GPa_01
+[2026-02-22 19:28:06] [START] Començant a processar: GIa
+[2026-02-22 19:28:06] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GIa
+[2026-02-22 19:28:06] [END] Acabat grup: GIa
+[2026-02-22 19:28:06] [START] Començant a processar: GQrFa
+[2026-02-22 19:28:16] [INFO] 4 Punts ja mostrejats inclosos pel grup GQrFa
+[2026-02-22 19:28:16] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: GQrFa
+[2026-02-22 19:28:38] [INFO] Menys de 30 polígons separats 200 m entre ells: GQrFa
+[2026-02-22 19:28:39] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-22 19:28:39] [END] Acabat: GQrFa
+[2026-02-22 19:28:39] [START] Començant a processar: GFs_03
+[2026-02-22 19:28:39] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GFs_03
+[2026-02-22 19:28:39] [END] Acabat grup: GFs_03
+[2026-02-22 19:28:39] [START] Començant a processar: GR_Pu
+[2026-02-22 19:28:48] [INFO] 1 Punts ja mostrejats inclosos pel grup GR_Pu
+[2026-02-22 19:28:48] [INFO] Més de 30 punts a la malla, aplicant GRTS: GR_Pu
+[2026-02-22 19:28:48] [MÈTODE] Malla + GRTS
+[2026-02-22 19:28:48] [END] Acabat: GR_Pu
+[2026-02-22 19:28:48] [START] Començant a processar: GPs_01
+[2026-02-22 19:29:04] [INFO] 3 Punts ja mostrejats inclosos pel grup GPs_01
+[2026-02-22 19:29:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPs_01
+[2026-02-22 19:29:05] [MÈTODE] Malla + GRTS
+[2026-02-22 19:29:06] [END] Acabat: GPs_01
+[2026-02-22 19:29:06] [START] Començant a processar: GR_PnPs
+[2026-02-22 19:29:20] [INFO] 0 Punts ja mostrejats inclosos pel grup GR_PnPs
+[2026-02-22 19:29:20] [INFO] Més de 30 punts a la malla, aplicant GRTS: GR_PnPs
+[2026-02-22 19:29:20] [MÈTODE] Malla + GRTS
+[2026-02-22 19:29:21] [END] Acabat: GR_PnPs
+[2026-02-22 19:29:21] [START] Començant a processar: GPs_04
+[2026-02-22 19:29:32] [INFO] 1 Punts ja mostrejats inclosos pel grup GPs_04
+[2026-02-22 19:29:32] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPs_04
+[2026-02-22 19:29:32] [MÈTODE] Malla + GRTS
+[2026-02-22 19:29:32] [END] Acabat: GPs_04
+[2026-02-22 19:29:32] [START] Començant a processar: GPn
+[2026-02-22 19:29:32] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GPn
+[2026-02-22 19:29:32] [END] Acabat grup: GPn
+[2026-02-22 19:29:32] [START] Començant a processar: GM_PhPn
+[2026-02-22 19:29:43] [INFO] 1 Punts ja mostrejats inclosos pel grup GM_PhPn
+[2026-02-22 19:29:43] [INFO] Més de 30 punts a la malla, aplicant GRTS: GM_PhPn
+[2026-02-22 19:29:43] [MÈTODE] Malla + GRTS
+[2026-02-22 19:29:43] [END] Acabat: GM_PhPn
+[2026-02-22 19:29:43] [START] Començant a processar: Gbmc
+[2026-02-22 19:29:43] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: Gbmc
+[2026-02-22 19:29:43] [END] Acabat grup: Gbmc
+[2026-02-22 19:29:43] [START] Començant a processar: GTb
+[2026-02-22 19:29:43] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GTb
+[2026-02-22 19:29:43] [END] Acabat grup: GTb
+[2026-02-22 19:29:43] [START] Començant a processar: GM_QpbPs
+[2026-02-22 19:29:57] [INFO] 1 Punts ja mostrejats inclosos pel grup GM_QpbPs
+[2026-02-22 19:29:57] [INFO] Més de 30 punts a la malla, aplicant GRTS: GM_QpbPs
+[2026-02-22 19:29:57] [MÈTODE] Malla + GRTS
+[2026-02-22 19:29:58] [END] Acabat: GM_QpbPs
+[2026-02-22 19:29:58] [START] Començant a processar: GQc
+[2026-02-22 19:30:07] [INFO] 1 Punts ja mostrejats inclosos pel grup GQc
+[2026-02-22 19:30:07] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQc
+[2026-02-22 19:30:07] [MÈTODE] Malla + GRTS
+[2026-02-22 19:30:07] [END] Acabat: GQc
+[2026-02-22 19:30:07] [START] Començant a processar: GM_FsPs
+[2026-02-22 19:30:19] [INFO] 2 Punts ja mostrejats inclosos pel grup GM_FsPs
+[2026-02-22 19:30:19] [INFO] Més de 30 punts a la malla, aplicant GRTS: GM_FsPs
+[2026-02-22 19:30:19] [MÈTODE] Malla + GRTS
+[2026-02-22 19:30:19] [END] Acabat: GM_FsPs
+[2026-02-22 19:30:19] [START] Començant a processar: GSx_01
+[2026-02-22 19:30:19] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GSx_01
+[2026-02-22 19:30:19] [END] Acabat grup: GSx_01
+[2026-02-22 19:30:19] [START] Començant a processar: GM_PsPn
+[2026-02-22 19:30:31] [INFO] 2 Punts ja mostrejats inclosos pel grup GM_PsPn
+[2026-02-22 19:30:31] [INFO] Més de 30 punts a la malla, aplicant GRTS: GM_PsPn
+[2026-02-22 19:30:31] [MÈTODE] Malla + GRTS
+[2026-02-22 19:30:31] [END] Acabat: GM_PsPn
+[2026-02-22 19:30:31] [START] Començant a processar: GFs_02
+[2026-02-22 19:30:31] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GFs_02
+[2026-02-22 19:30:31] [END] Acabat grup: GFs_02
+[2026-02-22 19:30:31] [START] Començant a processar: GBpd
+[2026-02-22 19:30:41] [INFO] 8 Punts ja mostrejats inclosos pel grup GBpd
+[2026-02-22 19:30:41] [INFO] Més de 30 punts a la malla, aplicant GRTS: GBpd
+[2026-02-22 19:30:41] [MÈTODE] Malla + GRTS
+[2026-02-22 19:30:41] [END] Acabat: GBpd
+[2026-02-22 19:30:41] [START] Començant a processar: GQpt
+[2026-02-22 19:30:52] [INFO] 6 Punts ja mostrejats inclosos pel grup GQpt
+[2026-02-22 19:30:52] [INFO] Més de 30 punts a la malla, aplicant GRTS: GQpt
+[2026-02-22 19:30:52] [MÈTODE] Malla + GRTS
+[2026-02-22 19:30:52] [END] Acabat: GQpt
+[2026-02-22 19:30:52] [START] Començant a processar: GPs_03
+[2026-02-22 19:31:04] [INFO] 1 Punts ja mostrejats inclosos pel grup GPs_03
+[2026-02-22 19:31:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPs_03
+[2026-02-22 19:31:04] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:05] [END] Acabat: GPs_03
+[2026-02-22 19:31:05] [START] Començant a processar: GQf
+[2026-02-22 19:31:05] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GQf
+[2026-02-22 19:31:05] [END] Acabat grup: GQf
+[2026-02-22 19:31:05] [START] Començant a processar: GPu_01
+[2026-02-22 19:31:05] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GPu_01
+[2026-02-22 19:31:05] [END] Acabat grup: GPu_01
+[2026-02-22 19:31:05] [START] Començant a processar: GAa_01
+[2026-02-22 19:31:14] [INFO] 14 Punts ja mostrejats inclosos pel grup GAa_01
+[2026-02-22 19:31:14] [INFO] Més de 30 punts a la malla, aplicant GRTS: GAa_01
+[2026-02-22 19:31:14] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:15] [END] Acabat: GAa_01
+[2026-02-22 19:31:15] [START] Començant a processar: GM_AaP
+[2026-02-22 19:31:25] [INFO] 5 Punts ja mostrejats inclosos pel grup GM_AaP
+[2026-02-22 19:31:25] [INFO] Més de 30 punts a la malla, aplicant GRTS: GM_AaP
+[2026-02-22 19:31:25] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:25] [END] Acabat: GM_AaP
+[2026-02-22 19:31:25] [START] Començant a processar: GPu_02
+[2026-02-22 19:31:25] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GPu_02
+[2026-02-22 19:31:25] [END] Acabat grup: GPu_02
+[2026-02-22 19:31:25] [START] Començant a processar: GPa_02
+[2026-02-22 19:31:35] [INFO] 4 Punts ja mostrejats inclosos pel grup GPa_02
+[2026-02-22 19:31:35] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPa_02
+[2026-02-22 19:31:35] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:35] [END] Acabat: GPa_02
+[2026-02-22 19:31:35] [START] Començant a processar: GPs_02
+[2026-02-22 19:31:47] [INFO] 0 Punts ja mostrejats inclosos pel grup GPs_02
+[2026-02-22 19:31:47] [INFO] Més de 30 punts a la malla, aplicant GRTS: GPs_02
+[2026-02-22 19:31:47] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:47] [END] Acabat: GPs_02
+[2026-02-22 19:31:47] [START] Començant a processar: GNo
+[2026-02-22 19:31:58] [INFO] 6 Punts ja mostrejats inclosos pel grup GNo
+[2026-02-22 19:31:58] [INFO] Més de 30 punts a la malla, aplicant GRTS: GNo
+[2026-02-22 19:31:58] [MÈTODE] Malla + GRTS
+[2026-02-22 19:31:58] [END] Acabat: GNo
+[2026-02-22 19:31:58] [START] Començant a processar: GAog
+[2026-02-22 19:32:07] [INFO] 0 Punts ja mostrejats inclosos pel grup GAog
+[2026-02-22 19:32:07] [INFO] Més de 30 punts a la malla, aplicant GRTS: GAog
+[2026-02-22 19:32:08] [MÈTODE] Malla + GRTS
+[2026-02-22 19:32:08] [END] Acabat: GAog
+[2026-02-22 19:32:08] [START] Començant a processar: GQpy
+[2026-02-22 19:32:08] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GQpy
+[2026-02-22 19:32:08] [END] Acabat grup: GQpy
+[2026-02-22 19:32:08] [START] Començant a processar: GAa_02
+[2026-02-22 19:32:18] [INFO] 6 Punts ja mostrejats inclosos pel grup GAa_02
+[2026-02-22 19:32:18] [INFO] Més de 30 punts a la malla, aplicant GRTS: GAa_02
+[2026-02-22 19:32:18] [MÈTODE] Malla + GRTS
+[2026-02-22 19:32:18] [END] Acabat: GAa_02
+[2026-02-22 19:32:18] [START] Començant a processar: GPuBp_t
+[2026-02-22 19:32:18] [INFO] 30 Punts ja mostrejats, aprofitats dels HIC, pel grup: GPuBp_t
+[2026-02-22 19:32:18] [END] Acabat grup: GPuBp_t
+[2026-02-22 19:32:18] [START] Començant a processar: GJt
+[2026-02-22 19:32:28] [INFO] 1 Punts ja mostrejats inclosos pel grup GJt
+[2026-02-22 19:32:28] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: GJt
+[2026-02-22 19:32:31] [INFO] Menys de 30 polígons separats 200 m entre ells: GJt
+[2026-02-22 19:32:31] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-22 19:32:31] [END] Acabat: GJt

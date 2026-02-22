@@ -94,6 +94,8 @@ st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
 
 
 punts_mostreig <- read_sf("results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
+
+punts_mostreig |> group_by(COD_HIC) |> summarise(N=n()) |> arrange(N)
 colnames(punts_mostreig_esri)
 
 punts_mostreig |> 
