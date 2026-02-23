@@ -85,7 +85,7 @@ colnames(punts_mostreig)
 # Nombre de punts aprofitats
 punts_mostreig  |> filter(Point_origin=="Legacy") |> nrow()
 
-st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
+st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/Punts_HIC.gpkg")
 
 # st_write(punts_mostreig, 
 #           "results/03_Llegir_resultats_HIC/Punts_mostreig_HIC.shp")
@@ -93,7 +93,10 @@ st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
 #### LLegir i resumir els punts de mosteig seleccionats. 
 
 
-punts_mostreig <- read_sf("results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
+punts_mostreig <- read_sf("results/03_Llegir_resultats_HIC/Punts_HIC.gpkg")
+
+sum(duplicated(st_geometry(punts_mostreig))) # cap punt duplicat
+
 
 punts_mostreig |> group_by(COD_HIC) |> summarise(N=n()) |> arrange(N)
 colnames(punts_mostreig_esri)

@@ -1,0 +1,166 @@
+[2026-02-23 23:45:50] [START] Començant a processar: X41.141
+[2026-02-23 23:46:00] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.141
+[2026-02-23 23:46:00] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.141
+[2026-02-23 23:46:00] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:00] [END] Acabat: X41.141
+[2026-02-23 23:46:00] [START] Començant a processar: X41.291.
+[2026-02-23 23:46:09] [INFO] 16 Punts ja mostrejats inclosos pel CORINE: X41.291.
+[2026-02-23 23:46:09] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.291.
+[2026-02-23 23:46:09] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:09] [END] Acabat: X41.291.
+[2026-02-23 23:46:09] [START] Començant a processar: X41.2A.
+[2026-02-23 23:46:19] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.2A.
+[2026-02-23 23:46:19] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.2A.
+[2026-02-23 23:46:19] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:19] [END] Acabat: X41.2A.
+[2026-02-23 23:46:19] [START] Començant a processar: X41.47.
+[2026-02-23 23:46:29] [INFO] 14 Punts ja mostrejats inclosos pel CORINE: X41.47.
+[2026-02-23 23:46:29] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.47.
+[2026-02-23 23:46:29] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:29] [END] Acabat: X41.47.
+[2026-02-23 23:46:29] [START] Començant a processar: X41.4C.
+[2026-02-23 23:46:39] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.4C.
+[2026-02-23 23:46:39] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.4C.
+[2026-02-23 23:46:39] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:39] [END] Acabat: X41.4C.
+[2026-02-23 23:46:39] [START] Començant a processar: X41.5612
+[2026-02-23 23:46:48] [INFO] 4 Punts ja mostrejats inclosos pel CORINE: X41.5612
+[2026-02-23 23:46:48] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.5612
+[2026-02-23 23:46:48] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:48] [END] Acabat: X41.5612
+[2026-02-23 23:46:48] [START] Començant a processar: X41.B312.
+[2026-02-23 23:46:58] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X41.B312.
+[2026-02-23 23:46:58] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B312.
+[2026-02-23 23:46:58] [MÈTODE] Malla + GRTS
+[2026-02-23 23:46:58] [END] Acabat: X41.B312.
+[2026-02-23 23:46:58] [START] Començant a processar: X41.B331.
+[2026-02-23 23:47:07] [INFO] 12 Punts ja mostrejats inclosos pel CORINE: X41.B331.
+[2026-02-23 23:47:07] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B331.
+[2026-02-23 23:47:08] [MÈTODE] Malla + GRTS
+[2026-02-23 23:47:08] [END] Acabat: X41.B331.
+[2026-02-23 23:47:08] [START] Començant a processar: X41.B333.
+[2026-02-23 23:47:17] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X41.B333.
+[2026-02-23 23:47:17] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B333.
+[2026-02-23 23:47:17] [MÈTODE] Malla + GRTS
+[2026-02-23 23:47:17] [END] Acabat: X41.B333.
+[2026-02-23 23:47:17] [START] Començant a processar: X42.124.
+[2026-02-23 23:47:27] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X42.124.
+[2026-02-23 23:47:27] [INFO] Més de 30 punts a la malla, aplicant GRTS: X42.124.
+[2026-02-23 23:47:27] [MÈTODE] Malla + GRTS
+[2026-02-23 23:47:27] [END] Acabat: X42.124.
+[2026-02-23 23:47:27] [START] Començant a processar: X42.5B23.
+[2026-02-23 23:47:37] [INFO] 1 Punts ja mostrejats inclosos pel CORINE: X42.5B23.
+[2026-02-23 23:47:37] [INFO] Més de 30 punts a la malla, aplicant GRTS: X42.5B23.
+[2026-02-23 23:47:37] [MÈTODE] Malla + GRTS
+[2026-02-23 23:47:37] [END] Acabat: X42.5B23.
+[2026-02-23 23:47:37] [START] Començant a processar: X42.A27
+[2026-02-23 23:47:47] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X42.A27
+[2026-02-23 23:47:47] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X42.A27
+[2026-02-23 23:47:49] [INFO] Menys de 30 polígons separats 200 m entre ells: X42.A27
+[2026-02-23 23:47:49] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-23 23:47:49] [END] Acabat: X42.A27
+[2026-02-23 23:47:49] [START] Començant a processar: X44.128.
+[2026-02-23 23:47:59] [INFO] 10 Punts ja mostrejats inclosos pel CORINE: X44.128.
+[2026-02-23 23:47:59] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.128.
+[2026-02-23 23:47:59] [MÈTODE] Malla + GRTS
+[2026-02-23 23:47:59] [END] Acabat: X44.128.
+[2026-02-23 23:47:59] [START] Començant a processar: X44.3432.
+[2026-02-23 23:48:09] [INFO] 17 Punts ja mostrejats inclosos pel CORINE: X44.3432.
+[2026-02-23 23:48:09] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.3432.
+[2026-02-23 23:48:09] [MÈTODE] Malla + GRTS
+[2026-02-23 23:48:09] [END] Acabat: X44.3432.
+[2026-02-23 23:48:09] [START] Començant a processar: X44.461.
+[2026-02-23 23:48:19] [INFO] 26 Punts ja mostrejats inclosos pel CORINE: X44.461.
+[2026-02-23 23:48:19] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.461.
+[2026-02-23 23:54:25] [START] Començant a processar: X41.141
+[2026-02-23 23:54:35] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.141
+[2026-02-23 23:54:35] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.141
+[2026-02-23 23:54:35] [MÈTODE] Malla + GRTS
+[2026-02-23 23:54:35] [END] Acabat: X41.141
+[2026-02-23 23:54:35] [START] Començant a processar: X41.291.
+[2026-02-23 23:54:44] [INFO] 16 Punts ja mostrejats inclosos pel CORINE: X41.291.
+[2026-02-23 23:54:44] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.291.
+[2026-02-23 23:54:45] [MÈTODE] Malla + GRTS
+[2026-02-23 23:54:45] [END] Acabat: X41.291.
+[2026-02-23 23:54:45] [START] Començant a processar: X41.2A.
+[2026-02-23 23:54:54] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.2A.
+[2026-02-23 23:54:54] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.2A.
+[2026-02-23 23:54:54] [MÈTODE] Malla + GRTS
+[2026-02-23 23:54:54] [END] Acabat: X41.2A.
+[2026-02-23 23:54:54] [START] Començant a processar: X41.47.
+[2026-02-23 23:55:04] [INFO] 14 Punts ja mostrejats inclosos pel CORINE: X41.47.
+[2026-02-23 23:55:04] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.47.
+[2026-02-23 23:55:04] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:04] [END] Acabat: X41.47.
+[2026-02-23 23:55:04] [START] Començant a processar: X41.4C.
+[2026-02-23 23:55:14] [INFO] 5 Punts ja mostrejats inclosos pel CORINE: X41.4C.
+[2026-02-23 23:55:14] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.4C.
+[2026-02-23 23:55:14] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:14] [END] Acabat: X41.4C.
+[2026-02-23 23:55:14] [START] Començant a processar: X41.5612
+[2026-02-23 23:55:24] [INFO] 4 Punts ja mostrejats inclosos pel CORINE: X41.5612
+[2026-02-23 23:55:24] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.5612
+[2026-02-23 23:55:24] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:24] [END] Acabat: X41.5612
+[2026-02-23 23:55:24] [START] Començant a processar: X41.B312.
+[2026-02-23 23:55:33] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X41.B312.
+[2026-02-23 23:55:33] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B312.
+[2026-02-23 23:55:33] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:33] [END] Acabat: X41.B312.
+[2026-02-23 23:55:33] [START] Començant a processar: X41.B331.
+[2026-02-23 23:55:43] [INFO] 12 Punts ja mostrejats inclosos pel CORINE: X41.B331.
+[2026-02-23 23:55:43] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B331.
+[2026-02-23 23:55:43] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:43] [END] Acabat: X41.B331.
+[2026-02-23 23:55:43] [START] Començant a processar: X41.B333.
+[2026-02-23 23:55:52] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X41.B333.
+[2026-02-23 23:55:52] [INFO] Més de 30 punts a la malla, aplicant GRTS: X41.B333.
+[2026-02-23 23:55:53] [MÈTODE] Malla + GRTS
+[2026-02-23 23:55:53] [END] Acabat: X41.B333.
+[2026-02-23 23:55:53] [START] Començant a processar: X42.124.
+[2026-02-23 23:56:02] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X42.124.
+[2026-02-23 23:56:02] [INFO] Més de 30 punts a la malla, aplicant GRTS: X42.124.
+[2026-02-23 23:56:02] [MÈTODE] Malla + GRTS
+[2026-02-23 23:56:02] [END] Acabat: X42.124.
+[2026-02-23 23:56:02] [START] Començant a processar: X42.5B23.
+[2026-02-23 23:56:12] [INFO] 1 Punts ja mostrejats inclosos pel CORINE: X42.5B23.
+[2026-02-23 23:56:12] [INFO] Més de 30 punts a la malla, aplicant GRTS: X42.5B23.
+[2026-02-23 23:56:12] [MÈTODE] Malla + GRTS
+[2026-02-23 23:56:12] [END] Acabat: X42.5B23.
+[2026-02-23 23:56:12] [START] Començant a processar: X42.A27
+[2026-02-23 23:56:22] [INFO] 2 Punts ja mostrejats inclosos pel CORINE: X42.A27
+[2026-02-23 23:56:22] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X42.A27
+[2026-02-23 23:56:24] [INFO] Menys de 30 polígons separats 200 m entre ells: X42.A27
+[2026-02-23 23:56:24] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-23 23:56:24] [END] Acabat: X42.A27
+[2026-02-23 23:56:24] [START] Començant a processar: X44.128.
+[2026-02-23 23:56:34] [INFO] 10 Punts ja mostrejats inclosos pel CORINE: X44.128.
+[2026-02-23 23:56:34] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.128.
+[2026-02-23 23:56:34] [MÈTODE] Malla + GRTS
+[2026-02-23 23:56:34] [END] Acabat: X44.128.
+[2026-02-23 23:56:34] [START] Començant a processar: X44.3432.
+[2026-02-23 23:56:44] [INFO] 17 Punts ja mostrejats inclosos pel CORINE: X44.3432.
+[2026-02-23 23:56:44] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.3432.
+[2026-02-23 23:56:44] [MÈTODE] Malla + GRTS
+[2026-02-23 23:56:44] [END] Acabat: X44.3432.
+[2026-02-23 23:56:44] [START] Començant a processar: X44.461.
+[2026-02-23 23:56:53] [INFO] 26 Punts ja mostrejats inclosos pel CORINE: X44.461.
+[2026-02-23 23:56:53] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.461.
+[2026-02-23 23:56:54] [MÈTODE] Malla + GRTS
+[2026-02-23 23:56:54] [END] Acabat: X44.461.
+[2026-02-23 23:56:54] [START] Començant a processar: X44.462.
+[2026-02-23 23:57:03] [INFO] 26 Punts ja mostrejats inclosos pel CORINE: X44.462.
+[2026-02-23 23:57:03] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.462.
+[2026-02-23 23:57:03] [MÈTODE] Malla + GRTS
+[2026-02-23 23:57:04] [END] Acabat: X44.462.
+[2026-02-23 23:57:04] [START] Començant a processar: X44.8131
+[2026-02-23 23:57:13] [INFO] 29 Punts ja mostrejats inclosos pel CORINE: X44.8131
+[2026-02-23 23:57:13] [INFO] Més de 30 punts a la malla, aplicant GRTS: X44.8131
+[2026-02-23 23:57:13] [MÈTODE] Malla + GRTS
+[2026-02-23 23:57:13] [END] Acabat: X44.8131
+[2026-02-23 23:57:13] [START] Començant a processar: X44.81341
+[2026-02-23 23:57:23] [INFO] 1 Punts ja mostrejats inclosos pel CORINE: X44.81341
+[2026-02-23 23:57:23] [ATENCIÓ!] Menys de 30 punts d'intersecció amb la malla per: X44.81341
+[2026-02-23 23:58:06] [INFO] Menys de 30 polígons separats 200 m entre ells: X44.81341
+[2026-02-23 23:58:06] [MÈTODE] Centroide polígon (<30 pol & <30 points)
+[2026-02-23 23:58:06] [END] Acabat: X44.81341

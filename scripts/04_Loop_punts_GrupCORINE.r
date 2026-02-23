@@ -29,7 +29,12 @@ points_cat <- readRDS("results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
 punts_mostrejats <- read_sf("data/Parcelles_fetes_20260213/Parcelles_fetes_20260213.shp") |> 
                 mutate(COD_HIC_tf = make.names(COD_HIC))
 
-punts_hic <- read_sf("results/03_Llegir_resultats_HIC/punts_mostreig.gpkg") |> 
+    # Filtrar punt duplicat punts_mostrejats
+
+    dup_pts <- duplicated(st_geometry(punts_mostrejats))
+    punts_mostrejats <- punts_mostrejats[!dup_pts,]
+
+punts_hic <- read_sf("results/03_Llegir_resultats_HIC/Punts_HIC.gpkg") |> 
                 mutate(Selected_for = "HIC")
 
 punts_mostrejats_no_HIC <- punts_mostrejats |> filter(COD_HIC=="-")
@@ -40,17 +45,20 @@ punts_hic |> filter(Point_origin=="Legacy")  |> nrow()
 nrow(punts_mostrejats)
 
 punts_mostrejats_no_HIC |> nrow()
+punts_hic |> nrow()
 
 # Assegurar-nos que utilitzen la mateixa geometry abans d'ajuntar-los
-punts_mostrejats <- st_set_geometry(punts_mostrejats, "geometry")
+punts_mostrejats_no_HIC <- st_set_geometry(punts_mostrejats_no_HIC, "geometry")
 punts_hic <- st_set_geometry(punts_hic, "geometry")
 
 punts_fets <- bind_rows(punts_mostrejats_no_HIC, punts_hic)
 
+nrow(punts_fets) == nrow(punts_mostrejats_no_HIC) + nrow(punts_hic)
+
+
 # Eliminar dimensió z de punts
 punts_fets <- st_cast(punts_fets, "POINT")
 punts_fets <- st_zm(punts_fets)
-
 
 
 # Comprovar que tenen la mateixa projecció
@@ -66,7 +74,7 @@ make.names(grups)==grups # Els noms estan bé per escriure fitxers etc.
 colnames(punts_fets)
 
 #### Generem un fitxer per enregistrar el procediment intern del Loop. 
-log_file <- "results/04_Loop_punts_GrupCORINE/Log_Grups_20260222.txt"
+log_file <- "results/04_Loop_punts_GrupCORINE/Log_Grups_20260223.txt"
 
 
 #### Directoris on desar els fitxers generats

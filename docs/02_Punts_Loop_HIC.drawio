@@ -1,183 +1,271 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0" version="29.4.0" pages="2">
-  <diagram name="Pàgina-1" id="B4fkj4jZyQHgMVTgnkVz">
-    <mxGraphModel dx="713" dy="475" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="8000" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;b&gt;&lt;u&gt;01_Generar_malla_Catalunya&lt;/u&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="30" width="260" x="10" y="50" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-4" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-2" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="o5X97Xysw68P0ZrTH_YO-3" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="Polígon de Catalunya" vertex="1">
-          <mxGeometry height="30" width="156" x="336" y="90" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-15" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="414" y="240" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-17" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="310" y="270" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Generem malla hexagonal" vertex="1">
-          <mxGeometry height="30" width="120" x="354" y="160" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-16" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-5" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Generem centroides dels hexàgons" vertex="1">
-          <mxGeometry height="35" width="120" x="354" y="245" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Malla per tot Catalunya" vertex="1">
-          <mxGeometry height="60" width="120" x="354" y="350" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-13" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-9" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="100m" vertex="1">
-          <mxGeometry height="30" width="60" x="474" y="380" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="Vèrtex dels hexàgons + centroides" vertex="1">
-          <mxGeometry height="30" width="240" x="300" y="420" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;b&gt;&lt;u&gt;02_Loop_punts_HIC&lt;/u&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="30" width="200" x="10" y="490" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;" value="1. Dades:" vertex="1">
-          <mxGeometry height="30" width="120" x="70" y="560" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;b&gt;Boscos:&lt;/b&gt; Shape amb tots els polígons de HIC, Arbre dominant, CORINE...." vertex="1">
-          <mxGeometry height="30" width="410" x="160" y="600" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;b&gt;Punts_mostrejats&lt;/b&gt;: Punts ja mostrejats amb HIC, Arbre dominant, CORINE..." vertex="1">
-          <mxGeometry height="30" width="380" x="160" y="647" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;div&gt;&lt;b&gt;Punts Malla &lt;/b&gt;Catalunya: Punts generats a l&#39;script 01_Generar_malla_Catalunya&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="380" x="160" y="693" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;" value="&lt;b&gt;HIC radi:&lt;/b&gt; Data frame on indica si s&#39;ha d&#39;aplicar o no el radi per aquest HIC" vertex="1">
-          <mxGeometry height="30" width="330" x="160" y="740" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;" value="Procediment repetit per cada &lt;b&gt;HIC &lt;/b&gt;i &lt;b&gt;Regió&lt;/b&gt;" vertex="1">
-          <mxGeometry height="30" width="190" x="35" y="850" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-4" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-30" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="F8Oqdm_LgTIsokBZgfmb-3" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="o5X97Xysw68P0ZrTH_YO-30" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Regió" vertex="1">
-          <mxGeometry height="30" width="120" x="260" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="&amp;amp;" vertex="1">
-          <mxGeometry height="30" width="60" x="370" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-5" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-2" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="F8Oqdm_LgTIsokBZgfmb-3">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="320" y="1050" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-2" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="HIC" vertex="1">
-          <mxGeometry height="30" width="120" x="420" y="910" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-7" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-13" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-10" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-13" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0.443;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;" target="F8Oqdm_LgTIsokBZgfmb-11">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="220" y="1120" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-31" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-3" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-30">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-3" parent="1" style="whiteSpace=wrap;html=1;rounded=1;arcSize=23;convertToSvg=1;" value="Filtre de BOSCOS" vertex="1">
-          <mxGeometry height="60" width="120" x="340" y="1010" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-9" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-8" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Si cal aplicar buffer per aquest HIC" vertex="1">
-          <mxGeometry height="60" width="120" x="540" y="1010" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;labelBackgroundColor=#FF2442;convertToSvg=1;" value="Hi ha polígons?" vertex="1">
-          <mxGeometry height="30" width="120" x="340" y="1070" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-18" connectable="0" parent="1" style="group" value="" vertex="1">
-          <mxGeometry height="90" width="120" x="414" y="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-6" parent="F8Oqdm_LgTIsokBZgfmb-18" style="rounded=1;whiteSpace=wrap;html=1;flipH=1;legacyAnchorPoints=0;" value="Retallar la malla" vertex="1">
-          <mxGeometry height="60" width="120" y="30" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-14" parent="F8Oqdm_LgTIsokBZgfmb-18" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="SI" vertex="1">
-          <mxGeometry height="30" width="60" x="50" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-24" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-21" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-22">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-25" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-21" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-23">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Hi ha punts ja mostrejats?" vertex="1">
-          <mxGeometry height="30" width="160" x="394" y="1220" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-22" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Generar punts" vertex="1">
-          <mxGeometry height="60" width="120" x="336" y="1300" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-37" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-23" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-33">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="370" y="1410" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Generar punts + Punts ja mostrejats" vertex="1">
-          <mxGeometry height="60" width="120" x="490" y="1300" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="SI" vertex="1">
-          <mxGeometry height="30" width="60" x="540" y="1270" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="NO" vertex="1">
-          <mxGeometry height="30" width="60" x="340" y="1270" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;flipH=1;legacyAnchorPoints=0;fillColor=#f8cecc;strokeColor=#b85450;" value="Aturar el procés" vertex="1">
-          <mxGeometry height="60" width="120" x="280" y="1150" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="NO" vertex="1">
-          <mxGeometry height="30" width="60" x="290" y="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Desar Shape del polígon" vertex="1">
-          <mxGeometry height="60" width="120" x="90" y="1010" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Desar malla" vertex="1">
-          <mxGeometry height="60" width="120" x="90" y="1160" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Desar&amp;nbsp; punts" vertex="1">
-          <mxGeometry height="60" width="120" x="90" y="1310" as="geometry" />
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-34" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-6" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-32">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="340" y="1230" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="F8Oqdm_LgTIsokBZgfmb-36" edge="1" parent="1" source="F8Oqdm_LgTIsokBZgfmb-22" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.007;entryY=0.369;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;" target="F8Oqdm_LgTIsokBZgfmb-33">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="a1CUKcxXNLjxVop7Z7-2" name="Pàgina-2">
-    <mxGraphModel dx="749" dy="499" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e" pages="2">
+    <diagram name="Pàgina-1" id="B4fkj4jZyQHgMVTgnkVz">
+        <mxGraphModel dx="1440" dy="1775" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-4" value="" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="o5X97Xysw68P0ZrTH_YO-2" target="o5X97Xysw68P0ZrTH_YO-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-2" value="Polígon de Catalunya" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=1;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="336" y="90" width="156" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-15" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="414" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-17" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" target="o5X97Xysw68P0ZrTH_YO-9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="270"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-3" value="Generem malla hexagonal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="354" y="160" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-16" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="o5X97Xysw68P0ZrTH_YO-5" target="o5X97Xysw68P0ZrTH_YO-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-5" value="Generem centroides dels hexàgons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="354" y="245" width="120" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-9" value="Malla per tot Catalunya" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="354" y="350" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-13" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" parent="1" source="o5X97Xysw68P0ZrTH_YO-9" target="o5X97Xysw68P0ZrTH_YO-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-14" value="100m" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=1;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="474" y="380" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-18" value="Vèrtex dels hexàgons + centroides" style="text;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;rounded=1;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="420" width="240" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-29" value="Procediment repetit per cada &lt;b&gt;HIC &lt;/b&gt;i &lt;b&gt;Regió&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=1;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="90" y="516" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-4" value="" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="o5X97Xysw68P0ZrTH_YO-30" target="F8Oqdm_LgTIsokBZgfmb-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="375" y="656"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="o5X97Xysw68P0ZrTH_YO-30" value="Regió" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="315" y="576" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-1" value="&amp;amp;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="576" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-5" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-2" target="F8Oqdm_LgTIsokBZgfmb-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="375" y="716" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="545" y="636"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-2" value="HIC" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="475" y="576" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-7" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-13" target="F8Oqdm_LgTIsokBZgfmb-6" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-10" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;entryX=0.443;entryY=-0.004;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-13" target="F8Oqdm_LgTIsokBZgfmb-11" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="275" y="786" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-31" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-3" target="F8Oqdm_LgTIsokBZgfmb-30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-3" value="Filtre de BOSCOS" style="whiteSpace=wrap;html=1;rounded=1;arcSize=23;convertToSvg=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="676" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-9" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-8" target="F8Oqdm_LgTIsokBZgfmb-3" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-8" value="Si cal aplicar buffer per aquest HIC" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="595" y="676" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-13" value="Hi ha polígons?" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;labelBackgroundColor=none;convertToSvg=1;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="736" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-24" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-21" target="F8Oqdm_LgTIsokBZgfmb-22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-25" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-21" target="F8Oqdm_LgTIsokBZgfmb-23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-21" value="Hi ha punts ja mostrejats?" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="449" y="886" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-22" value="Generar punts" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="391" y="966" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-37" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-23" target="F8Oqdm_LgTIsokBZgfmb-33" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="425" y="1076"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-23" value="Generar punts + Punts ja mostrejats" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="545" y="966" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-26" value="SI" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="595" y="936" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-27" value="NO" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="936" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-11" value="Aturar el procés" style="rounded=1;whiteSpace=wrap;html=1;flipH=1;legacyAnchorPoints=0;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="335" y="816" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-15" value="NO" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="345" y="786" width="60" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-30" value="Desar Shape del polígon" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="145" y="676" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-32" value="Desar malla" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="145" y="826" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-33" value="Desar&amp;nbsp; punts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="145" y="976" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-34" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-6" target="F8Oqdm_LgTIsokBZgfmb-32" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="395" y="896"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-36" style="edgeStyle=none;curved=1;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.007;entryY=0.369;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;startSize=8;endSize=8;strokeColor=#000000;" parent="1" source="F8Oqdm_LgTIsokBZgfmb-22" target="F8Oqdm_LgTIsokBZgfmb-33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;fontColor=#FFFFFF;rotation=90;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1291" y="210" width="50" height="342" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#FFFFFF;endArrow=none;endFill=0;strokeColor=#000000;" parent="1" source="4" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Retallem la malla de Catalunya per HIC i Regió" style="whiteSpace=wrap;html=1;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1139" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Seleccionem polígons &amp;gt; 200m de separació" style="whiteSpace=wrap;html=1;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="406" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Hi ha &amp;gt; 30 punts?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1259" y="322" width="120" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="SI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1470" y="346" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="NO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1140" y="346" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;fontColor=#FFFFFF;rotation=90;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="426" width="50" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Hi ha &amp;gt;30 pol separats &amp;gt;200m?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;labelBackgroundColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="1050" y="466" width="190" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="SI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1210" y="486" width="30" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="NO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="486" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="" style="edgeStyle=none;html=1;fontColor=#000000;strokeColor=#000000;" parent="1" source="14" target="15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Generem punt central en els polígons que NO tenen punts" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="546" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;html=1;fontColor=#000000;strokeColor=#000000;" parent="1" source="15" target="17" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="Sumem punts centre polígon + Punts de la malla" style="whiteSpace=wrap;html=1;fontColor=#333333;labelBackgroundColor=none;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="674" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Apliquem GRTS sobre els &amp;gt;30 punts" style="whiteSpace=wrap;html=1;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="1180" y="796" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Generem punt central en els polígons que NO tenen punts" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="546" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="" style="edgeStyle=none;html=1;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#000000;" parent="1" source="20" target="30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="Sumem punts centre polígon + Punts de la malla" style="whiteSpace=wrap;html=1;fontColor=#333333;labelBackgroundColor=none;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="674" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="Apliquem GRTS sobre els &amp;gt;30 punts" style="whiteSpace=wrap;html=1;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="796" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;font color=&quot;#000000&quot;&gt;Punts ja mostrejats&lt;/font&gt;" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1399" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="" style="line;strokeWidth=1;html=1;perimeter=backbonePerimeter;points=[];outlineConnect=0;labelBackgroundColor=none;fontColor=#FFFFFF;rotation=90;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1294" y="290" width="50" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Generar punts:&amp;nbsp;&lt;/b&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1259" y="160" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Hi ha &amp;gt;30 punts?" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="606" width="130" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="edgeStyle=none;html=1;fontSize=14;fontColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#000000;" parent="1" source="29" target="21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Sumem punts centre polígon + Punts de la malla" style="whiteSpace=wrap;html=1;fontColor=#333333;labelBackgroundColor=none;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1040" y="674" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="Seleccionem tots els punts" style="whiteSpace=wrap;html=1;fontColor=#ffffff;labelBackgroundColor=none;fillColor=#60a917;strokeColor=#2D7600;" parent="1" vertex="1">
+                    <mxGeometry x="900" y="796" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;fontColor=#FFFFFF;rotation=90;strokeColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1010" y="584" width="50" height="132" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="NO" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="920" y="629" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="SI" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=14;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="629" width="40" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="edgeStyle=none;html=1;fontSize=12;fontColor=#FFFFFF;endArrow=classic;endFill=1;strokeColor=#000000;" parent="1" source="37" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;Ens quedem amb els punts de la malla&lt;br&gt;+&lt;br&gt;Punts ja mostrejats&lt;br&gt;&lt;/font&gt;" style="whiteSpace=wrap;html=1;labelBackgroundColor=none;strokeWidth=1;fontSize=14;fontColor=#333333;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1408" y="406" width="154" height="94" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="edgeStyle=none;html=1;strokeColor=#000000;" edge="1" parent="1" source="39" target="41">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Apliquem GRTS amb dist mínima 200m" style="whiteSpace=wrap;html=1;fontSize=14;fontColor=#333333;labelBackgroundColor=none;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1403" y="552" width="164" height="93" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="Generem 30 punts" style="whiteSpace=wrap;html=1;fontSize=14;fontColor=#ffffff;labelBackgroundColor=none;strokeWidth=1;fillColor=#60a917;strokeColor=#2D7600;" vertex="1" parent="1">
+                    <mxGeometry x="1425" y="796" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-6" value="Retallar la malla" style="rounded=1;whiteSpace=wrap;html=1;flipH=1;legacyAnchorPoints=0;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="469" y="816" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="F8Oqdm_LgTIsokBZgfmb-14" value="SI" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;fontColor=#000000;" parent="1" vertex="1">
+                    <mxGeometry x="519" y="786" width="60" height="30" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="a1CUKcxXNLjxVop7Z7-2" name="Pàgina-2">
+        <mxGraphModel dx="576" dy="710" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
