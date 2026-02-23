@@ -34,6 +34,16 @@ radi <- read.csv2("data/HICs_radi.csv") |>
 st_crs(points_cat) == st_crs(boscos)
 st_crs(punts_mostrejats) == st_crs(boscos)
 
+#### Eliminar punts duplicats en els ja mostrejats: per l'HIC 9120 hi ha 2 punts duplicats
+
+dup_all <- duplicated(st_geometry(punts_mostrejats)) |
+           duplicated(st_geometry(punts_mostrejats), fromLast = TRUE)
+
+punts_mostrejats[dup_all, ] |> View() # Simplement hi ha un dia de diferència, ja es seleccionarà quin es el bo. 
+
+dup_pts <- duplicated(st_geometry(punts_mostrejats))
+
+punts_mostrejats <- punts_mostrejats[!dup_pts,]
 
 ##### MARK: Preparació pel Loop
 
@@ -55,7 +65,7 @@ hics_radis <- radi |>
 
 
 #### Generem un fitxer per enregistrar el procediment intern del Loop. 
-log_file <- "results/02_Loop_punts_HIC/Log_HIC_20260218.txt"
+log_file <- "results/02_Loop_punts_HIC/HIC_9120_dupl.txt"
 
 
 
@@ -76,9 +86,10 @@ dir_poligons <- "results/02_Loop_punts_HIC/Poligons_shapes/"
 
 #### MARK: Loop per regió i HIC
 
-j=1
-i=1
-rm(hic, regio)
+
+regio <- regions[1]
+hic <- hics[3]
+
 for(j in seq_along(regions)){
 
     regio <- regions[j]
@@ -139,6 +150,7 @@ resultat_punts <- generate_points_hic(pol,
                                         n_target = 30, 
                                         min_dist = 200, 
                                         n_iter = 100)
+
 
 
 if (is.null(resultat_punts)) {

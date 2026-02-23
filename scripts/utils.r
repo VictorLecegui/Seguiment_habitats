@@ -166,7 +166,15 @@ generate_points_hic <- function(pol,
      if(nrow(points) > n_target){
       # SI hih a punts mostrejats els afegim
       if (!is.null(legacy_points) && nrow(legacy_points) > 0) { 
-        points <- grts(points, 
+        points_close_legacy <- st_is_within_distance(
+                             points,
+                             legacy_points,
+                            dist = set_units(min_dist,m))
+        
+
+        points_no_legacy <- points[lengths(points_close_legacy) == 0, ]
+       
+        points <- grts(points_no_legacy, 
                     n_base = n_target,
                     mindis = min_dist,
                     legacy_sites = legacy_points)
@@ -202,8 +210,15 @@ generate_points_hic <- function(pol,
         
         # SI queden punts per mostrejar
         if (n_remaining > 0) {
+          points_close_legacy <- st_is_within_distance(
+                             points_pol,
+                             legacy_points,
+                            dist = set_units(min_dist,m))
+        
 
-          points <- grts(points_pol,
+          points_no_legacy <- points_pol[lengths(points_close_legacy) == 0, ]
+
+          points <- grts(points_no_legacy,
                          n_base = n_target,
                          legacy_sites = legacy_points,
                          mindis = min_dist)
@@ -240,7 +255,15 @@ generate_points_hic <- function(pol,
       n_remaining <- n_target - nrow(legacy_points)
       
       if (n_remaining > 0) {
-        points <- grts(hic_points,
+        points_close_legacy <- st_is_within_distance(
+                             hic_points,
+                             legacy_points,
+                            dist = set_units(min_dist,m))
+        
+
+        points_no_legacy <- hic_points[lengths(points_close_legacy) == 0, ]
+
+        points <- grts(points_no_legacy,
                        n_base = n_target,
                        legacy_sites = legacy_points,
                        mindis = min_dist)
@@ -306,7 +329,8 @@ generate_points_grups <- function(pol,
     close_to_legacy <- st_is_within_distance(
                              grup_points,
                              legacy_points,
-                            dist = set_units(200,m))
+                            dist = set_units(min_dist,m))
+                            
     grup_points <- grup_points[lengths(close_to_legacy) == 0, ]
 
 }

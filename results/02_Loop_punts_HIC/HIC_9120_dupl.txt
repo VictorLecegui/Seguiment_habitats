@@ -1,0 +1,22 @@
+[2026-02-23 12:23:02] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:23:02] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:23:02] [MÈTODE] Malla + GRTS
+[2026-02-23 12:30:35] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:30:35] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:30:35] [MÈTODE] Malla + GRTS
+[2026-02-23 12:32:44] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:32:44] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:32:44] [MÈTODE] Malla + GRTS
+[2026-02-23 12:34:09] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:34:09] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:34:09] [MÈTODE] Malla + GRTS
+[2026-02-23 12:43:13] [INFO] 10 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:43:13] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:43:13] [MÈTODE] Malla + GRTS
+[2026-02-23 12:58:40] [START] Començant a processar: X9120 MED
+[2026-02-23 12:59:21] [INFO] 9 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:59:21] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:59:57] [INFO] 9 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-02-23 12:59:57] [INFO] Més de 30 punts a la malla, aplicant GRTS: X9120 MED
+[2026-02-23 12:59:57] [MÈTODE] Malla + GRTS
+[2026-02-23 13:00:34] [END] Acabat: X9120 MED

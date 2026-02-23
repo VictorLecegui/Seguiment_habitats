@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0" version="29.4.0">
+  <diagram name="Pàgina-1" id="B4fkj4jZyQHgMVTgnkVz">
+    <mxGraphModel dx="988" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="01_Generar_malla_Catalunya" vertex="1">
+          <mxGeometry height="30" width="60" x="80" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-4" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-2" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="o5X97Xysw68P0ZrTH_YO-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Polígon de Catalunya" vertex="1">
+          <mxGeometry height="30" width="156" x="336" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-15" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-17" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Generem malla hexagonal" vertex="1">
+          <mxGeometry height="30" width="120" x="354" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-16" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-5" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Generem centroides dels hexàgons" vertex="1">
+          <mxGeometry height="35" width="120" x="354" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Malla per tot Catalunya" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-13" edge="1" parent="1" source="o5X97Xysw68P0ZrTH_YO-9" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="o5X97Xysw68P0ZrTH_YO-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="100m" vertex="1">
+          <mxGeometry height="30" width="60" x="474" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="o5X97Xysw68P0ZrTH_YO-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="Vèrtex dels hexàgons + centroides" vertex="1">
+          <mxGeometry height="30" width="240" x="300" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

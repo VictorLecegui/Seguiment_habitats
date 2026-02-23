@@ -104,4 +104,55 @@ punts_grups |>
 boscos |> filter(Codi_grup=="GJt") |> plot()
 punts_grups |> filter(Codi_grup=="GJt") |> plot()
 
+
+
 st_write(punts_grups, "results/05_Llegir_punts_Grup/Punts_HIC_Grup.gpkg")
+
+
+#### Afegir columna de si els putns son HIC + Grup o Grup
+
+punts_hic <- st_read("results/03_Llegir_resultats_HIC/punts_mostreig.gpkg")
+
+punts_grups <- st_read("results/05_Llegir_punts_Grup/Punts_HIC_Grup.gpkg")
+
+## Comprovar si hi ha punts duplicats: 
+
+dup_geom <- duplicated(st_geometry(punts_hic))
+
+sum(dup_geom) 
+
+  punts_hic[dup_geom, ]
+nrow(punts_grups)
+# comprovo si en eliminar-lo s'ha perdut algun punt del diseny
+
+punts_grups |> filter(COD_HIC == "9120" & RegioHIC == "MED") |> nrow()
+
+close_to_legacy <- st_is_within_distance(
+                             punts_grups,
+                             punts_hic,
+                            dist = set_units(10,m))
+        
+
+punts_exclusius_grup <- punts_grups[lengths(close_to_legacy) == 0, ]
+
+punts_exclusius_grup <- punts_exclusius_grup |> 
+  mutate(Categoria = "Grup_CORINE")
+
+punts_hic <- punts_hic |> 
+  mutate(Categoria = "HIC + Grup_CORINE")
+
+punts_totals <- bind_rows(punts_hic, punts_exclusius_grup)
+nrow(punts_totals)
+
+nrow(punts_grups) - nrow(punts_hic)
+
+nrow(punts_exclusius_grup) + nrow(punts_hic) == nrow(punts_grups)
+
+
+
+punts_grups |> 
+  filter(Llista_ver == "LV") |> 
+  group_by(COD_CORINE) |> 
+  summarise(N = n()) |> 
+  arrange(N) 
+
