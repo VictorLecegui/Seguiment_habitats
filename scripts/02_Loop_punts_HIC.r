@@ -18,32 +18,35 @@ source("scripts/utils.R")
 
 ##### MARK: Dades
 
+# Mapa d'habitats
 boscos <- read_sf("data/MHTCv3_boscos_RegionsHIC/MHTCv3_boscos_RegionsHIC.shp") |> 
                 mutate(COD_HIC_tf = make.names(COD_HIC))
 
+# Punts ja mostejats
 punts_mostrejats <- read_sf("data/Parcelles_fetes_20260213/Parcelles_fetes_20260213.shp") |> 
                 mutate(COD_HIC_tf = make.names(COD_HIC))
 
-points_cat <- readRDS("results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
+ # Filtrar punt duplicat punts_mostrejats
 
-radi <- read.csv2("data/HICs_radi.csv") |> 
-                mutate(COD_HIC_tf = make.names(HIC))
+    dup_pts <- duplicated(st_geometry(punts_mostrejats))
+    punts_mostrejats <- punts_mostrejats[!dup_pts,]
+ # Eliminar dimensió z
+
+    punts_mostrejats <- st_cast(punts_mostrejats, "POINT")
+    punts_mostrejats <- st_zm(punts_mostrejats)
+
+
+punts_mostrejats <- st_set_geometry(punts_mostrejats, "geometry")
+
+# Malla de punts
+points_cat <- readRDS("results/01_Generar_malla_Catalunya/Malla_Catalunya.rds")
+points_cat <- st_set_geometry(points_cat, "geometry")
 
 # Comprovar que tenen la mateixa projecció
 
 st_crs(points_cat) == st_crs(boscos)
 st_crs(punts_mostrejats) == st_crs(boscos)
 
-#### Eliminar punts duplicats en els ja mostrejats: per l'HIC 9120 hi ha 2 punts duplicats
-
-dup_all <- duplicated(st_geometry(punts_mostrejats)) |
-           duplicated(st_geometry(punts_mostrejats), fromLast = TRUE)
-
-punts_mostrejats[dup_all, ] |> View() # Simplement hi ha un dia de diferència, ja es seleccionarà quin es el bo. 
-
-dup_pts <- duplicated(st_geometry(punts_mostrejats))
-
-punts_mostrejats <- punts_mostrejats[!dup_pts,]
 
 ##### MARK: Preparació pel Loop
 
@@ -57,16 +60,9 @@ setdiff(hics_most, hics)
 regions <- unique(boscos$RegioHIC)
 
 # HICS que s'han de fer el buffer
-unique(radi$Radi)
-hics_radis <- radi |> 
-                filter(Radi == "Si") |> 
-                pull(COD_HIC_tf)
-
-
 
 #### Generem un fitxer per enregistrar el procediment intern del Loop. 
-log_file <- "results/02_Loop_punts_HIC/HIC_9120_dupl.txt"
-
+log_file <- "results/02_Loop_punts_HIC/Log_punts_HIC_20260226.txt"
 
 
 #### Directoris on desar els fitxers generats
@@ -102,28 +98,23 @@ for(i in seq_along(hics)){
 
     log_msg(level = "START", msg = paste("Començant a processar:", hic, regio))
 
-# Si l'HIC ha de tenir buffer o no 
+# Filtrem la capa d'habitats per l'HIC i regió que volem: 
 
-# SI HIC té buffer
-    if(hic %in% hics_radis){
-         pol <- filter_polygons(boscos, 
-                        field = "COD_HIC_tf", 
-                        value = hic,
-                        buff_dist = "Radi_buffe") |> 
-                filter(RegioHIC == regio) |> 
-                st_as_sf()
-# NO HIC no se li ha d'aplicar buffer.                 
-    } else {
-         pol <- filter_polygons(boscos, 
-                        field = "COD_HIC_tf", 
-                        value = hic) |> 
-                filter(RegioHIC == regio) |> 
-                st_as_sf()
-    }
+    pol <- filter_polygons(boscos, 
+                    field = "COD_HIC_tf", 
+                    value = hic) |> 
+            filter(RegioHIC == regio) |> 
+            st_as_sf()
+
+# Filtre dels polígons de menys de 200m2 (inventari no hi entra)
+
+pol_flt <- pol[st_area(pol) > set_units(200, m2),]
+
 
 # Si no hi ha polígons per aquest HIC o regió passar al següent. 
-   if(nrow(pol)==0){
+   if(nrow(pol_flt)==0){
         log_msg(level = "ATENCIÓ!", msg = paste("No hi ha polígons de:", hic, "a", regio))
+        log_msg(level = "END", msg = paste("Acabat:", hic, "a", regio))
             next
    }
 
@@ -132,23 +123,19 @@ for(i in seq_along(hics)){
 punts_hic_regio <- punts_mostrejats |> 
                         filter(COD_HIC_tf == hic & RegioHIC == regio)
 
-# Eliminar dimensió z de punts
-if(!is.null(punts_hic_regio) && nrow(punts_hic_regio)>0){
-    punts_hic_regio <- st_cast(punts_hic_regio, "POINT")
-    punts_hic_regio <- st_zm(punts_hic_regio)
-}
 
 #### Generar els punts (funció a utils.r). Segons si ja hi ha punts o no. 
 
 # Posem l'objecte punts_hic_regio, si es null internament la funció ja l'ignora
 
-resultat_punts <- generate_points_hic(pol, 
+resultat_punts <- generate_points_hic(pol_flt, 
                                         points_cat, 
                                         hic, 
                                         regio, 
                                         legacy_points = punts_hic_regio,
                                         n_target = 30, 
-                                        min_dist = 200, 
+                                        min_dist = 199,
+                                        n_reserva = 6, 
                                         n_iter = 100)
 
 

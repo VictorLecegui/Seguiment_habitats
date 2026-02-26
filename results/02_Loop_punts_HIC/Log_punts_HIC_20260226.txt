@@ -1,0 +1,2 @@
+[2026-02-26 12:00:54] [START] Començant a processar: X9120 MED
+[2026-02-26 13:45:13] [INFO] 9 Punts ja mostrejats inclosos per l'HIC X9120 a MED
