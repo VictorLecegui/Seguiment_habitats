@@ -11,81 +11,44 @@ path_punts <- "results/02_Loop_punts_HIC/Punts_mostreig"
 # List all RDS files (important fix)
 punts_hic <- list.files(path_punts, pattern = "\\.rds$", full.names = TRUE)
 
-#file_path<-"results/02_Loop_punts_HIC/Punts_mostreig/Punts_X9340_MED.rds"
+file_path<-"results/02_Loop_punts_HIC/Punts_mostreig/Punts_X9340_MED.rds"
 # Function to read and process each file
 read_points_grts <- function(file_path){
-    print(file_path)
+  print(file_path)
+  
   one_hic <- readRDS(file_path)
 
-  punts_obj <- one_hic$punts
+  punts_obj <- one_hic$points
 
-# Si els punts han sigut generats amb GRTS:
-if("sp_design" %in% class(punts_obj)){
-
-  # Combine GRTS and Legacy correctly
-  if (!is.null(punts_obj$sites_legacy) && !is.null(punts_obj$sites_base)) {
-
-    punts_grts <- punts_obj$sites_base |> 
-      mutate(Point_origin = "GRTS")
-
-    punts_legacy <- punts_obj$sites_legacy |> 
-      mutate(Point_origin = "Legacy")
-
-    punts <- bind_rows(punts_grts, punts_legacy)
-
-  } else {
-    if(nrow(punts_obj$sites_base) == 30){
-        
-         punts <- punts_obj$sites_base |> 
-          mutate(Point_origin = "GRTS")
-    } else{
-        if(nrow(punts_obj$sites_legacy) == 30){
-            punts <- punts_obj$sites_legacy  |> 
-                mutate(Point_origin = "Legacy")
-        }
-    }
-
-  }
-} else {
-  
-  # SI els punts s'han generat amb el centroide del polígon etc. 
-   punts <- punts_obj
+  return(punts_obj)
 }
 
+read_metadata_grts <- function(file_path){
+  print(file_path)
+  
+  one_hic <- readRDS(file_path)
 
-  # Add generation method 
-  punts <- punts |> 
-    mutate(Method = one_hic$method)
+  meta_obj <- one_hic$meta_points
 
-  # ---- Minimum distance check ----
-  min_dist_matrix <- st_distance(punts)
-
-  diag(min_dist_matrix) <- set_units(Inf, "m")
-
-  min_dist_value <- min(min_dist_matrix)
-
-  punts <- punts |> 
-    mutate(min_dist_200m = ifelse(min_dist_value < set_units(200, "m"),
-                                  "Inf_200m",
-                                  "Sup_200m"))
-
-  return(punts)
+  return(meta_obj)
 }
 
 # Apply to all files
 punts_ls <- lapply(punts_hic, read_points_grts)
-
+metadata_ls <- lapply(punts_hic, read_metadata_grts)
 
 
 punts_mostreig <- bind_rows(punts_ls)
 nrow(punts_mostreig) # Nombre de punts a mostrejar
 
 colnames(punts_mostreig)
+head(punts_mostreig)
+
+metadata_punts <- bind_rows(metadata_ls)
 
 # Nombre de punts aprofitats
-punts_mostreig  |> filter(Point_origin=="Legacy") |> nrow()
 
-st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/Punts_HIC.gpkg")
+# st_write(punts_mostreig, "results/03_Llegir_resultats_HIC/Punts_HIC.gpkg")
 
 # st_write(punts_mostreig, 
 #           "results/03_Llegir_resultats_HIC/Punts_mostreig_HIC.shp")
@@ -104,8 +67,12 @@ colnames(punts_mostreig_esri)
 punts_mostreig |> 
     group_by(COD_HIC_tf, RegioHIC) |> 
     summarise(N = n()) |> 
-    arrange(desc(N))
+    arrange(N)
 
+
+metadata_punts |>
+  filter(variables=="sp_balance_SES") |> 
+  filter(values < 0)
 # Seguent nivell: Grup de CORINEs
 
 # Grups pels quals s'haurà de buscar punts

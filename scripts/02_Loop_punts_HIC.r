@@ -11,6 +11,7 @@ library(units)
 library(spsurvey)
 library(leaflet)
 library(htmlwidgets)
+library(pbapply)
 
 # Funcions personalitzades
 
@@ -62,7 +63,7 @@ regions <- unique(boscos$RegioHIC)
 # HICS que s'han de fer el buffer
 
 #### Generem un fitxer per enregistrar el procediment intern del Loop. 
-log_file <- "results/02_Loop_punts_HIC/Log_punts_HIC_20260226.txt"
+log_file <- "results/02_Loop_punts_HIC/Log_poligons_HIC_20260302.txt"
 
 
 #### Directoris on desar els fitxers generats
@@ -85,6 +86,10 @@ dir_poligons <- "results/02_Loop_punts_HIC/Poligons_shapes/"
 
 regio <- regions[1]
 hic <- hics[3]
+hic <- "X9430"
+
+
+#### Loop 1: Buscar quines combinacions de HIC i regió tenen polígons
 
 for(j in seq_along(regions)){
 
@@ -113,16 +118,58 @@ pol_flt <- pol[st_area(pol) > set_units(200, m2),]
 
 # Si no hi ha polígons per aquest HIC o regió passar al següent. 
    if(nrow(pol_flt)==0){
-        log_msg(level = "ATENCIÓ!", msg = paste("No hi ha polígons de:", hic, "a", regio))
+        log_msg(level = "ATENCIÓ!", msg = paste("No hi ha polígons <200m2 de:", hic, "a", regio))
         log_msg(level = "END", msg = paste("Acabat:", hic, "a", regio))
-            next
+
+
+        next    
    }
+
+
+st_write(pol_flt, paste0(dir_poligons, "Pol_", hic, "_", regio, ".gpkg"))
+log_msg(level = "END", msg = paste("Poligons guardats per: ", hic, "a", regio))
+
+}}
+
+### Loop 2: Comprovar el nombre de punts 
+
+## Llegir els polígons generats en el loop anterior (HICS i Regions amb poligons)
+
+pol_files <- list.files(dir_poligons, pattern = "\\.gpkg$", full.names = FALSE)
+pol_clean <- tools::file_path_sans_ext(pol_files)
+
+split_mat <- do.call(rbind, strsplit(pol_clean, "_"))
+
+files_df <- data.frame(
+  prefix = split_mat[,1],
+  HIC    = split_mat[,2],
+  Region = split_mat[,3],
+  row.names = NULL
+)
+
+log_file <- "results/02_Loop_punts_HIC/Log_punts_HIC_20260302.txt"
+
+hic <- "X9120"
+regio <- "MED"
+
+
+
+
+for(k in 1:nrow(files_df)) {
+
+  hic   <- files_df$HIC[k]
+  regio <- files_df$Region[k]
+
+log_msg(level = "START", msg = paste("Compençant a processar punts per: ", hic, "a", regio, 
+                                        k, "/", nrow(files_df)))
 
 #### Extreure punts mostrejats
 
 punts_hic_regio <- punts_mostrejats |> 
                         filter(COD_HIC_tf == hic & RegioHIC == regio)
 
+
+pol_flt <- st_read(paste0(dir_poligons, "/", pol_files[k]))
 
 #### Generar els punts (funció a utils.r). Segons si ja hi ha punts o no. 
 
@@ -136,37 +183,23 @@ resultat_punts <- generate_points_hic(pol_flt,
                                         n_target = 30, 
                                         min_dist = 199,
                                         n_reserva = 6, 
-                                        n_iter = 100)
-
-
-
-if (is.null(resultat_punts)) {
-    log_msg(level="ERROR",
-            msg=paste("No s'han pogut generar punts per:", hic, regio))
-    next
-}
-
+                                        n_iter = 9)
 
 
 #### Part 4: Desar els punts, poligons i malla per cada HIC i regió
 
-saveRDS(list(punts = resultat_punts$points, 
-                method = resultat_punts$method), 
+saveRDS(resultat_punts, 
                 paste0(dir_punts_mostreig, "Punts_", hic, "_", regio, ".rds"))
 
 if(nrow(resultat_punts$hic_points)>1){
 saveRDS(resultat_punts$hic_points, paste0(dir_malla, "Malla_", hic, "_", regio, ".rds"))
 }
 
-if(!is.null(resultat_punts$points_centre)){
-    saveRDS(resultat_punts$points_centre, paste0(dir_malla, "Punts_centre_", hic, "_", regio, ".rds"))
-}
-
-# Escric un shape amb el poligon filtrat per HIC i Regió
-write_sf(pol, paste0(dir_poligons, "Pol_", hic, "_", regio, ".shp"))
 
 log_msg(level = "END", msg = paste("Acabat:", hic, regio))
 
-}}
+
+}
+
 
 

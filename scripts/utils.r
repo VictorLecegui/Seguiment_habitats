@@ -71,6 +71,30 @@ select_polygons_200m <- function(sf_obj, dist = 200) {
   do.call(rbind, selected)
 }
 
+#### MARK: Balanç espacial aleatori
+points_random <- function(p_malla, 
+                               n_target,
+                               n_reserva, 
+                               legacy_points = NULL, 
+                               min_dist,
+                               maxtry = 10){
+
+    rand_points <- irs(p_malla, 
+                       n_base = n_target, 
+                       n_over = n_reserva,
+                       legacy_sites = legacy_points,
+                       mindis = min_dist,
+                       maxtry = maxtry)
+
+    points_bined <- sp_rbind(rand_points)
+    bal <- sp_balance(points_bined, p_malla)
+
+    return(bal$value)
+}
+
+
+
+
 #### MARK: HIC Function with the process of selecting points considering already sampled points: 
 
 generate_points_hic <- function(pol_flt,
@@ -81,7 +105,7 @@ generate_points_hic <- function(pol_flt,
                                 n_target = 30,
                                 n_reserva = 6, 
                                 min_dist = 199,
-                                n_iter = 100) {
+                                n_iter = 999) {
   
   #### Inici filtrem malla pel polígon de l'HIC
   
@@ -134,15 +158,19 @@ if (n_punts >= n_target + n_reserva) {
    # SI hi ha punts mostrejats 
     if (legacy == TRUE) {
       
-      n_remaining <- n_target - nrow(legacy_points)
-      
+      n_remaining <- (n_target + n_reserva) - nrow(legacy_points)
+      # Si encara queden punts per mostrejar
+
       if (n_remaining > 0) {
  
         points <- grts(hic_points,
                        n_base = n_target,
                        legacy_sites = legacy_points,
                        n_over = n_reserva,
-                       mindis = min_dist)
+                       mindis = min_dist,
+                       maxtry = 100,
+                       DesignID = paste0(hic,"_",regio)
+        )
 
         points_bined <- sp_rbind(points) # combinem:
           # Punts legacy
@@ -151,7 +179,8 @@ if (n_punts >= n_target + n_reserva) {
 
         points_bal <- sp_balance(points_bined, hic_points)
         
-        method <- "Malla + Legacy (GRTS)"
+        method <- "Malla_i_GRTS_amb_Legacy"
+        path <- 1
 
         # Comprovem dist min: 
       
@@ -161,65 +190,148 @@ if (n_punts >= n_target + n_reserva) {
                 TRUE,
                 FALSE)
 
-      } else {
+      } 
+      else 
+      # Si ja hi ha 36 punts mostrejats per HIC  
+      {
         points <- legacy_points
 
         points_bal <- sp_balance(points, hic_points)
 
-        method <- "Legacy >= 30"
-
-         m <- st_distance(points_bined)
+        method <- "Legacy_sup_30"
+        path <- 2
+         m <- st_distance(points)
         diag(m)<-Inf
         dist_sup_200 <- ifelse(min(m) > set_units(min_dist,m),
                 TRUE,
                 FALSE)        
       }
-  
+
+      #### Compute p-val of the spatial balance
+
+      rand_bal <- pbreplicate(
+                    n_iter,
+                    points_random(
+                      p_malla = hic_points,
+                      n_target = n_target,
+                      n_reserva = n_reserva,
+                      legacy_points = legacy_points,
+                      min_dist = min_dist
+                    )
+                  )
+
+      p_value <- (sum(rand_bal <= points_bal$value) + 1) / (n_iter + 1)
+      ses <- (points_bal$value - mean(rand_bal))/sd(rand_bal)
+      mean_rand <- mean(rand_bal)
+
   # NO hi ha punts mostrejats    
     } else {
       
        points <- grts(hic_points,
                        n_base = n_target,
                        n_over = n_reserva,
-                       mindis = min_dist)
+                       mindis = min_dist,
+                       maxtry = 100,
+                       DesignID = paste0(hic,"_",regio))
 
-      method <- "Malla + GRTS"
+      method <- "Malla_i_GRTS_no_legacy"
+      path  <- 3
 
       points_bined <- sp_rbind(points)
 
-      points_bal <- sp_balance(points_bined)
+      points_bal <- sp_balance(points_bined, hic_points)
 
       m <- st_distance(points_bined)
         diag(m)<-Inf
         dist_sup_200 <- ifelse(min(m) > set_units(min_dist,m),
                 TRUE,
                 FALSE)  
+      
+         rand_bal <- pbreplicate(
+                    n_iter,
+                    points_random(
+                      p_malla = hic_points,
+                      n_target = n_target,
+                      n_reserva = n_reserva,
+                      legacy_points = NULL,
+                      min_dist = min_dist
+                    )
+                  )
+
+      p_value <- (sum(rand_bal <= points_bal$value) + 1) / (n_iter + 1)
+      ses <- (points_bal$value - mean(rand_bal))/sd(rand_bal)
+      mean_rand <- mean(rand_bal)
 
     }
-  } else {
 
-    log_msg(level = "ATENCIÓ", msg = paste("Nombre de punts", hic, regio, ":", n_punts, "<", n_target + n_reserva))
-    next
+### Results when n_points >30 
+
+
+log_msg(level = paste(hic, regio), msg = paste(hic, regio, legacy, method, points_bal$value, p_value, dist_sup_200, path))
+
+n_legacy <- if (!is.null(legacy_points)) nrow(legacy_points) else 0
+
+meta_results <- c(hic, regio, legacy, n_legacy, method, points_bal$value, mean(rand_bal), ses, p_value, dist_sup_200, path, n_punts)
+names(meta_results) <- c("HIC", "Regio", "Legacy", "N_legacy", "Metode", "sp_balance_grts", "sp_balance_rand","sp_balance_SES", "sp_balance_p-val", "Dist_sup_200", "Ruta", "N_punts_disp") 
+
+meta_tbl <- tibble(values = meta_results,
+                      variables = names(meta_results),
+                      HIC = hic, 
+                      Regio = regio)
+  return(list(
+    points = points_bined,
+    hic_points = hic_points,
+    meta_points = meta_tbl))
+}
+
+
+### Si no hi ha 30 punts a la malla
+
+   else {
+
+    log_msg(level = "ATENCIÓ", msg = paste("Falta de punts per GRTS", hic, regio, ":", n_punts, "<", n_target + n_reserva))
+    
+### Generar punt central si un polígon no té punt: 
+
+ idx <- st_intersects(pol_flt, hic_points)
+ pol_no_points   <- pol_flt[lengths(idx) == 0, ]
+ points_pol <- st_point_on_surface(pol_no_points)
+  points_pol <- st_set_geometry(points_pol, "geometry")
+
+
+  hic_points2 <- hic_points |> mutate(Point_origin = "Malla")
+  points_pol <- points_pol |> mutate(Points_origin = "Centroid")
+  
+  points_sample <- bind_rows(hic_points2, points_pol)
+###
+
+path  <- 4
+method <- "Malla_i_pol_sense_punts"
+
+### Results when n_points < 30
+
+n_legacy <- if (!is.null(legacy_points)) nrow(legacy_points) else 0
+
+meta_results <- c(hic, regio, legacy, n_legacy, method, NA, NA, NA, NA, NA,path, nrow(points_sample))
+names(meta_results) <- c("HIC", "Regio", "Legacy", "N_legacy", "Metode", "sp_balance_grts", "sp_balance_rand","sp_balance_SES","sp_balance_p-val", "Dist_sup_200", "Ruta", "N_punts_disp") 
+
+log_msg(level = paste(hic, regio), msg = paste(hic, regio, legacy, method, dist_sup_200, path, nrow(points_sample)))
+
+
+meta_tbl <- tibble(values = meta_results,
+                      variables = names(meta_results),
+                      HIC = hic, 
+                      Regio = regio) 
+
+
+return(list(
+  points = points_sample,
+  hic_points = hic_points,
+  meta_points = meta_tbl
+))
 
   }
-  
-##### Guardem els resultats: 
-
-log_msg(level = "MÈTODE", msg = method)
-
-if(exists("points_pol")){
-    return(list(
-    points = points,
-    hic_points = hic_points,
-    points_centre = points_pol,
-    method_points = method  ))
-}
-
-  return(list(
-    points = points,
-    hic_points = hic_points,
-    method_points = method  ))
-}
+                                }
 
 
 ### MARK: Funció per generar punts pels grups de CORINE
