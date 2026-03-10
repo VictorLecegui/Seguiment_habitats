@@ -71,792 +71,874 @@ select_polygons_200m <- function(sf_obj, dist = 200) {
   do.call(rbind, selected)
 }
 
-#### Function with the process of selecting points considering already sampled points: 
+#### MARK: Balanç espacial aleatori
+points_random <- function(p_malla, 
+                               n_target,
+                               n_reserva, 
+                               legacy_points = NULL, 
+                               min_dist){
 
-generate_points_hic <- function(pol,
+    rand_points <- irs(p_malla, 
+                       n_base = n_target, 
+                       n_over = n_reserva,
+                       legacy_sites = legacy_points,
+                       mindis = min_dist,
+                       maxtry = 50)
+
+    if(!is.null(legacy_points) && nrow(legacy_points)> 0){
+        points_bined <- bind_rows(rand_points$sites_base,
+                                  rand_points$sites_legacy,
+                                  rand_points$sites_over)
+    } else {
+      points_bined <- bind_rows(rand_points$sites_base,
+                                  rand_points$sites_over) 
+    }
+
+   bal <- sp_balance(points_bined, p_malla)
+
+    return(bal$value)
+}
+
+
+
+
+
+
+#### MARK: HIC Function with the process of selecting points considering already sampled points: 
+
+generate_points_hic <- function(pol_flt,
                                 points_cat,
                                 hic,
                                 regio,
                                 legacy_points = NULL,
                                 n_target = 30,
-                                min_dist = 200,
-                                n_iter = 100) {
+                                n_reserva = 6, 
+                                min_dist = 199,
+                                n_iter = 999) {
   
   #### Inici filtrem malla pel polígon de l'HIC
   
-  points_cat_crop <- st_crop(points_cat, st_bbox(pol))
   
-  hic_points <- st_join(points_cat_crop, pol,
+  hic_points <- st_join(points_cat, pol_flt,
                         join = st_within, left = FALSE)
-  
-  # Considerem punts mostrejats per tenir el nombre de punts que tenim
-  # SI tenim punts mostrejats
-  if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-    
-    log_msg(msg = paste(nrow(legacy_points),
+
+ if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+
+# Filtrem punts a <99 m de la malla respecte els punts ja fets. 
+
+  close_to_legacy <- st_is_within_distance(
+                             hic_points,
+                             legacy_points,
+                            dist = set_units(99,m))
+
+  hic_points <- hic_points[lengths(close_to_legacy) == 0, ]
+
+# Nombre de punts totals 
+
+  log_msg(msg = paste(nrow(legacy_points),
                         "Punts ja mostrejats inclosos per l'HIC",
                         hic, "a", regio))
-    
-    n_punts <- nrow(hic_points) + nrow(legacy_points)
-    
-  } 
-  # NO tenim punts mostejats
-  else {
-    
-    log_msg(msg = paste("0 Punts ja mostrejats inclosos per l'HIC",
+
+  n_punts <- nrow(hic_points) + nrow(legacy_points)
+
+
+
+  legacy <- TRUE # Variable pel metadata final
+
+ } else {
+
+  log_msg(msg = paste("0 Punts ja mostrejats inclosos per l'HIC",
                         hic, "a", regio))
     
-    n_punts <- nrow(hic_points)
-  }
-  
-  
-  # Comprovem si el nombre de punts disponibles es inferior o superior als que volem
+  n_punts <- nrow(hic_points)
 
-  # Menys punts disponibles dels que volem: 
-  if (n_punts < n_target) {
+  legacy = FALSE # Variable pel metadata final
+
+                                }
+
+# Comprovem si el nombre de punts disponibles es inferior o superior als que volem
+
+# Més punts disponibles dels que volem: 
+
+if (n_punts >= n_target + n_reserva) {
     
-    log_msg(level = "ATENCIÓ!",
-            msg = paste("Menys de", n_target,
-                        "punts d'intersecció amb la malla per:",
-                        hic, regio))
-    # Busquem combinacions de polígons separats 200m entre ells
-    results <- lapply(1:n_iter,
-                      function(x) select_polygons_200m(pol, min_dist))
-    
-    # Millor combinació de polígons a 200m entre ells
-    best <- results[[which.max(sapply(results, nrow))]]
-    
-    # Si no hi ha polígons separats 200m entre ells Aturar el procés
-    if (nrow(best) == 0) {
-      log_msg(level = "ERROR",
-              msg = paste("Cap polígon seleccionat a més de",
-                          min_dist, "m:", hic, regio))
-      return(NULL)
-    }
-    
-    # SI hi ha pol separats 200m entre ells
-
-    # Extreure poligons que coincidien de la malla
-    idx <- st_contains(best, hic_points)
-    pol_with_points <- best[lengths(idx) > 0, ]
-    
-    # Poligons sense punts 
-    pol_no_points   <- best[lengths(idx) == 0, ]
-    
-    # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
-    if ((nrow(pol_no_points) + nrow(hic_points)) < n_target) {
-      
-      log_msg(msg = paste("Menys de", n_target,
-                          "polígons separats", min_dist,
-                          "m entre ells:", hic, regio))
-      # Generem un punt per polígon dels que no en teníen
-      points_pol <- st_point_on_surface(pol_no_points)
-      
-      # SI hih a punts mostrejats els afegim
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-        points <- rbind(points_pol, hic_points, legacy_points)
-        method <- "Centroide polígon (<30 pol & <30 points)"
-      } 
-      # NO hi ha punts mostejats (punts malla + punts centre)
-      else {
-        points <- rbind(points_pol, hic_points)
-        method <- "Centroide polígon (<30 pol & <30 points)"
-      }
-# Si una vegada ajuntem els polígons + punts malla etc. >30 punts
-     if(nrow(points) > n_target){
-      # SI hih a punts mostrejats els afegim
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) { 
-        points_close_legacy <- st_is_within_distance(
-                             points,
-                             legacy_points,
-                            dist = set_units(min_dist,m))
-        
-
-        points_no_legacy <- points[lengths(points_close_legacy) == 0, ]
-       
-        points <- grts(points_no_legacy, 
-                    n_base = n_target,
-                    mindis = min_dist,
-                    legacy_sites = legacy_points)
-        method <- "Centroide polígon (<30 pol & >30 points)"
-      } 
-      # NO hi ha punts mostejats (punts malla + punts centre + GRTS)
-      else {
-        points <- grts(points, 
-                    n_base = n_target, 
-                    mindis = min_dist)
-        method <- "Centroide polígon (<30 pol & >30 points)"
-      }
-     }
-
-     # Més de 30 polígons separats 200m entre ells 
-    } else {
-      
-      log_msg(msg = paste("Més de", n_target,
-                          "polígons amb distància mínima",
-                          min_dist, "m, aplicant GRTS per:",
-                          hic, regio))
-      
-      # Afegim un punt central en els polígons que no tenen punts
-      points_pol <- st_point_on_surface(pol_no_points)
-      # Ajuntem punts centroide + punts malla
-      points_pol <- rbind(hic_points, points_pol)
-
-      # SI hih a punts mostejats
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-        
-        # Calculem punts que queden per mostrejat
-        n_remaining <- n_target - nrow(legacy_points)
-        
-        # SI queden punts per mostrejar
-        if (n_remaining > 0) {
-          points_close_legacy <- st_is_within_distance(
-                             points_pol,
-                             legacy_points,
-                            dist = set_units(min_dist,m))
-        
-
-          points_no_legacy <- points_pol[lengths(points_close_legacy) == 0, ]
-
-          points <- grts(points_no_legacy,
-                         n_base = n_target,
-                         legacy_sites = legacy_points,
-                         mindis = min_dist)
-          method <- "Centroide polígon + GRTS (>30 pol)"
-
-        } else {
-          points <- legacy_points
-
-          method <- "30 punts ja mostrejats"
-        }
-  
-
-      # NO hi ha punts mostrejats
-      } else {
-        
-        points <- grts(points_pol,
-                       n_base = n_target,
-                       mindis = min_dist)
-        method <- "Centroide polígon + GRTS (>30 pol)"
-      }
-    }
-
-# Més de 30 punts en la intersecció amb la malla
-
-  } else {
-    
-    log_msg(msg = paste("Més de", n_target,
-                        "punts a la malla, aplicant GRTS:",
+    log_msg(msg = paste("Punts disponibles:", n_punts, ">=", n_target + n_reserva,
+                        ", aplicant GRTS:",
                         hic, regio))
 
    # SI hi ha punts mostrejats 
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+    if (legacy == TRUE) {
       
-      n_remaining <- n_target - nrow(legacy_points)
-      
+      n_remaining <- (n_target + n_reserva) - nrow(legacy_points)
+      # Si encara queden punts per mostrejar
+
       if (n_remaining > 0) {
-        points_close_legacy <- st_is_within_distance(
-                             hic_points,
-                             legacy_points,
-                            dist = set_units(min_dist,m))
-        
-
-        points_no_legacy <- hic_points[lengths(points_close_legacy) == 0, ]
-
-        points <- grts(points_no_legacy,
+ 
+        points <- grts(hic_points,
                        n_base = n_target,
                        legacy_sites = legacy_points,
-                       mindis = min_dist)
-        method <- "Malla + GRTS"
-      } else {
+                       n_over = n_reserva,
+                       mindis = min_dist,
+                       maxtry = 100,
+                       DesignID = paste0(hic,"_",regio)
+        )
+
+        points_bined <- sp_rbind(points) # combinem:
+          # Punts legacy
+          # Punts base
+          # Punts reserva
+
+        points_bal <- sp_balance(points_bined, hic_points)
+        
+        method <- "Malla_i_GRTS_amb_Legacy"
+        path <- 1
+
+        # Comprovem dist min: 
+      
+        m <- st_distance(points_bined)
+        diag(m)<-Inf
+        dist_sup_200 <- ifelse(min(m) > set_units(min_dist,m),
+                TRUE,
+                FALSE)
+
+      } 
+      else 
+      # Si ja hi ha 36 punts mostrejats per HIC  
+      {
         points <- legacy_points
-        method <- "30 punts ja mostrejats"
+
+        points_bal <- sp_balance(points, hic_points)
+
+        method <- "Legacy_sup_30"
+        path <- 2
+         m <- st_distance(points)
+        diag(m)<-Inf
+        dist_sup_200 <- ifelse(min(m) > set_units(min_dist,m),
+                TRUE,
+                FALSE)        
       }
-  
+
+      #### Compute p-val of the spatial balance
+
+    rand_bal <- future.apply::future_sapply(
+  seq_len(n_iter),
+  function(i, hic_points, n_target, n_reserva, min_dist) {
+        source("scripts/utils.R")
+    
+    tryCatch(
+      points_random(
+        p_malla = hic_points,
+        n_target = n_target,
+        n_reserva = n_reserva,
+        legacy_points = NULL,
+        min_dist = min_dist
+      ),
+      error = function(e) NA_real_
+    )
+
+  },
+  hic_points = hic_points,
+  n_target = n_target,
+  n_reserva = n_reserva,
+  min_dist = min_dist,
+  future.packages = c("sf", "dplyr", "spsurvey"),
+  future.seed = TRUE
+)
+        rand_bal_clean <- rand_bal[!is.na(rand_bal)]
+        n_fail <- sum(is.na(rand_bal))          
+
+      p_val <- (sum(rand_bal_clean < points_bal) + 1) / (length(rand_bal_clean) + 1)
+      ses <- (points_bal$value - mean(rand_bal_clean))/sd(rand_bal_clean)
+      mean_rand <- mean(rand_bal_clean, na.rm = TRUE)
+
   # NO hi ha punts mostrejats    
     } else {
       
-      points <- grts(hic_points,
-                     n_base = n_target,
-                     mindis = min_dist)
-      method <- "Malla + GRTS"
+       points <- grts(hic_points,
+                       n_base = n_target,
+                       n_over = n_reserva,
+                       mindis = min_dist,
+                       maxtry = 100,
+                       DesignID = paste0(hic,"_",regio))
+
+      method <- "Malla_i_GRTS_no_legacy"
+      path  <- 3
+
+      points_bined <- sp_rbind(points)
+
+      points_bal <- sp_balance(points_bined, hic_points)
+
+      m <- st_distance(points_bined)
+        diag(m)<-Inf
+        dist_sup_200 <- ifelse(min(m) > set_units(min_dist,m),
+                TRUE,
+                FALSE)  
+      
+     #### Compute p-val of the spatial balance
+
+    rand_bal <- future.apply::future_sapply(
+  seq_len(n_iter),
+  function(i, hic_points, n_target, n_reserva, min_dist) {
+        source("scripts/utils.R")
+    
+    tryCatch(
+      points_random(
+        p_malla = hic_points,
+        n_target = n_target,
+        n_reserva = n_reserva,
+        legacy_points = NULL,
+        min_dist = min_dist
+      ),
+      error = function(e) NA_real_
+    )
+
+  },
+  hic_points = hic_points,
+  n_target = n_target,
+  n_reserva = n_reserva,
+  min_dist = min_dist,
+  future.packages = c("sf", "dplyr", "spsurvey"),
+  future.seed = TRUE
+)
+        
+        rand_bal_clean <- rand_bal[!is.na(rand_bal)]
+        n_fail <- sum(is.na(rand_bal))          
+
+      p_val <- (sum(rand_bal_clean < points_bal) + 1) / (length(rand_bal_clean) + 1)
+      ses <- (points_bal$value - mean(rand_bal_clean))/sd(rand_bal_clean)
+      mean_rand <- mean(rand_bal_clean)
+
     }
-  }
-  
-##### Guardem els resultats: 
 
-log_msg(level = "MÈTODE", msg = method)
+### Results when n_points >30 
 
-if(exists("points_pol")){
-    return(list(
-    points = points,
-    hic_points = hic_points,
-    points_centre = points_pol,
-    method_points = method  ))
-}
 
+log_msg(level = paste(hic, regio), msg = paste(hic, regio, legacy, method, round(points_bal$value, 5), p_val, dist_sup_200, path, n_punts))
+
+n_legacy <- if (!is.null(legacy_points)) nrow(legacy_points) else 0
+
+meta_results <- c(hic, regio, legacy, n_legacy, method, points_bal$value, mean(rand_bal), ses, p_val, dist_sup_200, path, n_punts)
+names(meta_results) <- c("HIC", "Regio", "Legacy", "N_legacy", "Metode", "sp_balance_grts", "sp_balance_rand","sp_balance_SES", "sp_balance_p-val", "Dist_sup_200", "Ruta", "N_punts_disp") 
+
+meta_tbl <- tibble(values = meta_results,
+                      variables = names(meta_results),
+                      HIC = hic, 
+                      Regio = regio)
   return(list(
-    points = points,
+    points = points_bined,
     hic_points = hic_points,
-    method_points = method  ))
+    meta_points = meta_tbl))
 }
+
+
+### Si no hi ha 30 punts a la malla
+
+   else {
+
+    log_msg(level = "ATENCIÓ", msg = paste("Falta de punts per GRTS", hic, regio, ":", n_punts, "<", n_target + n_reserva))
+    
+### Generar punt central si un polígon no té punt: 
+
+ idx <- st_intersects(pol_flt, hic_points)
+ pol_no_points   <- pol_flt[lengths(idx) == 0, ]
+ points_pol <- st_point_on_surface(pol_no_points)
+  points_pol <- st_set_geometry(points_pol, "geometry")
+
+
+  hic_points2 <- hic_points |> mutate(Point_origin = "Malla")
+  points_pol <- points_pol |> mutate(Point_origin = "Centroid")
+  
+  points_sample <- bind_rows(hic_points2, points_pol)
+
+
+
+###
+
+path  <- 4
+method <- "Malla_i_pol_sense_punts"
+
+### Results when n_points < 30
+
+n_legacy <- if (!is.null(legacy_points)) nrow(legacy_points) else 0
+
+meta_results <- c(hic, regio, legacy, n_legacy, method, NA, NA, NA, NA, NA,path, nrow(points_sample))
+names(meta_results) <- c("HIC", "Regio", "Legacy", "N_legacy", "Metode", "sp_balance_grts", "sp_balance_rand","sp_balance_SES","sp_balance_p-val", "Dist_sup_200", "Ruta", "N_punts_disp") 
+
+log_msg(level = paste(hic, regio), msg = paste(hic, regio, legacy, method, path, nrow(points_sample)))
+
+
+meta_tbl <- tibble(values = meta_results,
+                      variables = names(meta_results),
+                      HIC = hic, 
+                      Regio = regio) 
+
+
+return(list(
+  points = points_sample,
+  hic_points = hic_points,
+  meta_points = meta_tbl
+))
+
+  }
+                                }
 
 
 ### MARK: Funció per generar punts pels grups de CORINE
 
 
 
-generate_points_grups <- function(pol,
-                                points_cat,
-                                grup,
-                                legacy_points = NULL,
-                                n_target = 30,
-                                min_dist = 200,
-                                n_iter = 100) {
+# generate_points_grups <- function(pol,
+#                                 points_cat,
+#                                 grup,
+#                                 legacy_points = NULL,
+#                                 n_target = 30,
+#                                 n_base = 6, 
+#                                 min_dist = 199,
+#                                 n_iter = 100) {
   
-  #### Inici filtrem malla pel polígon del grup
+#   #### Inici filtrem malla pel polígon del grup
 
   
-  grup_points <- st_join(points_cat, pol,
-                        join = st_within, left = FALSE)
+#   grup_points <- st_join(points_cat, pol,
+#                         join = st_within, left = FALSE)
 
 
-# Filtrar els punts de la malla que estan a <200m dels punts ja mostejats
+# # Filtrar els punts de la malla que estan a <200m dels punts ja mostejats
 
- if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#  if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
 
-    close_to_legacy <- st_is_within_distance(
-                             grup_points,
-                             legacy_points,
-                            dist = set_units(min_dist,m))
+#     close_to_legacy <- st_is_within_distance(
+#                              grup_points,
+#                              legacy_points,
+#                             dist = set_units(min_dist,m))
 
-    grup_points <- grup_points[lengths(close_to_legacy) == 0, ]
+#     grup_points <- grup_points[lengths(close_to_legacy) == 0, ]
 
-}
+# }
   
-  # Considerem punts mostrejats per tenir el nombre de punts que tenim
+#   # Considerem punts mostrejats per tenir el nombre de punts que tenim
   
-  # SI tenim punts mostrejats
-  if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#   # SI tenim punts mostrejats
+#   if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
     
-    log_msg(msg = paste(nrow(legacy_points),
-                        "Punts ja mostrejats inclosos pel grup",
-                        grup))
+#     log_msg(msg = paste(nrow(legacy_points),
+#                         "Punts ja mostrejats inclosos pel grup",
+#                         grup))
     
-    n_punts <- nrow(grup_points) + nrow(legacy_points)
+#     n_punts <- nrow(grup_points) + nrow(legacy_points)
     
-  } 
-  # NO tenim punts mostejats
-  else {
+#   } 
+#   # NO tenim punts mostejats
+#   else {
     
-    log_msg(msg = paste("0 Punts ja mostrejats inclosos pel grup",
-                        grup))
+#     log_msg(msg = paste("0 Punts ja mostrejats inclosos pel grup",
+#                         grup))
     
-    n_punts <- nrow(grup_points)
-  }
+#     n_punts <- nrow(grup_points)
+#   }
   
   
-  # Comprovem si el nombre de punts disponibles es inferior o superior als que volem
+#   # Comprovem si el nombre de punts disponibles es inferior o superior als que volem
 
-  # Menys punts disponibles dels que volem: 
-  if (n_punts < n_target) {
+#   # Menys punts disponibles dels que volem: 
+#   if (n_punts < n_target) {
     
-    log_msg(level = "ATENCIÓ!",
-            msg = paste("Menys de", n_target,
-                        "punts d'intersecció amb la malla per:",
-                        grup))
-    # Busquem combinacions de polígons separats 200m entre ells
-    results <- lapply(1:n_iter,
-                      function(x) select_polygons_200m(pol, min_dist))
+#     log_msg(level = "ATENCIÓ!",
+#             msg = paste("Menys de", n_target,
+#                         "punts d'intersecció amb la malla per:",
+#                         grup))
+#     # Busquem combinacions de polígons separats 200m entre ells
+#     results <- lapply(1:n_iter,
+#                       function(x) select_polygons_200m(pol, min_dist))
     
-    # Millor combinació de polígons a 200m entre ells
-    best <- results[[which.max(sapply(results, nrow))]]
+#     # Millor combinació de polígons a 200m entre ells
+#     best <- results[[which.max(sapply(results, nrow))]]
     
-    # Si no hi ha polígons separats 200m entre ells Aturar el procés
-    if (nrow(best) == 0) {
-      log_msg(level = "ERROR",
-              msg = paste("Cap polígon seleccionat a més de",
-                          min_dist, "m:", grup))
-      return(NULL)
-    }
+#     # Si no hi ha polígons separats 200m entre ells Aturar el procés
+#     if (nrow(best) == 0) {
+#       log_msg(level = "ERROR",
+#               msg = paste("Cap polígon seleccionat a més de",
+#                           min_dist, "m:", grup))
+#       return(NULL)
+#     }
     
-    # SI hi ha pol separats 200m entre ells
+#     # SI hi ha pol separats 200m entre ells
 
-    # Extreure poligons que coincidien de la malla
-    idx <- st_contains(best, grup_points)
-    pol_with_points <- best[lengths(idx) > 0, ]
+#     # Extreure poligons que coincidien de la malla
+#     idx <- st_contains(best, grup_points)
+#     pol_with_points <- best[lengths(idx) > 0, ]
     
-    # Poligons sense punts 
-    pol_no_points   <- best[lengths(idx) == 0, ]
+#     # Poligons sense punts 
+#     pol_no_points   <- best[lengths(idx) == 0, ]
     
-    # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
-    if ((nrow(pol_no_points) + nrow(grup_points)) < n_target) {
+#     # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
+#     if ((nrow(pol_no_points) + nrow(grup_points)) < n_target) {
       
-      log_msg(msg = paste("Menys de", n_target,
-                          "polígons separats", min_dist,
-                          "m entre ells:", grup))
-      # Generem un punt per polígon dels que no en teníen
-      points_pol <- st_point_on_surface(pol_no_points)
+#       log_msg(msg = paste("Menys de", n_target,
+#                           "polígons separats", min_dist,
+#                           "m entre ells:", grup))
+#       # Generem un punt per polígon dels que no en teníen
+#       points_pol <- st_point_on_surface(pol_no_points)
       
-      # SI hih a punts mostrejats els afegim
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-          points_pol <- st_set_geometry(points_pol, "geometry")
-          grup_points <- st_set_geometry(grup_points, "geometry")
-          legacy_points <- st_set_geometry(legacy_points, "geometry")
+#       # SI hih a punts mostrejats els afegim
+#       if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#           points_pol <- st_set_geometry(points_pol, "geometry")
+#           grup_points <- st_set_geometry(grup_points, "geometry")
+#           legacy_points <- st_set_geometry(legacy_points, "geometry")
 
 
-        points <- bind_rows(points_pol, grup_points, legacy_points)
+#         points <- bind_rows(points_pol, grup_points, legacy_points)
 
-        if(nrow(points) > n_target){
-            points <- grts(points, 
-                    n_base = n_target,
-                    mindis = min_dist,
-                    legacy_sites = legacy_points)
+#         if(nrow(points) > n_target){
+#             points <- grts(points, 
+#                     n_base = n_target,
+#                     mindis = min_dist,
+#                     legacy_sites = legacy_points)
             
-             method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
-        } else {
-             method <- "Centroide polígon (<30 pol & <30 points)"
-        }
+#              method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
+#         } else {
+#              method <- "Centroide polígon (<30 pol & <30 points)"
+#         }
 
-      } 
-      # NO hi ha punts mostejats (punts malla + punts centre)
-      else {
+#       } 
+#       # NO hi ha punts mostejats (punts malla + punts centre)
+#       else {
         
-        points_pol <- st_set_geometry(points_pol, "geometry")
-        grup_points <- st_set_geometry(grup_points, "geometry")
+#         points_pol <- st_set_geometry(points_pol, "geometry")
+#         grup_points <- st_set_geometry(grup_points, "geometry")
         
-        points <- bind_rows(points_pol, grup_points)
+#         points <- bind_rows(points_pol, grup_points)
 
-        if(nrow(points) > n_target){
-             points <- grts(points, 
-                    n_base = n_target, 
-                    mindis = min_dist)
+#         if(nrow(points) > n_target){
+#              points <- grts(points, 
+#                     n_base = n_target, 
+#                     mindis = min_dist)
 
-            method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
+#             method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
 
-        }
-        method <- "Centroide polígon (<30 pol & <30 points)"
-      }
+#         }
+#         method <- "Centroide polígon (<30 pol & <30 points)"
+#       }
 
-     # Més de 30 polígons separats 200m entre ells 
-    } else {
+#      # Més de 30 polígons separats 200m entre ells 
+#     } else {
       
-      log_msg(msg = paste("Més de", n_target,
-                          "polígons amb distància mínima",
-                          min_dist, "m, aplicant GRTS per:",
-                          grup))
+#       log_msg(msg = paste("Més de", n_target,
+#                           "polígons amb distància mínima",
+#                           min_dist, "m, aplicant GRTS per:",
+#                           grup))
       
-      # Afegim un punt central en els polígons que no tenen punts
-      points_pol <- st_point_on_surface(pol_no_points)
-      # Ajuntem punts centroide + punts malla
-      points_pol <- rbind(grup_points, points_pol)
+#       # Afegim un punt central en els polígons que no tenen punts
+#       points_pol <- st_point_on_surface(pol_no_points)
+#       # Ajuntem punts centroide + punts malla
+#       points_pol <- rbind(grup_points, points_pol)
 
-      # SI hih a punts mostejats
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#       # SI hih a punts mostejats
+#       if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
         
-        # Calculem punts que queden per mostrejat
-        n_remaining <- n_target - nrow(legacy_points)
+#         # Calculem punts que queden per mostrejat
+#         n_remaining <- n_target - nrow(legacy_points)
         
-        # SI queden punts per mostrejar
-        if (n_remaining > 0) {
+#         # SI queden punts per mostrejar
+#         if (n_remaining > 0) {
 
-          points <- grts(points_pol,
-                         n_base = n_target,
-                         legacy_sites = legacy_points,
-                         mindis = min_dist)
-          method <- "Centroide polígon + GRTS (>30 pol)"
+#           points <- grts(points_pol,
+#                          n_base = n_target,
+#                          legacy_sites = legacy_points,
+#                          mindis = min_dist)
+#           method <- "Centroide polígon + GRTS (>30 pol)"
 
-        } else {
-          points <- legacy_points
+#         } else {
+#           points <- legacy_points
 
-          method <- "30 punts ja mostrejats"
-        }
+#           method <- "30 punts ja mostrejats"
+#         }
   
 
-      # NO hi ha punts mostrejats
-      } else {
+#       # NO hi ha punts mostrejats
+#       } else {
         
-        points <- grts(points_pol,
-                       n_base = n_target,
-                       mindis = min_dist)
-        method <- "Centroide polígon + GRTS (>30 pol)"
-      }
-    }
+#         points <- grts(points_pol,
+#                        n_base = n_target,
+#                        mindis = min_dist)
+#         method <- "Centroide polígon + GRTS (>30 pol)"
+#       }
+#     }
 
-# Més de 30 punts en la intersecció amb la malla
+# # Més de 30 punts en la intersecció amb la malla
 
-  } else {
+#   } else {
     
-    log_msg(msg = paste("Més de", n_target,
-                        "punts a la malla, aplicant GRTS:",
-                        grup))
+#     log_msg(msg = paste("Més de", n_target,
+#                         "punts a la malla, aplicant GRTS:",
+#                         grup))
 
-   # SI hi ha punts mostrejats 
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#    # SI hi ha punts mostrejats 
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
       
-      n_remaining <- n_target - nrow(legacy_points)
+#       n_remaining <- n_target - nrow(legacy_points)
       
-      if (n_remaining > 0) {
-        points <- grts(grup_points,
-                       n_base = n_target,
-                       legacy_sites = legacy_points,
-                       mindis = min_dist)
-        method <- "Malla + GRTS"
-      } else {
-        points <- legacy_points
-        method <- "30 punts ja mostrejats"
-      }
+#       if (n_remaining > 0) {
+#         points <- grts(grup_points,
+#                        n_base = n_target,
+#                        legacy_sites = legacy_points,
+#                        mindis = min_dist)
+#         method <- "Malla + GRTS"
+#       } else {
+#         points <- legacy_points
+#         method <- "30 punts ja mostrejats"
+#       }
   
-  # NO hi ha punts mostrejats    
-    } else {
+#   # NO hi ha punts mostrejats    
+#     } else {
       
-      points <- grts(grup_points,
-                     n_base = n_target,
-                     mindis = min_dist)
-      method <- "Malla + GRTS"
-    }
-  }
+#       points <- grts(grup_points,
+#                      n_base = n_target,
+#                      mindis = min_dist)
+#       method <- "Malla + GRTS"
+#     }
+#   }
   
-##### Guardem els resultats: 
+# ##### Guardem els resultats: 
 
-log_msg(level = "MÈTODE", msg = method)
+# log_msg(level = "MÈTODE", msg = method)
 
-if(exists("points_pol")){
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-     result_list <- list(
-        points = points,
-        grup_points = grup_points,
-        points_centre = points_pol,
-        method_points = method,
-        n_legacy = nrow(legacy_points)  )
+# if(exists("points_pol")){
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#      result_list <- list(
+#         points = points,
+#         grup_points = grup_points,
+#         points_centre = points_pol,
+#         method_points = method,
+#         n_legacy = nrow(legacy_points)  )
 
-    return(result_list)
-    } else {
-         result_list <- list(
-        points = points,
-        grup_points = grup_points,
-        points_centre = points_pol,
-        method_points = method)
+#     return(result_list)
+#     } else {
+#          result_list <- list(
+#         points = points,
+#         grup_points = grup_points,
+#         points_centre = points_pol,
+#         method_points = method)
 
-    return(result_list)
+#     return(result_list)
 
-    }
+#     }
 
-} else {
+# } else {
 
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-     result_list <- list(
-        points = points,
-        grup_points = grup_points,
-        method_points = method,
-        n_legacy = nrow(legacy_points)  )
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#      result_list <- list(
+#         points = points,
+#         grup_points = grup_points,
+#         method_points = method,
+#         n_legacy = nrow(legacy_points)  )
 
-    return(result_list)
-    } else {
-         result_list <- list(
-        points = points,
-        grup_points = grup_points,
-        method_points = method)
+#     return(result_list)
+#     } else {
+#          result_list <- list(
+#         points = points,
+#         grup_points = grup_points,
+#         method_points = method)
         
-    return(result_list)
+#     return(result_list)
 
-    }
+#     }
 
 
-}
-}
+# }
+# }
 
-### MARK: Funció generar punts LLista vermella
+# ### MARK: Funció generar punts LLista vermella
 
-generate_points_LV <- function(pol,
-                                points_cat,
-                                corine,
-                                legacy_points = NULL,
-                                n_target = 30,
-                                min_dist = 200,
-                                n_iter = 100) {
+# generate_points_LV <- function(pol,
+#                                 points_cat,
+#                                 corine,
+#                                 legacy_points = NULL,
+#                                 n_target = 30,
+#                                 min_dist = 200,
+#                                 n_iter = 100) {
   
-  # Check if there are duplicated legacy points
+#   # Check if there are duplicated legacy points
 
-if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+# if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
   
-  dup_leg <- duplicated(st_geometry(legacy_points))
+#   dup_leg <- duplicated(st_geometry(legacy_points))
   
-  if (any(dup_leg)) {
-    stop(paste("Duplicated points in Legacy points in", corine))
-  }
-}
+#   if (any(dup_leg)) {
+#     stop(paste("Duplicated points in Legacy points in", corine))
+#   }
+# }
 
-  #### Inici filtrem malla pel polígon del grup
+#   #### Inici filtrem malla pel polígon del grup
 
   
-  corine_points <- st_join(points_cat, pol,
-                        join = st_within, left = FALSE)
+#   corine_points <- st_join(points_cat, pol,
+#                         join = st_within, left = FALSE)
 
 
-# Filtrar els punts de la malla que estan a <200m dels punts ja mostejats
+# # Filtrar els punts de la malla que estan a <200m dels punts ja mostejats
 
- if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#  if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
 
-    close_to_legacy <- st_is_within_distance(
-                             corine_points,
-                             legacy_points,
-                            dist = set_units(100,m))
+#     close_to_legacy <- st_is_within_distance(
+#                              corine_points,
+#                              legacy_points,
+#                             dist = set_units(100,m))
 
-    corine_points <- corine_points[lengths(close_to_legacy) == 0, ]
+#     corine_points <- corine_points[lengths(close_to_legacy) == 0, ]
 
-}
+# }
   
-  # Considerem punts mostrejats per tenir el nombre de punts que tenim
+#   # Considerem punts mostrejats per tenir el nombre de punts que tenim
   
-  # SI tenim punts mostrejats
-  if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#   # SI tenim punts mostrejats
+#   if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
     
-    log_msg(msg = paste(nrow(legacy_points),
-                        "Punts ja mostrejats inclosos pel CORINE:",
-                        corine))
+#     log_msg(msg = paste(nrow(legacy_points),
+#                         "Punts ja mostrejats inclosos pel CORINE:",
+#                         corine))
     
-    n_punts <- nrow(corine_points) + nrow(legacy_points)
+#     n_punts <- nrow(corine_points) + nrow(legacy_points)
     
-  } 
-  # NO tenim punts mostejats
-  else {
+#   } 
+#   # NO tenim punts mostejats
+#   else {
     
-    log_msg(msg = paste("0 Punts ja mostrejats inclosos pel CORINE",
-                        corine))
+#     log_msg(msg = paste("0 Punts ja mostrejats inclosos pel CORINE",
+#                         corine))
     
-    n_punts <- nrow(corine_points)
-  }
+#     n_punts <- nrow(corine_points)
+#   }
   
   
-  # Comprovem si el nombre de punts disponibles es inferior o superior als que volem
+#   # Comprovem si el nombre de punts disponibles es inferior o superior als que volem
 
- log_msg(level = "INFO",
-            msg = paste(n_punts,
-                        " disponibles per:",
-                        corine))
-  # Menys punts disponibles dels que volem: 
-  if (n_punts < n_target) {
+#  log_msg(level = "INFO",
+#             msg = paste(n_punts,
+#                         " disponibles per:",
+#                         corine))
+#   # Menys punts disponibles dels que volem: 
+#   if (n_punts < n_target) {
     
-    log_msg(level = "ATENCIÓ!",
-            msg = paste("Menys de", n_target,
-                        "punts d'intersecció amb la malla per:",
-                        corine))
-    # Busquem combinacions de polígons separats 200m entre ells
-    results <- lapply(1:n_iter,
-                      function(x) select_polygons_200m(pol, min_dist))
+#     log_msg(level = "ATENCIÓ!",
+#             msg = paste("Menys de", n_target,
+#                         "punts d'intersecció amb la malla per:",
+#                         corine))
+#     # Busquem combinacions de polígons separats 200m entre ells
+#     results <- lapply(1:n_iter,
+#                       function(x) select_polygons_200m(pol, min_dist))
     
-    # Millor combinació de polígons a 200m entre ells
-    best <- results[[which.max(sapply(results, nrow))]]
+#     # Millor combinació de polígons a 200m entre ells
+#     best <- results[[which.max(sapply(results, nrow))]]
     
-    # Si no hi ha polígons separats 200m entre ells Aturar el procés
-    if (nrow(best) == 0) {
-      log_msg(level = "ERROR",
-              msg = paste("Cap polígon seleccionat a més de",
-                          min_dist, "m:", corine))
-      return(NULL)
-    }
+#     # Si no hi ha polígons separats 200m entre ells Aturar el procés
+#     if (nrow(best) == 0) {
+#       log_msg(level = "ERROR",
+#               msg = paste("Cap polígon seleccionat a més de",
+#                           min_dist, "m:", corine))
+#       return(NULL)
+#     }
     
-    # SI hi ha pol separats 200m entre ells
+#     # SI hi ha pol separats 200m entre ells
 
-    # Extreure poligons que coincidien de la malla
-    idx <- st_contains(best, corine_points)
-    pol_with_points <- best[lengths(idx) > 0, ]
+#     # Extreure poligons que coincidien de la malla
+#     idx <- st_contains(best, corine_points)
+#     pol_with_points <- best[lengths(idx) > 0, ]
     
-    # Poligons sense punts 
-    pol_no_points   <- best[lengths(idx) == 0, ]
+#     # Poligons sense punts 
+#     pol_no_points   <- best[lengths(idx) == 0, ]
     
-    # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
-    if ((nrow(pol_no_points) + nrow(corine_points)) < n_target) {
+#     # Menys de 30 poligons separats 200m entre ells i menys de 30 punts a la malla
+#     if ((nrow(pol_no_points) + nrow(corine_points)) < n_target) {
       
-      log_msg(msg = paste("Menys de", n_target,
-                          "polígons separats", min_dist,
-                          "m entre ells:", corine))
-      # Generem un punt per polígon dels que no en teníen
-      points_pol <- st_point_on_surface(pol_no_points)
+#       log_msg(msg = paste("Menys de", n_target,
+#                           "polígons separats", min_dist,
+#                           "m entre ells:", corine))
+#       # Generem un punt per polígon dels que no en teníen
+#       points_pol <- st_point_on_surface(pol_no_points)
       
-      # SI hih a punts mostrejats els afegim
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-          points_pol <- st_set_geometry(points_pol, "geometry")
-          corine_points <- st_set_geometry(corine_points, "geometry")
-          legacy_points <- st_set_geometry(legacy_points, "geometry")
+#       # SI hih a punts mostrejats els afegim
+#       if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#           points_pol <- st_set_geometry(points_pol, "geometry")
+#           corine_points <- st_set_geometry(corine_points, "geometry")
+#           legacy_points <- st_set_geometry(legacy_points, "geometry")
 
 
-        points <- bind_rows(points_pol, corine_points, legacy_points)
+#         points <- bind_rows(points_pol, corine_points, legacy_points)
 
-        dup_pts <- duplicated(st_geometry(points))
-        points <- points[!dup_pts,]
+#         dup_pts <- duplicated(st_geometry(points))
+#         points <- points[!dup_pts,]
 
 
-        if(nrow(points) > n_target){
-            points <- grts(points, 
-                    n_base = n_target,
-                    mindis = min_dist,
-                    legacy_sites = legacy_points)
+#         if(nrow(points) > n_target){
+#             points <- grts(points, 
+#                     n_base = n_target,
+#                     mindis = min_dist,
+#                     legacy_sites = legacy_points)
 
-             method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
-        } else {
-             method <- "Centroide polígon (<30 pol & <30 points)"
-        }
+#              method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
+#         } else {
+#              method <- "Centroide polígon (<30 pol & <30 points)"
+#         }
 
-      } 
-      # NO hi ha punts mostejats (punts malla + punts centre)
-      else {
+#       } 
+#       # NO hi ha punts mostejats (punts malla + punts centre)
+#       else {
         
-        points_pol <- st_set_geometry(points_pol, "geometry")
-        corine_points <- st_set_geometry(corine_points, "geometry")
+#         points_pol <- st_set_geometry(points_pol, "geometry")
+#         corine_points <- st_set_geometry(corine_points, "geometry")
         
-        points <- bind_rows(points_pol, corine_points)
+#         points <- bind_rows(points_pol, corine_points)
 
-        dup_pts <- duplicated(st_geometry(points))
-        points <- points[!dup,]
+#         dup_pts <- duplicated(st_geometry(points))
+#         points <- points[!dup,]
 
 
-        if(nrow(points) > n_target){
-             points <- grts(points, 
-                    n_base = n_target, 
-                    mindis = min_dist)
+#         if(nrow(points) > n_target){
+#              points <- grts(points, 
+#                     n_base = n_target, 
+#                     mindis = min_dist)
 
-            method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
+#             method <- "Centroide polígon (<30 pol & >30 points) - GRTS"
 
-        }
-        method <- "Centroide polígon (<30 pol & <30 points)"
-      }
+#         }
+#         method <- "Centroide polígon (<30 pol & <30 points)"
+#       }
 
-     # Més de 30 polígons separats 200m entre ells 
-    } else {
+#      # Més de 30 polígons separats 200m entre ells 
+#     } else {
       
-      log_msg(msg = paste("Més de", n_target,
-                          "polígons amb distància mínima",
-                          min_dist, "m, aplicant GRTS per:",
-                          corine))
+#       log_msg(msg = paste("Més de", n_target,
+#                           "polígons amb distància mínima",
+#                           min_dist, "m, aplicant GRTS per:",
+#                           corine))
       
-      # Afegim un punt central en els polígons que no tenen punts
-      points_pol <- st_point_on_surface(pol_no_points)
-      # Ajuntem punts centroide + punts malla
-      corine_points <- st_set_geometry(corine_points, "geometry")
-      points_pol <- st_set_geometry(points_pol, "geometry")
+#       # Afegim un punt central en els polígons que no tenen punts
+#       points_pol <- st_point_on_surface(pol_no_points)
+#       # Ajuntem punts centroide + punts malla
+#       corine_points <- st_set_geometry(corine_points, "geometry")
+#       points_pol <- st_set_geometry(points_pol, "geometry")
 
-      points_pol <- bind_rows(corine_points, points_pol)
+#       points_pol <- bind_rows(corine_points, points_pol)
 
-      dup_pts <- duplicated(st_geometry(points_pol))
-      points_pol <- points_pol[!dup_pts,]
+#       dup_pts <- duplicated(st_geometry(points_pol))
+#       points_pol <- points_pol[!dup_pts,]
 
-      # SI hih a punts mostejats
-      if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#       # SI hih a punts mostejats
+#       if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
         
-        # Calculem punts que queden per mostrejat
-        n_remaining <- n_target - nrow(legacy_points)
+#         # Calculem punts que queden per mostrejat
+#         n_remaining <- n_target - nrow(legacy_points)
         
-        # SI queden punts per mostrejar
-        if (n_remaining > 0) {
+#         # SI queden punts per mostrejar
+#         if (n_remaining > 0) {
 
-          points <- grts(points_pol,
-                         n_base = n_target,
-                         legacy_sites = legacy_points,
-                         mindis = min_dist)
-          method <- "Centroide polígon + GRTS (>30 pol)"
+#           points <- grts(points_pol,
+#                          n_base = n_target,
+#                          legacy_sites = legacy_points,
+#                          mindis = min_dist)
+#           method <- "Centroide polígon + GRTS (>30 pol)"
 
-        } else {
-          points <- legacy_points
+#         } else {
+#           points <- legacy_points
 
-          method <- "30 punts ja mostrejats"
-        }
+#           method <- "30 punts ja mostrejats"
+#         }
   
 
-      # NO hi ha punts mostrejats
-      } else {
+#       # NO hi ha punts mostrejats
+#       } else {
         
-        points <- grts(points_pol,
-                       n_base = n_target,
-                       mindis = min_dist)
-        method <- "Centroide polígon + GRTS (>30 pol)"
-      }
-    }
+#         points <- grts(points_pol,
+#                        n_base = n_target,
+#                        mindis = min_dist)
+#         method <- "Centroide polígon + GRTS (>30 pol)"
+#       }
+#     }
 
-# Més de 30 punts en la intersecció amb la malla
+# # Més de 30 punts en la intersecció amb la malla
 
-  } else {
+#   } else {
     
-    log_msg(msg = paste("Més de", n_target,
-                        "punts a la malla, aplicant GRTS:",
-                        corine))
+#     log_msg(msg = paste("Més de", n_target,
+#                         "punts a la malla, aplicant GRTS:",
+#                         corine))
 
-   # SI hi ha punts mostrejats 
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#    # SI hi ha punts mostrejats 
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
       
-      n_remaining <- n_target - nrow(legacy_points)
+#       n_remaining <- n_target - nrow(legacy_points)
 
-      points_disp <- bind_rows(corine_points, legacy_points)
+#       points_disp <- bind_rows(corine_points, legacy_points)
 
 
-      if (n_remaining > 0) {
-        points <- grts(points_disp,
-                       n_base = n_target,
-                       legacy_sites = legacy_points,
-                       mindis = min_dist)
+#       if (n_remaining > 0) {
+#         points <- grts(points_disp,
+#                        n_base = n_target,
+#                        legacy_sites = legacy_points,
+#                        mindis = min_dist)
         
-        method <- "Malla + GRTS"
-      } else {
-        points <- legacy_points
-        method <- "30 punts ja mostrejats"
-      }
+#         method <- "Malla + GRTS"
+#       } else {
+#         points <- legacy_points
+#         method <- "30 punts ja mostrejats"
+#       }
   
-  # NO hi ha punts mostrejats    
-    } else {
+#   # NO hi ha punts mostrejats    
+#     } else {
       
-      points <- grts(corine_points,
-                     n_base = n_target,
-                     mindis = min_dist)
-      method <- "Malla + GRTS"
-    }
-  }
+#       points <- grts(corine_points,
+#                      n_base = n_target,
+#                      mindis = min_dist)
+#       method <- "Malla + GRTS"
+#     }
+#   }
   
-##### Guardem els resultats: 
+# ##### Guardem els resultats: 
 
-log_msg(level = "MÈTODE", msg = method)
+# log_msg(level = "MÈTODE", msg = method)
 
-if(exists("points_pol")){
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-     result_list <- list(
-        points = points,
-        corine_points = corine_points,
-        points_centre = points_pol,
-        method_points = method,
-        n_legacy = nrow(legacy_points)  )
+# if(exists("points_pol")){
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#      result_list <- list(
+#         points = points,
+#         corine_points = corine_points,
+#         points_centre = points_pol,
+#         method_points = method,
+#         n_legacy = nrow(legacy_points)  )
 
-    return(result_list)
-    } else {
-         result_list <- list(
-        points = points,
-        corine_points = corine_points,
-        points_centre = points_pol,
-        method_points = method)
+#     return(result_list)
+#     } else {
+#          result_list <- list(
+#         points = points,
+#         corine_points = corine_points,
+#         points_centre = points_pol,
+#         method_points = method)
 
-    return(result_list)
+#     return(result_list)
 
-    }
+#     }
 
-} else {
+# } else {
 
-    if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
-     result_list <- list(
-        points = points,
-        corine_points = corine_points,
-        method_points = method,
-        n_legacy = nrow(legacy_points)  )
+#     if (!is.null(legacy_points) && nrow(legacy_points) > 0) {
+#      result_list <- list(
+#         points = points,
+#         corine_points = corine_points,
+#         method_points = method,
+#         n_legacy = nrow(legacy_points)  )
 
-    return(result_list)
-    } else {
-         result_list <- list(
-        points = points,
-        corine_points = corine_points,
-        method_points = method)
+#     return(result_list)
+#     } else {
+#          result_list <- list(
+#         points = points,
+#         corine_points = corine_points,
+#         method_points = method)
         
-    return(result_list)
+#     return(result_list)
 
-    }
+#     }
 
-}
-}
+# }
+# }
 

@@ -1,0 +1,210 @@
+[2026-03-09 23:14:39] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-09 23:15:23] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X2270. a MED
+[2026-03-09 23:15:23] [INFO] Punts disponibles: 1550 >= 36 , aplicant GRTS: X2270. MED
+[2026-03-09 23:16:22] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-09 23:16:30] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X2270. a MED
+[2026-03-09 23:16:30] [INFO] Punts disponibles: 1550 >= 36 , aplicant GRTS: X2270. MED
+[2026-03-09 23:18:35] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-09 23:18:44] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X2270. a MED
+[2026-03-09 23:18:44] [INFO] Punts disponibles: 1550 >= 36 , aplicant GRTS: X2270. MED
+[2026-03-09 23:25:16] [X2270. MED] X2270. MED FALSE Malla_i_GRTS_no_legacy 0.02827 0.003 TRUE 3 1550
+[2026-03-09 23:25:16] [END] Acabat: X2270. MED
+[2026-03-09 23:25:16] [START] Compençant a processar punts per:  X3240 a ALP 2 / 39
+[2026-03-09 23:25:27] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a ALP
+[2026-03-09 23:25:27] [INFO] Punts disponibles: 778 >= 36 , aplicant GRTS: X3240 ALP
+[2026-03-09 23:30:12] [X3240 ALP] X3240 ALP FALSE Malla_i_GRTS_no_legacy 0.04925 0.003 TRUE 3 778
+[2026-03-09 23:30:12] [END] Acabat: X3240 ALP
+[2026-03-09 23:30:12] [START] Compençant a processar punts per:  X3240 a MED 3 / 39
+[2026-03-09 23:30:21] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a MED
+[2026-03-09 23:30:21] [INFO] Punts disponibles: 784 >= 36 , aplicant GRTS: X3240 MED
+[2026-03-09 23:35:04] [X3240 MED] X3240 MED FALSE Malla_i_GRTS_no_legacy 0.02173 0.00301204819277108 TRUE 3 784
+[2026-03-09 23:35:04] [END] Acabat: X3240 MED
+[2026-03-09 23:35:04] [START] Compençant a processar punts per:  X9120 a ALP 4 / 39
+[2026-03-10 08:50:01] [START] Compençant a processar punts per:  X9120 a ALP 4 / 39
+[2026-03-10 08:50:09] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9120 a ALP
+[2026-03-10 08:50:09] [INFO] Punts disponibles: 2432 >= 36 , aplicant GRTS: X9120 ALP
+[2026-03-10 08:55:48] [X9120 ALP] X9120 ALP FALSE Malla_i_GRTS_no_legacy 0.03637 0.003 TRUE 3 2432
+[2026-03-10 08:55:48] [END] Acabat: X9120 ALP
+[2026-03-10 08:55:48] [START] Compençant a processar punts per:  X9120 a MED 5 / 39
+[2026-03-10 08:56:02] [INFO] 14 Punts ja mostrejats inclosos per l'HIC X9120 a MED
+[2026-03-10 08:56:02] [INFO] Punts disponibles: 5522 >= 36 , aplicant GRTS: X9120 MED
+[2026-03-10 09:00:43] [X9120 MED] X9120 MED TRUE Malla_i_GRTS_amb_Legacy 0.04963 0.003 TRUE 1 5522
+[2026-03-10 09:00:44] [END] Acabat: X9120 MED
+[2026-03-10 09:00:44] [START] Compençant a processar punts per:  X9130 a ALP 6 / 39
+[2026-03-10 09:00:53] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9130 a ALP
+[2026-03-10 09:00:53] [INFO] Punts disponibles: 5225 >= 36 , aplicant GRTS: X9130 ALP
+[2026-03-10 09:05:42] [X9130 ALP] X9130 ALP TRUE Malla_i_GRTS_amb_Legacy 0.04132 0.003 TRUE 1 5225
+[2026-03-10 09:05:42] [END] Acabat: X9130 ALP
+[2026-03-10 09:05:42] [START] Compençant a processar punts per:  X9130 a MED 7 / 39
+[2026-03-10 09:05:52] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9130 a MED
+[2026-03-10 09:05:52] [INFO] Punts disponibles: 9583 >= 36 , aplicant GRTS: X9130 MED
+[2026-03-10 09:10:07] [X9130 MED] X9130 MED FALSE Malla_i_GRTS_no_legacy 0.02568 0.003 TRUE 3 9583
+[2026-03-10 09:10:07] [END] Acabat: X9130 MED
+[2026-03-10 09:10:07] [START] Compençant a processar punts per:  X9140 a ALP 8 / 39
+[2026-03-10 09:10:16] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9140 a ALP
+[2026-03-10 09:10:16] [INFO] Punts disponibles: 236 >= 36 , aplicant GRTS: X9140 ALP
+[2026-03-10 09:16:24] [X9140 ALP] X9140 ALP FALSE Malla_i_GRTS_no_legacy 0.05774 0.003 FALSE 3 236
+[2026-03-10 09:16:24] [END] Acabat: X9140 ALP
+[2026-03-10 09:16:24] [START] Compençant a processar punts per:  X9150 a ALP 9 / 39
+[2026-03-10 09:16:33] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9150 a ALP
+[2026-03-10 09:16:33] [INFO] Punts disponibles: 2265 >= 36 , aplicant GRTS: X9150 ALP
+[2026-03-10 09:22:11] [X9150 ALP] X9150 ALP TRUE Malla_i_GRTS_amb_Legacy 0.03957 0.003 TRUE 1 2265
+[2026-03-10 09:22:11] [END] Acabat: X9150 ALP
+[2026-03-10 09:22:11] [START] Compençant a processar punts per:  X9150 a MED 10 / 39
+[2026-03-10 09:22:21] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9150 a MED
+[2026-03-10 09:22:21] [INFO] Punts disponibles: 10254 >= 36 , aplicant GRTS: X9150 MED
+[2026-03-10 09:26:13] [X9150 MED] X9150 MED FALSE Malla_i_GRTS_no_legacy 0.03279 0.003 TRUE 3 10254
+[2026-03-10 09:26:13] [END] Acabat: X9150 MED
+[2026-03-10 09:26:13] [START] Compençant a processar punts per:  X9160 a ALP 11 / 39
+[2026-03-10 09:26:22] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9160 a ALP
+[2026-03-10 09:26:22] [INFO] Punts disponibles: 3334 >= 36 , aplicant GRTS: X9160 ALP
+[2026-03-10 09:31:38] [X9160 ALP] X9160 ALP FALSE Malla_i_GRTS_no_legacy 0.02639 0.003 TRUE 3 3334
+[2026-03-10 09:31:38] [END] Acabat: X9160 ALP
+[2026-03-10 09:31:38] [START] Compençant a processar punts per:  X9160 a MED 12 / 39
+[2026-03-10 09:31:47] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9160 a MED
+[2026-03-10 09:31:47] [INFO] Punts disponibles: 2850 >= 36 , aplicant GRTS: X9160 MED
+[2026-03-10 09:36:36] [X9160 MED] X9160 MED FALSE Malla_i_GRTS_no_legacy 0.02199 0.003 TRUE 3 2850
+[2026-03-10 09:36:36] [END] Acabat: X9160 MED
+[2026-03-10 09:36:36] [START] Compençant a processar punts per:  X9180. a ALP 13 / 39
+[2026-03-10 09:36:45] [INFO] 2 Punts ja mostrejats inclosos per l'HIC X9180. a ALP
+[2026-03-10 09:36:45] [INFO] Punts disponibles: 219 >= 36 , aplicant GRTS: X9180. ALP
+[2026-03-10 09:42:51] [X9180. ALP] X9180. ALP TRUE Malla_i_GRTS_amb_Legacy 0.09068 0.004 TRUE 1 219
+[2026-03-10 09:42:51] [END] Acabat: X9180. ALP
+[2026-03-10 09:42:51] [START] Compençant a processar punts per:  X9180. a MED 14 / 39
+[2026-03-10 09:43:00] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9180. a MED
+[2026-03-10 09:43:00] [INFO] Punts disponibles: 268 >= 36 , aplicant GRTS: X9180. MED
+[2026-03-10 09:49:03] [X9180. MED] X9180. MED FALSE Malla_i_GRTS_no_legacy 0.04565 0.003 TRUE 3 268
+[2026-03-10 09:49:03] [END] Acabat: X9180. MED
+[2026-03-10 09:49:03] [START] Compençant a processar punts per:  X91D0. a ALP 15 / 39
+[2026-03-10 09:49:12] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91D0. a ALP
+[2026-03-10 09:49:12] [ATENCIÓ] Falta de punts per GRTS X91D0. ALP : 34 < 36
+[2026-03-10 09:49:12] [END LOOP] Acabat tot el loop: Punts generats per HIC
+[2026-03-10 09:56:45] [START] Compençant a processar punts per:  X91D0. a ALP 15 / 39
+[2026-03-10 09:57:27] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91D0. a ALP
+[2026-03-10 09:57:27] [ATENCIÓ] Falta de punts per GRTS X91D0. ALP : 34 < 36
+[2026-03-10 09:57:27] [X91D0. ALP] X91D0. ALP FALSE Malla_i_pol_sense_punts 4 67
+[2026-03-10 09:58:09] [START] Compençant a processar punts per:  X91D0. a ALP 15 / 39
+[2026-03-10 09:58:22] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91D0. a ALP
+[2026-03-10 09:58:22] [ATENCIÓ] Falta de punts per GRTS X91D0. ALP : 34 < 36
+[2026-03-10 09:58:22] [X91D0. ALP] X91D0. ALP FALSE Malla_i_pol_sense_punts 4 67
+[2026-03-10 09:58:22] [END] Acabat: X91D0. ALP
+[2026-03-10 09:58:22] [START] Compençant a processar punts per:  X91E0. a ALP 16 / 39
+[2026-03-10 09:58:33] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91E0. a ALP
+[2026-03-10 09:58:33] [INFO] Punts disponibles: 1474 >= 36 , aplicant GRTS: X91E0. ALP
+[2026-03-10 10:02:33] [X91E0. ALP] X91E0. ALP FALSE Malla_i_GRTS_no_legacy 0.02461 0.003 TRUE 3 1474
+[2026-03-10 10:02:33] [END] Acabat: X91E0. ALP
+[2026-03-10 10:02:33] [START] Compençant a processar punts per:  X91E0. a MED 17 / 39
+[2026-03-10 10:02:45] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91E0. a MED
+[2026-03-10 10:02:45] [INFO] Punts disponibles: 4836 >= 36 , aplicant GRTS: X91E0. MED
+[2026-03-10 10:04:55] [X91E0. MED] X91E0. MED FALSE Malla_i_GRTS_no_legacy 0.03752 0.003 TRUE 3 4836
+[2026-03-10 10:04:55] [END] Acabat: X91E0. MED
+[2026-03-10 10:04:55] [START] Compençant a processar punts per:  X91F0 a MED 18 / 39
+[2026-03-10 10:05:04] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X91F0 a MED
+[2026-03-10 10:05:04] [INFO] Punts disponibles: 198 >= 36 , aplicant GRTS: X91F0 MED
+[2026-03-10 10:11:14] [X91F0 MED] X91F0 MED FALSE Malla_i_GRTS_no_legacy 0.04083 0.003 TRUE 3 198
+[2026-03-10 10:11:14] [END] Acabat: X91F0 MED
+[2026-03-10 10:11:14] [START] Compençant a processar punts per:  X9230 a MED 19 / 39
+[2026-03-10 10:11:23] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9230 a MED
+[2026-03-10 10:11:23] [INFO] Punts disponibles: 98 >= 36 , aplicant GRTS: X9230 MED
+[2026-03-10 10:17:33] [X9230 MED] X9230 MED FALSE Malla_i_GRTS_no_legacy 0.03704 0.004 FALSE 3 98
+[2026-03-10 10:17:33] [END] Acabat: X9230 MED
+[2026-03-10 10:17:33] [START] Compençant a processar punts per:  X9240 a ALP 20 / 39
+[2026-03-10 10:17:42] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9240 a ALP
+[2026-03-10 10:17:42] [INFO] Punts disponibles: 541 >= 36 , aplicant GRTS: X9240 ALP
+[2026-03-10 10:23:51] [X9240 ALP] X9240 ALP FALSE Malla_i_GRTS_no_legacy 0.01962 0.003 TRUE 3 541
+[2026-03-10 10:23:51] [END] Acabat: X9240 ALP
+[2026-03-10 10:23:51] [START] Compençant a processar punts per:  X9240 a MED 21 / 39
+[2026-03-10 10:24:02] [INFO] 2 Punts ja mostrejats inclosos per l'HIC X9240 a MED
+[2026-03-10 10:24:02] [INFO] Punts disponibles: 25488 >= 36 , aplicant GRTS: X9240 MED
+[2026-03-10 10:28:05] [X9240 MED] X9240 MED TRUE Malla_i_GRTS_amb_Legacy 0.02874 0.003 TRUE 1 25488
+[2026-03-10 10:28:05] [END] Acabat: X9240 MED
+[2026-03-10 10:28:05] [START] Compençant a processar punts per:  X9260 a MED 22 / 39
+[2026-03-10 10:28:16] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9260 a MED
+[2026-03-10 10:28:16] [INFO] Punts disponibles: 12954 >= 36 , aplicant GRTS: X9260 MED
+[2026-03-10 10:32:01] [X9260 MED] X9260 MED TRUE Malla_i_GRTS_amb_Legacy 0.04747 0.004 TRUE 1 12954
+[2026-03-10 10:32:01] [END] Acabat: X9260 MED
+[2026-03-10 10:32:01] [START] Compençant a processar punts per:  X92A0 a ALP 23 / 39
+[2026-03-10 10:32:10] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92A0 a ALP
+[2026-03-10 10:32:10] [ATENCIÓ] Falta de punts per GRTS X92A0 ALP : 23 < 36
+[2026-03-10 10:32:10] [X92A0 ALP] X92A0 ALP FALSE Malla_i_pol_sense_punts 4 35
+[2026-03-10 10:32:10] [END] Acabat: X92A0 ALP
+[2026-03-10 10:32:10] [START] Compençant a processar punts per:  X92A0 a MED 24 / 39
+[2026-03-10 10:32:21] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92A0 a MED
+[2026-03-10 10:32:21] [INFO] Punts disponibles: 13099 >= 36 , aplicant GRTS: X92A0 MED
+[2026-03-10 10:34:57] [X92A0 MED] X92A0 MED FALSE Malla_i_GRTS_no_legacy 0.03141 0.003 TRUE 3 13099
+[2026-03-10 10:34:58] [END] Acabat: X92A0 MED
+[2026-03-10 10:34:58] [START] Compençant a processar punts per:  X92D0 a MED 25 / 39
+[2026-03-10 10:35:07] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X92D0 a MED
+[2026-03-10 10:35:07] [INFO] Punts disponibles: 671 >= 36 , aplicant GRTS: X92D0 MED
+[2026-03-10 10:39:56] [X92D0 MED] X92D0 MED FALSE Malla_i_GRTS_no_legacy 0.05855 0.00301204819277108 TRUE 3 671
+[2026-03-10 10:39:56] [END] Acabat: X92D0 MED
+[2026-03-10 10:39:56] [START] Compençant a processar punts per:  X9330 a MED 26 / 39
+[2026-03-10 10:40:09] [INFO] 3 Punts ja mostrejats inclosos per l'HIC X9330 a MED
+[2026-03-10 10:40:09] [INFO] Punts disponibles: 85524 >= 36 , aplicant GRTS: X9330 MED
+[2026-03-10 10:51:19] [X9330 MED] X9330 MED TRUE Malla_i_GRTS_amb_Legacy 0.02365 0.003 TRUE 1 85524
+[2026-03-10 10:51:19] [END] Acabat: X9330 MED
+[2026-03-10 10:51:19] [START] Compençant a processar punts per:  X9340 a ALP 27 / 39
+[2026-03-10 10:51:35] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9340 a ALP
+[2026-03-10 10:51:35] [INFO] Punts disponibles: 19615 >= 36 , aplicant GRTS: X9340 ALP
+[2026-03-10 10:55:27] [X9340 ALP] X9340 ALP FALSE Malla_i_GRTS_no_legacy 0.0322 0.003 TRUE 3 19615
+[2026-03-10 10:55:27] [END] Acabat: X9340 ALP
+[2026-03-10 10:55:27] [START] Compençant a processar punts per:  X9340 a MED 28 / 39
+[2026-03-10 10:56:01] [INFO] 7 Punts ja mostrejats inclosos per l'HIC X9340 a MED
+[2026-03-10 10:56:01] [INFO] Punts disponibles: 336736 >= 36 , aplicant GRTS: X9340 MED
+[2026-03-10 11:38:34] [X9340 MED] X9340 MED TRUE Malla_i_GRTS_amb_Legacy 0.05098 0.003 TRUE 1 336736
+[2026-03-10 11:38:43] [END] Acabat: X9340 MED
+[2026-03-10 11:38:43] [START] Compençant a processar punts per:  X9380 a MED 29 / 39
+[2026-03-10 11:39:07] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9380 a MED
+[2026-03-10 11:39:07] [ATENCIÓ] Falta de punts per GRTS X9380 MED : 3 < 36
+[2026-03-10 11:39:08] [X9380 MED] X9380 MED FALSE Malla_i_pol_sense_punts 4 11
+[2026-03-10 11:39:08] [END] Acabat: X9380 MED
+[2026-03-10 11:39:08] [START] Compençant a processar punts per:  X9430. a ALP 30 / 39
+[2026-03-10 11:39:49] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9430. a ALP
+[2026-03-10 11:39:49] [INFO] Punts disponibles: 16597 >= 36 , aplicant GRTS: X9430. ALP
+[2026-03-10 11:44:30] [X9430. ALP] X9430. ALP TRUE Malla_i_GRTS_amb_Legacy 0.05136 0.004 TRUE 1 16597
+[2026-03-10 11:44:30] [END] Acabat: X9430. ALP
+[2026-03-10 11:44:30] [START] Compençant a processar punts per:  X9430. a MED 31 / 39
+[2026-03-10 11:44:43] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9430. a MED
+[2026-03-10 11:44:43] [INFO] Punts disponibles: 199 >= 36 , aplicant GRTS: X9430. MED
+[2026-03-10 11:50:54] [X9430. MED] X9430. MED FALSE Malla_i_GRTS_no_legacy 0.02206 0.003 FALSE 3 199
+[2026-03-10 11:50:54] [END] Acabat: X9430. MED
+[2026-03-10 11:50:54] [START] Compençant a processar punts per:  X9430 a ALP 32 / 39
+[2026-03-10 11:51:25] [INFO] 5 Punts ja mostrejats inclosos per l'HIC X9430 a ALP
+[2026-03-10 11:51:25] [INFO] Punts disponibles: 43383 >= 36 , aplicant GRTS: X9430 ALP
+[2026-03-10 11:57:58] [X9430 ALP] X9430 ALP TRUE Malla_i_GRTS_amb_Legacy 0.04058 0.004 TRUE 1 43383
+[2026-03-10 11:57:58] [END] Acabat: X9430 ALP
+[2026-03-10 11:57:58] [START] Compençant a processar punts per:  X9430 a MED 33 / 39
+[2026-03-10 11:58:35] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9430 a MED
+[2026-03-10 11:58:36] [ATENCIÓ] Falta de punts per GRTS X9430 MED : 22 < 36
+[2026-03-10 11:58:36] [X9430 MED] X9430 MED FALSE Malla_i_pol_sense_punts 4 22
+[2026-03-10 11:58:36] [END] Acabat: X9430 MED
+[2026-03-10 11:58:36] [START] Compençant a processar punts per:  X9530. a ALP 34 / 39
+[2026-03-10 11:58:46] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9530. a ALP
+[2026-03-10 11:58:46] [INFO] Punts disponibles: 2175 >= 36 , aplicant GRTS: X9530. ALP
+[2026-03-10 12:04:50] [X9530. ALP] X9530. ALP FALSE Malla_i_GRTS_no_legacy 0.0266 0.003 TRUE 3 2175
+[2026-03-10 12:04:50] [END] Acabat: X9530. ALP
+[2026-03-10 12:04:50] [START] Compençant a processar punts per:  X9530. a MED 35 / 39
+[2026-03-10 12:05:07] [INFO] 8 Punts ja mostrejats inclosos per l'HIC X9530. a MED
+[2026-03-10 12:05:07] [INFO] Punts disponibles: 53275 >= 36 , aplicant GRTS: X9530. MED
+[2026-03-10 12:12:45] [X9530. MED] X9530. MED TRUE Malla_i_GRTS_amb_Legacy 0.05163 0.003 TRUE 1 53275
+[2026-03-10 12:12:45] [END] Acabat: X9530. MED
+[2026-03-10 12:12:45] [START] Compençant a processar punts per:  X9540 a MED 36 / 39
+[2026-03-10 12:14:12] [INFO] 11 Punts ja mostrejats inclosos per l'HIC X9540 a MED
+[2026-03-10 12:14:12] [INFO] Punts disponibles: 328510 >= 36 , aplicant GRTS: X9540 MED
+[2026-03-10 12:55:54] [X9540 MED] X9540 MED TRUE Malla_i_GRTS_amb_Legacy 0.05381 0.004 TRUE 1 328510
+[2026-03-10 12:56:05] [END] Acabat: X9540 MED
+[2026-03-10 12:56:05] [START] Compençant a processar punts per:  X9560. a ALP 37 / 39
+[2026-03-10 12:57:15] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9560. a ALP
+[2026-03-10 12:57:15] [ATENCIÓ] Falta de punts per GRTS X9560. ALP : 1 < 36
+[2026-03-10 12:57:15] [X9560. ALP] X9560. ALP FALSE Malla_i_pol_sense_punts 4 3
+[2026-03-10 12:57:15] [END] Acabat: X9560. ALP
+[2026-03-10 12:57:15] [START] Compençant a processar punts per:  X9580. a ALP 38 / 39
+[2026-03-10 12:57:24] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9580. a ALP
+[2026-03-10 12:57:24] [ATENCIÓ] Falta de punts per GRTS X9580. ALP : 0 < 36
+[2026-03-10 12:57:24] [X9580. ALP] X9580. ALP FALSE Malla_i_pol_sense_punts 4 1
+[2026-03-10 12:57:24] [END] Acabat: X9580. ALP
+[2026-03-10 12:57:24] [START] Compençant a processar punts per:  X9580. a MED 39 / 39
+[2026-03-10 12:57:37] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X9580. a MED
+[2026-03-10 12:57:37] [ATENCIÓ] Falta de punts per GRTS X9580. MED : 4 < 36
+[2026-03-10 12:57:37] [X9580. MED] X9580. MED FALSE Malla_i_pol_sense_punts 4 22
+[2026-03-10 12:57:37] [END] Acabat: X9580. MED
