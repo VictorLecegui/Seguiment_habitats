@@ -1,0 +1,23 @@
+[2026-03-09 16:37:59] [START] Compençant a processar punts per:  X3240 a MED 3 / 39
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:01] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'legacy_points' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:43:10] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | object 'n_target' not found
+[2026-03-09 16:46:29] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a MED
+[2026-03-09 16:46:29] [INFO] Punts disponibles: 784 >= 36 , aplicant GRTS: X3240 MED
+[2026-03-09 16:55:04] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | arguments imply differing number of rows: 35, 36
+[2026-03-09 17:07:51] [ERROR_RANDOM] Randomization failed | HIC: X3240 Regio: MED | arguments imply differing number of rows: 35, 36

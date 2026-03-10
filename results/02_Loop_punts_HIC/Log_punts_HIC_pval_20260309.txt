@@ -1,0 +1,6 @@
+[2026-03-09 17:18:34] [START] Compençant a processar punts per:   a  1 / 0
+[2026-03-09 17:19:08] [START] Compençant a processar punts per:   a  1 / 0
+[2026-03-09 17:20:28] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-09 17:21:06] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-09 17:21:18] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X2270. a MED
+[2026-03-09 17:21:18] [INFO] Punts disponibles: 1550 >= 36 , aplicant GRTS: X2270. MED

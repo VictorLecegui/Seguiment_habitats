@@ -1,0 +1,111 @@
+[2026-03-06 15:11:05] [START] Començant a processar: X9340 MED
+[2026-03-06 15:11:12] [END] Poligons guardats per:  X9340 a MED
+[2026-03-06 15:11:12] [START] Començant a processar: X9540 MED
+[2026-03-06 15:11:18] [END] Poligons guardats per:  X9540 a MED
+[2026-03-06 15:11:18] [START] Començant a processar: X9120 MED
+[2026-03-06 15:11:21] [END] Poligons guardats per:  X9120 a MED
+[2026-03-06 15:11:21] [START] Començant a processar: X92A0 MED
+[2026-03-06 15:11:24] [END] Poligons guardats per:  X92A0 a MED
+[2026-03-06 15:11:24] [START] Començant a processar: X92D0 MED
+[2026-03-06 15:11:27] [END] Poligons guardats per:  X92D0 a MED
+[2026-03-06 15:11:27] [START] Començant a processar: X9330 MED
+[2026-03-06 15:11:31] [END] Poligons guardats per:  X9330 a MED
+[2026-03-06 15:11:31] [START] Començant a processar: X91E0. MED
+[2026-03-06 15:11:34] [END] Poligons guardats per:  X91E0. a MED
+[2026-03-06 15:11:34] [START] Començant a processar: X9260 MED
+[2026-03-06 15:11:37] [END] Poligons guardats per:  X9260 a MED
+[2026-03-06 15:11:37] [START] Començant a processar: X91F0 MED
+[2026-03-06 15:11:40] [END] Poligons guardats per:  X91F0 a MED
+[2026-03-06 15:11:40] [START] Començant a processar: X9380 MED
+[2026-03-06 15:11:43] [END] Poligons guardats per:  X9380 a MED
+[2026-03-06 15:11:44] [START] Començant a processar: X9150 MED
+[2026-03-06 15:11:47] [END] Poligons guardats per:  X9150 a MED
+[2026-03-06 15:11:47] [START] Començant a processar: X9530. MED
+[2026-03-06 15:11:50] [END] Poligons guardats per:  X9530. a MED
+[2026-03-06 15:11:50] [START] Començant a processar: X9240 MED
+[2026-03-06 15:11:54] [END] Poligons guardats per:  X9240 a MED
+[2026-03-06 15:11:54] [START] Començant a processar: X9160 MED
+[2026-03-06 15:11:57] [END] Poligons guardats per:  X9160 a MED
+[2026-03-06 15:11:57] [START] Començant a processar: X9180. MED
+[2026-03-06 15:12:00] [END] Poligons guardats per:  X9180. a MED
+[2026-03-06 15:12:00] [START] Començant a processar: X9580. MED
+[2026-03-06 15:12:04] [END] Poligons guardats per:  X9580. a MED
+[2026-03-06 15:12:04] [START] Començant a processar: X9130 MED
+[2026-03-06 15:12:07] [END] Poligons guardats per:  X9130 a MED
+[2026-03-06 15:12:07] [START] Començant a processar: X3240 MED
+[2026-03-06 15:12:10] [END] Poligons guardats per:  X3240 a MED
+[2026-03-06 15:12:10] [START] Començant a processar: X9430. MED
+[2026-03-06 15:12:13] [END] Poligons guardats per:  X9430. a MED
+[2026-03-06 15:12:13] [START] Començant a processar: X9430 MED
+[2026-03-06 15:12:16] [END] Poligons guardats per:  X9430 a MED
+[2026-03-06 15:12:16] [START] Començant a processar: X9230 MED
+[2026-03-06 15:12:19] [END] Poligons guardats per:  X9230 a MED
+[2026-03-06 15:12:19] [START] Començant a processar: X91D0. MED
+[2026-03-06 15:12:22] [ATENCIÓ!] No hi ha polígons <200m2 de: X91D0. a MED
+[2026-03-06 15:12:22] [END] Acabat: X91D0. a MED
+[2026-03-06 15:12:22] [START] Començant a processar: X9560. MED
+[2026-03-06 15:12:25] [ATENCIÓ!] No hi ha polígons <200m2 de: X9560. a MED
+[2026-03-06 15:12:25] [END] Acabat: X9560. a MED
+[2026-03-06 15:12:25] [START] Començant a processar: X9140 MED
+[2026-03-06 15:12:28] [ATENCIÓ!] No hi ha polígons <200m2 de: X9140 a MED
+[2026-03-06 15:12:28] [END] Acabat: X9140 a MED
+[2026-03-06 15:12:28] [START] Començant a processar: X2270. MED
+[2026-03-06 15:12:31] [END] Poligons guardats per:  X2270. a MED
+[2026-03-06 15:12:31] [START] Començant a processar: X9340 ALP
+[2026-03-06 15:12:35] [END] Poligons guardats per:  X9340 a ALP
+[2026-03-06 15:12:35] [START] Començant a processar: X9540 ALP
+[2026-03-06 15:12:39] [ATENCIÓ!] No hi ha polígons <200m2 de: X9540 a ALP
+[2026-03-06 15:12:39] [END] Acabat: X9540 a ALP
+[2026-03-06 15:12:39] [START] Començant a processar: X9120 ALP
+[2026-03-06 15:12:42] [END] Poligons guardats per:  X9120 a ALP
+[2026-03-06 15:12:42] [START] Començant a processar: X92A0 ALP
+[2026-03-06 15:12:45] [END] Poligons guardats per:  X92A0 a ALP
+[2026-03-06 15:12:45] [START] Començant a processar: X92D0 ALP
+[2026-03-06 15:12:48] [ATENCIÓ!] No hi ha polígons <200m2 de: X92D0 a ALP
+[2026-03-06 15:12:48] [END] Acabat: X92D0 a ALP
+[2026-03-06 15:12:48] [START] Començant a processar: X9330 ALP
+[2026-03-06 15:12:51] [ATENCIÓ!] No hi ha polígons <200m2 de: X9330 a ALP
+[2026-03-06 15:12:51] [END] Acabat: X9330 a ALP
+[2026-03-06 15:12:51] [START] Començant a processar: X91E0. ALP
+[2026-03-06 15:12:54] [END] Poligons guardats per:  X91E0. a ALP
+[2026-03-06 15:12:54] [START] Començant a processar: X9260 ALP
+[2026-03-06 15:12:57] [ATENCIÓ!] No hi ha polígons <200m2 de: X9260 a ALP
+[2026-03-06 15:12:57] [END] Acabat: X9260 a ALP
+[2026-03-06 15:12:57] [START] Començant a processar: X91F0 ALP
+[2026-03-06 15:13:00] [ATENCIÓ!] No hi ha polígons <200m2 de: X91F0 a ALP
+[2026-03-06 15:13:00] [END] Acabat: X91F0 a ALP
+[2026-03-06 15:13:00] [START] Començant a processar: X9380 ALP
+[2026-03-06 15:13:03] [ATENCIÓ!] No hi ha polígons <200m2 de: X9380 a ALP
+[2026-03-06 15:13:03] [END] Acabat: X9380 a ALP
+[2026-03-06 15:13:03] [START] Començant a processar: X9150 ALP
+[2026-03-06 15:13:06] [END] Poligons guardats per:  X9150 a ALP
+[2026-03-06 15:13:06] [START] Començant a processar: X9530. ALP
+[2026-03-06 15:13:10] [END] Poligons guardats per:  X9530. a ALP
+[2026-03-06 15:13:10] [START] Començant a processar: X9240 ALP
+[2026-03-06 15:13:13] [END] Poligons guardats per:  X9240 a ALP
+[2026-03-06 15:13:13] [START] Començant a processar: X9160 ALP
+[2026-03-06 15:13:16] [END] Poligons guardats per:  X9160 a ALP
+[2026-03-06 15:13:16] [START] Començant a processar: X9180. ALP
+[2026-03-06 15:13:19] [END] Poligons guardats per:  X9180. a ALP
+[2026-03-06 15:13:19] [START] Començant a processar: X9580. ALP
+[2026-03-06 15:13:22] [END] Poligons guardats per:  X9580. a ALP
+[2026-03-06 15:13:22] [START] Començant a processar: X9130 ALP
+[2026-03-06 15:13:25] [END] Poligons guardats per:  X9130 a ALP
+[2026-03-06 15:13:25] [START] Començant a processar: X3240 ALP
+[2026-03-06 15:13:28] [END] Poligons guardats per:  X3240 a ALP
+[2026-03-06 15:13:28] [START] Començant a processar: X9430. ALP
+[2026-03-06 15:13:31] [END] Poligons guardats per:  X9430. a ALP
+[2026-03-06 15:13:31] [START] Començant a processar: X9430 ALP
+[2026-03-06 15:13:34] [END] Poligons guardats per:  X9430 a ALP
+[2026-03-06 15:13:34] [START] Començant a processar: X9230 ALP
+[2026-03-06 15:13:37] [ATENCIÓ!] No hi ha polígons <200m2 de: X9230 a ALP
+[2026-03-06 15:13:37] [END] Acabat: X9230 a ALP
+[2026-03-06 15:13:37] [START] Començant a processar: X91D0. ALP
+[2026-03-06 15:13:41] [END] Poligons guardats per:  X91D0. a ALP
+[2026-03-06 15:13:41] [START] Començant a processar: X9560. ALP
+[2026-03-06 15:13:44] [END] Poligons guardats per:  X9560. a ALP
+[2026-03-06 15:13:44] [START] Començant a processar: X9140 ALP
+[2026-03-06 15:13:47] [END] Poligons guardats per:  X9140 a ALP
+[2026-03-06 15:13:47] [START] Començant a processar: X2270. ALP
+[2026-03-06 15:13:50] [ATENCIÓ!] No hi ha polígons <200m2 de: X2270. a ALP
+[2026-03-06 15:13:50] [END] Acabat: X2270. a ALP

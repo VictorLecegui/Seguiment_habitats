@@ -1,0 +1,14 @@
+[2026-03-06 15:59:56] [START] Compençant a processar punts per:  X2270. a MED 1 / 39
+[2026-03-06 16:00:05] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X2270. a MED
+[2026-03-06 16:00:05] [INFO] Punts disponibles: 1550 >= 36 , aplicant GRTS: X2270. MED
+[2026-03-06 16:21:55] [X2270. MED] X2270. MED FALSE Malla_i_GRTS_no_legacy 0.02701 0.006 TRUE 3
+[2026-03-06 16:21:55] [END] Acabat: X2270. MED
+[2026-03-06 16:21:55] [START] Compençant a processar punts per:  X3240 a ALP 2 / 39
+[2026-03-06 16:22:03] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a ALP
+[2026-03-06 16:22:03] [INFO] Punts disponibles: 778 >= 36 , aplicant GRTS: X3240 ALP
+[2026-03-06 16:37:32] [X3240 ALP] X3240 ALP FALSE Malla_i_GRTS_no_legacy 0.03079 0.003 TRUE 3
+[2026-03-06 16:37:32] [END] Acabat: X3240 ALP
+[2026-03-06 16:37:32] [START] Compençant a processar punts per:  X3240 a MED 3 / 39
+[2026-03-06 16:37:40] [INFO] 0 Punts ja mostrejats inclosos per l'HIC X3240 a MED
+[2026-03-06 16:37:40] [INFO] Punts disponibles: 784 >= 36 , aplicant GRTS: X3240 MED
+[2026-03-06 16:39:01] [END LOOP] Acabat tot el loop: Punts generats per HIC
